@@ -1,8 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import ProfileSection from "./components/ProfileSection";
 
 function App() {
-  return <div></div>
+  return (
+    <>
+      <ProfileSection></ProfileSection>
+    </>
+  );
 }
 
-export default App
+export default App;
