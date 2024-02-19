@@ -4,12 +4,16 @@ import "bootstrap-icons/font/bootstrap-icons.min.css";
 import MyFooter from "./components/MyFooter";
 import Resources from "./components/Resources";
 import ProfileSection from "./components/ProfileSection";
+import Interests from "./components/Interests";
+import Formation from "./components/Formation";
 
 function App() {
   return (
     <>
       <ProfileSection />
+      <Formation />
       <Resources />
+      <Interests />
       <MyFooter />
     </>
   );
