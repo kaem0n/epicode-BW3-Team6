@@ -7,12 +7,16 @@ const Interests = () => {
   return (
     <>
       <Row className="mt-2 mb-5">
-        <Col className="col-8">
-          <Card className="p-2">
-            <h4>Interessi</h4>
+        <Col>
+          <Card className="p-2 pb-3">
+            <Card.Title className="ps-2">Interessi</Card.Title>
             <Row>
               <Col>
-                <Nav variant="underline" defaultActiveKey="/home">
+                <Nav
+                  variant="underline"
+                  defaultActiveKey="/home"
+                  className="ps-2"
+                >
                   <Nav.Item>
                     <Nav.Link
                       eventKey="link-1"
@@ -49,7 +53,7 @@ const Interests = () => {
                 </Nav>
               </Col>
             </Row>
-            <Row>
+            <Row className="ps-2">
               <Col>
                 {clicked === "Top-Voices" ? (
                   <Row>
@@ -73,7 +77,7 @@ const Interests = () => {
                       </Row>
                     </Col>
                     <Col>
-                      <Row>
+                      <Row className="mt-3">
                         <Col className="col-2">
                           <img
                             src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
@@ -144,7 +148,7 @@ const Interests = () => {
                             style={{ width: "100%" }}
                           />
                         </Col>
-                        <Col className="col-6">
+                        <Col className="col-6 ">
                           <p className="mb-0">Epicode</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -153,7 +157,6 @@ const Interests = () => {
                         </Col>
                       </Row>
                     </Col>
-                    <Col></Col>
                   </Row>
                 ) : (
                   ""

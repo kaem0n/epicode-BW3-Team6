@@ -28,4 +28,5 @@ const ActivitiesModal = ({ show, hide }) => {
   );
 };
 
+
 export default ActivitiesModal;
