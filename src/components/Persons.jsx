@@ -3,7 +3,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 const Persons = () => {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card>
         <Card.Body>
           <Card.Title>Persone che potresti conoscere</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -32,10 +32,6 @@ const Persons = () => {
           </div>
         </Card.Body>
         <Card.Body>
-          <Card.Title>Persone che potresti conoscere</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Dalla tua scuola o univeresità
-          </Card.Subtitle>
           <Row>
             <Col xs={3}>
               <img
@@ -59,10 +55,6 @@ const Persons = () => {
           </div>
         </Card.Body>
         <Card.Body>
-          <Card.Title>Persone che potresti conoscere</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Dalla tua scuola o univeresità
-          </Card.Subtitle>
           <Row>
             <Col xs={3}>
               <img
@@ -86,10 +78,6 @@ const Persons = () => {
           </div>
         </Card.Body>
         <Card.Body>
-          <Card.Title>Persone che potresti conoscere</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Dalla tua scuola o univeresità
-          </Card.Subtitle>
           <Row>
             <Col xs={3}>
               <img

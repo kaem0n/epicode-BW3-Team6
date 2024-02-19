@@ -1,6 +1,7 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f4f2ee;
 }
 .suggestions-button {
   background-color: white !important;
@@ -44,39 +45,110 @@ body {
   font-weight: 600;
   border-radius: 30px;
 }
-.modal-body-language {
-  background-color: rgb(250, 250, 250);
+.mtlr:hover {
+  background-color: rgb(229, 229, 229);
+  transition: all 0.5s ease;
 }
-.bi-globe {
-  color: green;
-  height: 90px !important;
+.font-footer {
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
 }
-.btn-modal-italiano {
-  border: 1px solid rgb(189, 188, 188);
-  border-radius: 30px;
-  color: rgb(43, 43, 43) !important;
-  font-weight: 500;
+
+.font-footer-ans {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
 }
-.btn-modal-italiano:hover {
-  border: 2px solid gray;
-  background-color: rgb(233, 233, 233) !important;
+.font-footer-ans-p {
+  color: black;
+  font-size: 12px;
 }
-.btn-add-language {
-  border-radius: 30px;
-  color: #0d6efd;
-  font-weight: 500;
+#navbar {
+  font-size: 0.75rem;
+  z-index: 2000;
+  height: 6vh;
 }
-.btn-add-language:hover {
-  background-color: #d4e5ff !important;
-  color: #0d6efd;
-  border: 2px solid #0d6efd;
+
+#collapsible-nav-dropdown::after {
+  content: none;
 }
-.bi-globe {
-  font-size: 40px;
+
+#nav-offcanvas {
+  height: 94vh;
+  top: unset;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-.bi-eyeglasses {
-  font-size: 40px;
+
+.navbar-brand {
+  margin-right: 8px;
 }
-.bi-lightbulb {
-  font-size: 25px;
+
+.navbrand-icon {
+  font-size: 41px;
+}
+
+.nav-icon {
+  font-size: 21px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.nav-link {
+  padding: 0;
+  width: 80px;
+}
+
+.nav-search {
+  background-color: #edf3f8;
+  border: none;
+  border-radius: 5px;
+  padding: 0 40px;
+  height: 35px;
+  font-size: 0.9rem;
+}
+
+.nav-search:focus {
+  background-color: #edf3f8;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.75) inset;
+  font-size: 1rem;
+  box-sizing: content-box;
+  transition: 300ms;
+}
+
+.nav-search-icon {
+  position: absolute;
+  left: 12%;
+  top: 12%;
+  transform: translate(-50%, 50%);
+  font-size: 0.9rem;
+  cursor: text;
+}
+
+.nav-search-dropdown {
+  top: 0% !important;
+  width: 450px;
+}
+
+.bi-grid-3x3-gap-fill {
+  font-size: 20px;
+}
+
+.premium-link {
+  color: #915907;
+  width: 125px;
+  margin-left: 8px;
+  text-align: center;
+  text-decoration: underline;
+  box-sizing: content-box;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.fs-7 {
+  font-size: 0.9rem;
 }

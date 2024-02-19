@@ -93,13 +93,15 @@ const ProfileSettings = () => {
           <div className="d-flex align-items-center justify-content-between ">
             <Card.Title>Public profile & URL</Card.Title>
 
-            <Button className="border-0 bg-transparent ">
-              <i className="bi bi-pencil"></i>
-            </Button>
-          </div>
-          <Card.Text>www.link.profilo</Card.Text>
-        </Card.Body>
-      </Card>
+                <Button className="border-0 bg-transparent ">
+                  <i className="bi bi-pencil"></i>
+                </Button>
+              </div>
+              <Card.Text>www.link.profilo</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </>
   );
 };

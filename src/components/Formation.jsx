@@ -3,12 +3,12 @@ import { Card, Col, Row } from "react-bootstrap";
 const Formation = () => {
   return (
     <>
-      <Row className="mt-2">
-        <Col className="col-8">
+      <Row className="mt-2 mb-2">
+        <Col>
           <Card className="p-2">
             <Row className="justify-content-between ">
               <Col className="col-5">
-                <h4>Formazione</h4>
+                <Card.Title className="ps-2">Formazione</Card.Title>
               </Col>
               <Col className="col-3 d-flex justify-content-evenly text-secondary">
                 <i className="bi bi-plus-lg fs-4"></i>

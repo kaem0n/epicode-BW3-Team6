@@ -2,19 +2,47 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { Col, Container, Row } from "react-bootstrap";
+/* import Slider from "react-slick"; *
+/* import { Button, Card } from "react-bootstrap"; */
+//import pagine
+import Formation from "./components/Formation";
+import Interests from "./components/Interests";
+import MyFooter from "./components/MyFooter";
+import ProfileSection from "./components/ProfileSection";
+import Resources from "./components/Resources";
 import Suggestions from "./components/Suggestions";
-import { Button, Card } from "react-bootstrap";
-import ProfileSettings from "./components/ProfileSettings";
 import Persons from "./components/Persons";
+import ProfileSettings from "./components/ProfileSettings";
+import Analisys from "./components/Analisys";
+import Activities from "./components/Activities";
 
 function App() {
   return (
-    <div>
-      <Suggestions />
-      <ProfileSettings />
-      <Persons />
-    </div>
+    <>
+      <main>
+        <Container>
+          <Row>
+            <Col className="col-8">
+              <ProfileSection />
+              <Analisys />
+              <Resources />
+              <Activities />
+              <Formation />
+              <Suggestions />
+              <Interests />
+            </Col>
+            <Col className="col-4">
+              <ProfileSettings />
+              <Persons />
+            </Col>
+          </Row>
+        </Container>
+      </main>
+      <footer>
+        <MyFooter />
+      </footer>
+    </>
   );
 }
 
