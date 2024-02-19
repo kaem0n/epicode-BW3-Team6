@@ -35,7 +35,7 @@ const ProfileSection = () => {
   }, []);
   // console.log(state);
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 mb-2">
       <Row>
         <Col className="col-8">
           {state.profile ? (
