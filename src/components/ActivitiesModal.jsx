@@ -1,5 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 const ActivitiesModal = ({ show, hide }) => {
   return (
@@ -12,6 +14,12 @@ const ActivitiesModal = ({ show, hide }) => {
           La tua attività recente mostrerà solo i contenuti degli ultimi 360
           giorni
         </p>
+
+        <InputGroup>
+          <InputGroup.Radio aria-label="Radio button for following text input" />
+
+          <Form.Control aria-label="Text input with radio button" />
+        </InputGroup>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary">Salva</Button>
