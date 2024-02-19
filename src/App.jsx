@@ -1,13 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
-import Analisys from './components/Analisys';
-import Activities from './components/Activities';
+// import Analisys from './components/Analisys';
+// import Activities from './components/Activities';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.min.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+// import Slider from 'react-slick';
+import Suggestions from './components/Suggestions';
+// import { Button, Card } from 'react-bootstrap';
+import ProfileSettings from './components/ProfileSettings';
+import Persons from './components/Persons';
 
 function App() {
   return (
     <div>
-      <Analisys />
-      <Activities />
+      <Suggestions />
+      <ProfileSettings />
+      <Persons />
     </div>
   );
 }
