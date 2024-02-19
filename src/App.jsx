@@ -1,8 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
+import MyNavBar from './components/MyNavBar'
+import NavCanvas from './components/NavCanvas'
 
-function App() {
-  return <div></div>
+const App = () => {
+  return (
+    <>
+      <header>
+        <MyNavBar />
+        <NavCanvas />
+      </header>
+    </>
+  )
 }
 
 export default App
