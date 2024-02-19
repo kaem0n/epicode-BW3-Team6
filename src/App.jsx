@@ -1,21 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
-// import dei component
-import MyFooter from "./components/MyFooter";
-import Resources from "./components/Resources";
-import ProfileSection from "./components/ProfileSection";
-import Interests from "./components/Interests";
-import Formation from "./components/Formation";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Suggestions from "./components/Suggestions";
+import { Button, Card } from "react-bootstrap";
+import ProfileSettings from "./components/ProfileSettings";
+import Persons from "./components/Persons";
 
 function App() {
   return (
-    <>
-      <ProfileSection />
-      <Formation />
-      <Resources />
-      <Interests />
-      <MyFooter />
-    </>
+    <div>
+      <Suggestions />
+      <ProfileSettings />
+      <Persons />
+    </div>
   );
 }
 
