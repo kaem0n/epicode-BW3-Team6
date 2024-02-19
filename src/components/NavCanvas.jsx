@@ -41,41 +41,55 @@ const NavCanvas = () => {
               <ListGroup.Item className="container-fluid">
                 <Row className=" text-center g-3" xs={4}>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn1}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn1}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Learning
                     </span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn2}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn2}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Talent Insights
                     </span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn3}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn3}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Pubblica un&apos;offerta di lavoro
                     </span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn4}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn4}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Pubblicizza
                     </span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn5}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn5}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Trova lead
                     </span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn6}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn6}
+                    </div>
                     <span className="fs-8 text-secondary pointer">Gruppi</span>
                   </Col>
                   <Col className="d-flex flex-column align-items-center">
-                    <div className="border rounded-2 canvas-btn">{icn7}</div>
+                    <div className="border rounded-2 canvas-btn mb-1">
+                      {icn7}
+                    </div>
                     <span className="fs-8 text-secondary pointer">
                       Marketplace dei servizi
                     </span>
