@@ -98,11 +98,11 @@ const ProfileSection = () => {
                   </Col>
                   <Col className="col-4 p-0">
                     <img
-                      src="https://media.licdn.com/dms/image/D4D0BAQHDm_SN8cUvqg/company-logo_100_100/0/1703750847686/unitorvergata_logo?e=1716422400&v=beta&t=vJHtONqWXnk0-UXCZrEnL1eufbisb6eZomJdxWKoaVQ"
+                      src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1716422400&v=beta&t=5MUJe7JW7qN_AhLIvXWy09nSa-yX3GS-ThImsm3_xqE"
                       alt="logo"
                       style={{ width: "2em" }}
                     />
-                    <span id="università">La tua università/scuola</span>
+                    <span id="università">Epicode</span>
                   </Col>
                 </Row>
                 <Row className="mt-2 g-2">
