@@ -85,10 +85,24 @@ body {
   box-sizing: content-box;
 }
 
+.canvas-btn:hover {
+  box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.canvas-link:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
 .pointer {
   cursor: pointer;
 }
 
 .fs-7 {
   font-size: 0.9rem;
+}
+
+.fs-8 {
+  font-size: 0.75rem;
 }
