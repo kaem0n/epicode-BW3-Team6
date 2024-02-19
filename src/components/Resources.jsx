@@ -6,7 +6,7 @@ const Resources = () => {
   return (
     <Container className="mb-2">
       <Row>
-        <Col >
+        <Col className="col-8">
           <Card>
             <Card.Body>
               <Card.Title>Risorse</Card.Title>
