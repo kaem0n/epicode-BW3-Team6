@@ -8,9 +8,9 @@ import ProfileSection from "./components/ProfileSection";
 function App() {
   return (
     <>
+      <ProfileSection />
       <Resources />
       <MyFooter />
-      <ProfileSection></ProfileSection>
     </>
   );
 }
