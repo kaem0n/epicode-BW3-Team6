@@ -3,7 +3,67 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f4f2ee;
 }
+.suggestions-button {
+  background-color: white !important;
+  border: gray 1px solid !important;
+  border-radius: 28px;
+  color: gray;
+  font-weight: 600;
+}
+.suggestions-button:hover {
+  border: 2px solid gray !important;
+  background-color: rgb(233, 233, 233) !important;
+  color: gray;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.carousel {
+  padding: 1rem;
+
+  color: #000000;
+}
+.box {
+  height: 100%;
+}
+
+.slick-arrow {
+  border-radius: 50px;
+}
+.carousel .card {
+  min-height: 300px;
+}
+.bi-pencil {
+  color: black !important;
+}
+.btn-person {
+  border: 1px solid gray !important;
+  color: gray !important;
+  font-weight: 600;
+  border-radius: 30px;
+}
+.mtlr:hover {
+  background-color: rgb(229, 229, 229);
+  transition: all 0.5s ease;
+}
+.font-footer {
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.font-footer-ans {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+.font-footer-ans-p {
+  color: black;
+  font-size: 12px;
+}
 #navbar {
   font-size: 0.75rem;
   z-index: 2000;
