@@ -1,11 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
+// import dei component
+import MyFooter from "./components/MyFooter";
+import Resources from "./components/Resources";
 import ProfileSection from "./components/ProfileSection";
 
 function App() {
   return (
     <>
-      <ProfileSection></ProfileSection>
+      <ProfileSection />
+      <Resources />
+      <MyFooter />
     </>
   );
 }
