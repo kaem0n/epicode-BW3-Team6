@@ -84,7 +84,7 @@ const NavCanvas = () => {
               </ListGroup.Item>
             </ListGroup>
           </Card>
-          <Card className="mt-2">
+          <Card className="mt-2 border">
             <ListGroup variant="flush">
               <ListGroup.Item className="fw-semibold py-3 ps-4">
                 Scopri altro per il business

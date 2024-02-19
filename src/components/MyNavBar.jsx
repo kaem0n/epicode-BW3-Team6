@@ -1,8 +1,9 @@
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+// import NavDropdown from 'react-bootstrap/NavDropdown'
 import NavSearchBar from './NavSearchBar'
+import NavProfileCard from './NavProfileCard'
 
 const MyNavBar = () => {
   const premiumTxtGen = () => {
@@ -34,6 +35,7 @@ const MyNavBar = () => {
       expand="lg"
       className="bg-white p-0 border-bottom"
       id="navbar"
+      fixed="top"
     >
       <Container>
         <Navbar.Brand className="p-0">
@@ -63,28 +65,10 @@ const MyNavBar = () => {
               <i className="fa-solid fa-bell nav-icon"></i>
               <span>Notifiche</span>
             </Nav.Link>
-            <NavDropdown
-              align="end"
-              title={
-                <div className="d-flex flex-column justify-content-center align-items-center py-1 border-end">
-                  <img
-                    width="24"
-                    src="https://placedog.net/50/50"
-                    height="24"
-                    alt="user"
-                    className="rounded-circle dropdown-toggle"
-                    role="button"
-                  />
-                  <div className="dropdown-toggle">Tu</div>
-                </div>
-              }
-              id="collapsible-nav-dropdown"
-            >
-              <div className="px-2">test</div>
-            </NavDropdown>
+            <NavProfileCard />
             <Nav.Link
               onClick={openCanvas}
-              className="d-flex flex-column justify-content-center align-items-center py-1 pointer"
+              className="d-flex flex-column justify-content-center align-items-center py-1 ms-1 pointer"
             >
               <i className="bi bi-grid-3x3-gap-fill d-flex nav-icon"></i>
               <div className="dropdown-toggle">Per le aziende</div>
