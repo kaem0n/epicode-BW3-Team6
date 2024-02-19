@@ -1,32 +1,32 @@
-import { useState } from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import PostModal from "./PostModal";
-import ActivitiesModal from "./ActivitiesModal";
+import { useState } from 'react'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import PostModal from './PostModal'
+import ActivitiesModal from './ActivitiesModal'
 
 const Activities = () => {
-  const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
-  const [showActivitiesModal, setShowActivitiesModal] = useState(false); // Stato per controllare la visibilità del  modale attivita
+  const [showPostModal, setShowPostModal] = useState(false) // Stato per controllare la visibilità del modale per la creazione di un post
+  const [showActivitiesModal, setShowActivitiesModal] = useState(false) // Stato per controllare la visibilità del  modale attivita
 
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
-    setShowPostModal(true);
-  };
+    setShowPostModal(true)
+  }
 
   // Funzione per chiudere il modale per la creazione di un post
   const handleClosePostModal = () => {
-    setShowPostModal(false);
-  };
+    setShowPostModal(false)
+  }
 
   // Funzione per aprire  attività modale
   const handleActivitiesIconClick = () => {
-    setShowActivitiesModal(true);
-  };
+    setShowActivitiesModal(true)
+  }
 
   // Funzione per chiudere attività modale
   const handleCloseActivitiesModal = () => {
-    setShowActivitiesModal(false);
-  };
+    setShowActivitiesModal(false)
+  }
 
   return (
     <>
@@ -50,9 +50,9 @@ const Activities = () => {
               <div
                 className="d-flex align-items-center justify-content-center rounded-circle"
                 style={{
-                  width: "3.5rem",
-                  height: "3.5rem",
-                  minWidth: "auto",
+                  width: '3.5rem',
+                  height: '3.5rem',
+                  minWidth: 'auto',
                 }}
                 onClick={handleActivitiesIconClick}
               >
@@ -63,10 +63,10 @@ const Activities = () => {
             </div>
           </div>
 
-          <Card.Text>
+          <div className="card-text">
             <p>Non hai pubblicato ancora nulla</p>
             <p>I post che condividi appariranno qui</p>
-          </Card.Text>
+          </div>
         </Card.Body>
 
         <PostModal show={showPostModal} hide={handleClosePostModal} />
@@ -82,7 +82,7 @@ const Activities = () => {
         </a>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default Activities;
+export default Activities

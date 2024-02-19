@@ -4,20 +4,22 @@ import { useSelector } from 'react-redux'
 
 const NavProfileCard = () => {
   const profile = useSelector((state) => state.profile.profile)
-  console.log(profile)
+
   return (
     <NavDropdown
       align="end"
       title={
         <div className="d-flex flex-column justify-content-center align-items-center py-1 border-end">
-          <img
-            width="24"
-            src={profile.image}
-            height="24"
-            alt="user"
-            className="rounded-circle dropdown-toggle"
-            role="button"
-          />
+          {profile && (
+            <img
+              width="24"
+              src={profile.image}
+              height="24"
+              alt="user"
+              className="rounded-circle dropdown-toggle"
+              role="button"
+            />
+          )}
           <div className="dropdown-toggle">Tu</div>
         </div>
       }
@@ -25,20 +27,22 @@ const NavProfileCard = () => {
     >
       <div className="px-2">
         <div className="d-flex flex-column pb-2 border-bottom">
-          <div className="d-flex align-items-center mb-2 pointer">
-            <img
-              src={profile.image}
-              alt={profile._id}
-              width="60px"
-              className="me-2 rounded-circle"
-            />
-            <div className="d-flex flex-column">
-              <p className="m-0 fw-semibold">
-                {profile.name} {profile.surname}
-              </p>
-              <p className="m-0 fs-7">{profile.title}</p>
+          {profile && (
+            <div className="d-flex align-items-center mb-2 pointer">
+              <img
+                src={profile.image}
+                alt={profile._id}
+                width="60px"
+                className="me-2 rounded-circle"
+              />
+              <div className="d-flex flex-column">
+                <p className="m-0 fw-semibold">
+                  {profile.name} {profile.surname}
+                </p>
+                <p className="m-0 fs-7">{profile.title}</p>
+              </div>
             </div>
-          </div>
+          )}
           <Button
             variant="outline-primary"
             className="fs-7 rounded-5 py-0 fw-semibold"

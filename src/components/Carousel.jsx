@@ -1,5 +1,5 @@
-import { Button, Card } from "react-bootstrap";
-import Suggestions from "./Suggestions";
+import { Button, Card } from 'react-bootstrap'
+import Suggestions from './Suggestions'
 
 const Carousel = () => {
   const cards = [
@@ -70,8 +70,8 @@ const Carousel = () => {
       </div>
       ,<div>Card 5</div>,<div>Card 6</div>,
     </>,
-  ];
+  ]
 
-  return <Suggestions cards={cards} />;
-};
-export default Carousel;
+  return <Suggestions cards={cards} />
+}
+export default Carousel

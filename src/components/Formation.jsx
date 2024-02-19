@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from 'react-bootstrap'
 
 const Formation = () => {
   return (
@@ -19,7 +19,7 @@ const Formation = () => {
               <Col className="col-1">
                 <img
                   src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1716422400&v=beta&t=5MUJe7JW7qN_AhLIvXWy09nSa-yX3GS-ThImsm3_xqE"
-                  style={{ width: "4em" }}
+                  style={{ width: '4em' }}
                   alt="logo-scuola"
                 />
               </Col>
@@ -38,7 +38,7 @@ const Formation = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Formation;
+export default Formation
