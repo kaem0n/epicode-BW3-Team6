@@ -3,12 +3,14 @@ import "bootstrap-icons/font/bootstrap-icons.min.css";
 // import dei component
 import MyFooter from "./components/MyFooter";
 import Resources from "./components/Resources";
+import ProfileSection from "./components/ProfileSection";
 
 function App() {
   return (
     <>
       <Resources />
       <MyFooter />
+      <ProfileSection></ProfileSection>
     </>
   );
 }
