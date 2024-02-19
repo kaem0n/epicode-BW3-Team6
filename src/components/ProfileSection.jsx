@@ -18,7 +18,7 @@ const ProfileSection = () => {
                   src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
                   alt="profilo"
                   style={{ width: "10em", left: "33px", top: "88px" }}
-                  className=" border rounded-circle border-primary z-index-1 position-absolute"
+                  className=" border rounded-circle border-white z-index-1 position-absolute"
                 />
                 <i
                   className="bi bi-pen text-primary position-absolute px-2 py-1 rounded-circle"
