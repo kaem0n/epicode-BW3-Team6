@@ -14,6 +14,8 @@ import Resources from "./components/Resources";
 import Suggestions from "./components/Suggestions";
 import Persons from "./components/Persons";
 import ProfileSettings from "./components/ProfileSettings";
+import Analisys from "./components/Analisys";
+import Activities from "./components/Activities";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Row>
             <Col className="col-8">
               <ProfileSection />
+              <Analisys />
               <Resources />
+              <Activities />
               <Formation />
               <Suggestions />
               <Interests />

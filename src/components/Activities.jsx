@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import PostModal from './PostModal';
-import ActivitiesModal from './ActivitiesModal';
+import { useState } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import PostModal from "./PostModal";
+import ActivitiesModal from "./ActivitiesModal";
 
 const Activities = () => {
   const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
@@ -30,11 +30,11 @@ const Activities = () => {
 
   return (
     <>
-      <Card className="m-3">
+      <Card className="mb-2">
         <Card.Body className="ms-2">
           <div className="d-flex align-items-center">
             <div className="mb-3">
-              <h2> Attività</h2>
+              <h5> Attività</h5>
             </div>
             <div className="flex-grow-1"></div>
             <div>
@@ -50,14 +50,14 @@ const Activities = () => {
               <div
                 className="d-flex align-items-center justify-content-center rounded-circle"
                 style={{
-                  width: '3.5rem',
-                  height: '3.5rem',
-                  minWidth: 'auto',
+                  width: "3.5rem",
+                  height: "3.5rem",
+                  minWidth: "auto",
                 }}
                 onClick={handleActivitiesIconClick}
               >
                 <span>
-                  <i className="bi bi-pencil-fill"></i>
+                  <i className="bi bi-pen fs-4 text-secondary"></i>
                 </span>
               </div>
             </div>
@@ -75,15 +75,11 @@ const Activities = () => {
           show={showActivitiesModal}
           hide={handleCloseActivitiesModal}
         />
-        <Card.Footer className="text-muted footer-hover">
-          <Button
-            variant="link"
-            className="btn btn-link w-100 button-hover"
-            style={{ borderRadius: 0, borderTop: 'none' }}
-          >
-            Mostra tutte le analisi
-          </Button>
-        </Card.Footer>
+        <a className="text-decoration-none" href="#">
+          <div className="d-flex justify-content-center border-top p-2 link-dark text-decoration-none mtlr text-secondary ">
+            Mostra tutte le risorse <i className="bi bi-arrow-right"></i>
+          </div>
+        </a>
       </Card>
     </>
   );

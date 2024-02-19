@@ -8,7 +8,7 @@ const Interests = () => {
     <>
       <Row className="mt-2 mb-5">
         <Col>
-          <Card className="p-2">
+          <Card className="p-2 pb-3">
             <Card.Title className="ps-2">Interessi</Card.Title>
             <Row>
               <Col>
@@ -148,7 +148,7 @@ const Interests = () => {
                             style={{ width: "100%" }}
                           />
                         </Col>
-                        <Col className="col-6">
+                        <Col className="col-6 ">
                           <p className="mb-0">Epicode</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -157,7 +157,6 @@ const Interests = () => {
                         </Col>
                       </Row>
                     </Col>
-                    <Col></Col>
                   </Row>
                 ) : (
                   ""

@@ -8,7 +8,7 @@ const Resources = () => {
       <Col>
         <Card>
           <Card.Body>
-            <Card.Title>Risorse</Card.Title>
+            <Card.Title className="pb-2">Risorse</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
               <i className="bi bi-eye-fill me-2"></i>Solo per te
             </Card.Subtitle>

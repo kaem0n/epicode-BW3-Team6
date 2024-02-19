@@ -1,16 +1,13 @@
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
 
 const Analysis = () => {
   return (
-    <Card className="m-3">
+    <Card className="mb-2">
       <Card.Body className="ms-2">
         <div className="mb-3">
-          <h2> Analisi</h2>
+          <h5> Analisi</h5>
           <p>
-            <span>
-              <i className="bi bi-eye-fill me-2"></i>
-            </span>
+            <i className="bi bi-eye-fill me-2"></i>
             Solo per te
           </p>
         </div>
@@ -26,15 +23,11 @@ const Analysis = () => {
           </div>
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted footer-hover">
-        <Button
-          variant="link"
-          className="btn btn-link w-100 button-hover"
-          style={{ borderRadius: 0, borderTop: 'none' }}
-        >
-          Mostra tutte le analisi
-        </Button>
-      </Card.Footer>
+      <a className="text-decoration-none" href="#">
+        <div className="d-flex justify-content-center border-top p-2 link-dark text-decoration-none mtlr text-secondary ">
+          Mostra tutte le risorse <i className="bi bi-arrow-right"></i>
+        </div>
+      </a>
     </Card>
   );
 };
