@@ -1,16 +1,16 @@
-import { Card, Col, Row, Spinner } from 'react-bootstrap'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { myProfile } from '../redux/actions/ProfileSection'
+import { Card, Col, Row, Spinner } from "react-bootstrap";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { myProfile } from "../redux/actions/ProfileSection";
 
 const ProfileSection = () => {
-  const dispatch = useDispatch()
-  const state = useSelector((state) => state.profile)
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.profile);
 
   useEffect(() => {
-    dispatch(myProfile())
+    dispatch(myProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <Row className="mt-5 mb-2">
@@ -22,21 +22,21 @@ const ProfileSection = () => {
                 <img
                   src="https://www.ll-mm.com/images/placeholders/image-placeholder.jpg"
                   alt="bg-hero"
-                  style={{ width: '100%', height: '10em' }}
+                  style={{ width: "100%", height: "10em" }}
                 />
 
                 <img
                   src={state.profile.image}
                   alt="profilo"
-                  style={{ width: '10em', left: '33px', top: '88px' }}
+                  style={{ width: "10em", left: "33px", top: "88px" }}
                   className=" border rounded-circle border-white z-index-1 position-absolute"
                 />
                 <i
                   className="bi bi-pen text-primary position-absolute px-2 py-1 rounded-circle"
                   style={{
-                    right: '25px',
-                    top: '15px',
-                    backgroundColor: 'white',
+                    right: "25px",
+                    top: "15px",
+                    backgroundColor: "white",
                   }}
                 ></i>
               </div>
@@ -60,7 +60,7 @@ const ProfileSection = () => {
                   </span>
                   <p className="mb-0">{state.profile.title}</p>
                   <p className="text-secondary">
-                    {state.profile.area}{' '}
+                    {state.profile.area}{" "}
                     <span>
                       <i className="bi bi-dot"></i>
                     </span>
@@ -74,7 +74,7 @@ const ProfileSection = () => {
                   <img
                     src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1716422400&v=beta&t=5MUJe7JW7qN_AhLIvXWy09nSa-yX3GS-ThImsm3_xqE"
                     alt="logo"
-                    style={{ width: '2em' }}
+                    style={{ width: "2em" }}
                   />
                   <span id="università">Epicode</span>
                 </Col>
@@ -111,8 +111,8 @@ const ProfileSection = () => {
                     <Card
                       className="py-1 px-3 border-0"
                       style={{
-                        fontSize: '0.9em',
-                        backgroundColor: '#dde7f1',
+                        fontSize: "0.9em",
+                        backgroundColor: "#dde7f1",
                       }}
                     >
                       <span className="fw-semibold m-0 d-flex justify-content-between">
@@ -137,7 +137,7 @@ const ProfileSection = () => {
         )}
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ProfileSection
+export default ProfileSection;

@@ -99,6 +99,10 @@ const Persons = () => {
               <i className="bi bi-person-plus-fill"> Collegati</i>
             </Button>
           </div>
+          <div className="d-flex justify-content-center mt-3 ">
+            {" "}
+            <h6> Mostra tutto</h6>
+          </div>
         </Card.Body>
       </Card>
     </>
