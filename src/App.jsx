@@ -27,16 +27,16 @@ function App() {
       <main>
         <Container>
           <Row>
-            <Col xs={12} md={7} lg={8}>
+            <Col xs={12} md={7} lg={8} xl={9}>
               <ProfileSection />
+              <Suggestions />
               <Analisys />
               <Resources />
               <Activities />
               <Formation />
-              <Suggestions />
               <Interests />
             </Col>
-            <Col xs={12} md={5} lg={4}>
+            <Col xs={12} md={5} lg={4} xl={3}>
               <ProfileSettings />
               <Persons />
             </Col>

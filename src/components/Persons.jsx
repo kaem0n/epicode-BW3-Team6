@@ -1,4 +1,5 @@
-import { Button, Card, Col, Row } from 'react-bootstrap'
+import { Card, Col } from 'react-bootstrap'
+import Person from './Person'
 
 const Persons = () => {
   return (
@@ -6,112 +7,42 @@ const Persons = () => {
       <Col className="mb-5 mb-md-0">
         <Card>
           <Card.Body>
-            <Card.Title>Persone che potresti conoscere</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Dalla tua scuola o univeresità
+            <Card.Title className="fs-6">
+              Persone che potresti conoscere
+            </Card.Title>
+            <Card.Subtitle className="mb-2 text-secondary fw-normal fs-7">
+              Dalla tua scuola o università
             </Card.Subtitle>
-            <Row>
-              <Col xs={3}>
-                <img
-                  src="http://placekitten.com/200/300"
-                  className="rounded-circle"
-                  style={{
-                    width: '50px',
-                    height: '50px',
-                  }}
-                />
-              </Col>
-              <Col>
-                <Card.Title className="m-0">Nome</Card.Title>
-                <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
-                </Card.Text>
-              </Col>
-            </Row>
-            <div className="d-flex justify-content-center mt-3 border-bottom pb-4">
-              <Button className="bg-transparent text-black btn-person  ">
-                <i className="bi bi-person-plus-fill"> Collegati</i>
-              </Button>
-            </div>
-          </Card.Body>
-          <Card.Body>
-            <Row>
-              <Col xs={3}>
-                <img
-                  src="http://placekitten.com/200/300"
-                  className="rounded-circle"
-                  style={{
-                    width: '50px',
-                    height: '50px',
-                  }}
-                />
-              </Col>
-              <Col>
-                <Card.Title className="m-0">Nome</Card.Title>
-                <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
-                </Card.Text>
-              </Col>
-            </Row>
-            <div className="d-flex justify-content-center mt-3 border-bottom pb-4">
-              <Button className="bg-transparent text-black btn-person  ">
-                <i className="bi bi-person-plus-fill"> Collegati</i>
-              </Button>
-            </div>
-          </Card.Body>
-          <Card.Body>
-            <Row>
-              <Col xs={3}>
-                <img
-                  src="http://placekitten.com/200/300"
-                  className="rounded-circle"
-                  style={{
-                    width: '50px',
-                    height: '50px',
-                  }}
-                />
-              </Col>
-              <Col>
-                <Card.Title className="m-0">Nome</Card.Title>
-                <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
-                </Card.Text>
-              </Col>
-            </Row>
-            <div className="d-flex justify-content-center mt-3 border-bottom pb-4">
-              <Button className="bg-transparent text-black btn-person  ">
-                <i className="bi bi-person-plus-fill"> Collegati</i>
-              </Button>
-            </div>
-          </Card.Body>
-          <Card.Body>
-            <Row>
-              <Col xs={3}>
-                <img
-                  src="http://placekitten.com/200/300"
-                  className="rounded-circle"
-                  style={{
-                    width: '50px',
-                    height: '50px',
-                  }}
-                />
-              </Col>
-              <Col>
-                <Card.Title className="m-0">Nome</Card.Title>
-                <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
-                </Card.Text>
-              </Col>
-            </Row>
-            <div className="d-flex justify-content-center mt-3 border-bottom pb-4">
-              <Button className="bg-transparent text-black btn-person  ">
-                <i className="bi bi-person-plus-fill"> Collegati</i>
-              </Button>
-            </div>
-            <div className="d-flex justify-content-center mt-3 ">
-              {' '}
-              <h6> Mostra tutto</h6>
-            </div>
+            <Person
+              img="http://placekitten.com/200/300"
+              name="Nome Cognome"
+              title="Co-Founder & Ceo at Xquire (Techstars 23)"
+              id="#"
+            />
+            <Person
+              img="http://placekitten.com/200/300"
+              name="Nome Cognome"
+              title="Co-Founder & Ceo at Xquire (Techstars 23)"
+              id="#"
+            />
+            <Person
+              img="http://placekitten.com/200/300"
+              name="Nome Cognome"
+              title="Co-Founder & Ceo at Xquire (Techstars 23)"
+              id="#"
+            />
+            <Person
+              img="http://placekitten.com/200/300"
+              name="Nome Cognome"
+              title="Co-Founder & Ceo at Xquire (Techstars 23)"
+              id="#"
+            />
+            <Person
+              img="http://placekitten.com/200/300"
+              name="Nome Cognome"
+              title="Co-Founder & Ceo at Xquire (Techstars 23)"
+              id="#"
+            />
           </Card.Body>
         </Card>
       </Col>

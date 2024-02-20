@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card'
 
 const Analysis = () => {
   return (
-    <Card className="mb-2">
+    <Card className="my-2">
       <Card.Body className="ms-2">
         <div className="mb-3">
           <h5>Analisi</h5>
