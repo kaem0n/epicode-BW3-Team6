@@ -290,3 +290,13 @@ body {
     display: flex !important;
   }
 }
+
+.bg-gray-hover:hover {
+  background-color: rgb(224, 224, 224);
+  transition: 300ms;
+}
+
+.bg-darkgray-hover:hover {
+  background-color: #bcc5ce;
+  transition: 300ms;
+}

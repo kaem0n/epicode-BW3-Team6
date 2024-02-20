@@ -1,16 +1,16 @@
-import { Card, Col, Row, Spinner } from "react-bootstrap";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { myProfile } from "../redux/actions/ProfileSection";
+import { Button, Card, Col, Row, Spinner } from 'react-bootstrap'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { myProfile } from '../redux/actions/ProfileSection'
 
 const ProfileSection = () => {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.profile);
+  const dispatch = useDispatch()
+  const state = useSelector((state) => state.profile)
 
   useEffect(() => {
-    dispatch(myProfile());
+    dispatch(myProfile())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <Row className="mt-5 mb-2">
@@ -22,110 +22,127 @@ const ProfileSection = () => {
                 <img
                   src="https://www.ll-mm.com/images/placeholders/image-placeholder.jpg"
                   alt="bg-hero"
-                  style={{ width: "100%", height: "10em" }}
+                  style={{ width: '100%', height: '200px' }}
+                  className="pointer"
                 />
 
                 <img
                   src={state.profile.image}
                   alt="profilo"
-                  style={{ width: "10em", left: "33px", top: "88px" }}
-                  className=" border rounded-circle border-white z-index-1 position-absolute"
+                  style={{ width: '10em', left: '25px', top: '88px' }}
+                  className="border rounded-circle border-white z-index-1 position-absolute pointer"
                 />
                 <i
-                  className="bi bi-pen text-primary position-absolute px-2 py-1 rounded-circle"
+                  className="bi bi-camera-fill text-primary position-absolute px-2 py-1 rounded-circle pointer"
                   style={{
-                    right: "25px",
-                    top: "15px",
-                    backgroundColor: "white",
+                    right: '25px',
+                    top: '15px',
+                    backgroundColor: 'white',
                   }}
                 ></i>
               </div>
             </Card.Header>
             <div className="d-flex justify-content-end me-3 mt-3">
-              <i className="bi bi-pen text-secondary fs-5"></i>
+              <i
+                className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+                style={{
+                  height: '40px',
+                  width: '40px',
+                }}
+              ></i>
             </div>
-            <Card.Body className="pt-5">
+            <Card.Body className="px-4 pb-4 pt-0">
               <Row className="justify-content-between">
-                <Col className="col-7">
-                  <span className="fw-semibold fs-3 ">
-                    {state.profile.name} {state.profile.surname}
-                    <span className="ms-2">
-                      <button
-                        type="button"
-                        className="btn btn-outline-primary rounded-pill px-2 py-1"
-                      >
-                        <i className="bi bi-shield-check me-2"></i>Verifica ora
-                      </button>
+                <Col className="col-12 col-lg-7">
+                  <div className="d-flex align-items-center flex-wrap">
+                    <span className="fw-semibold fs-4 lh-1 pointer bg-gray-hover py-1 rounded-1 me-2">
+                      {state.profile.name} {state.profile.surname}
                     </span>
-                  </span>
-                  <p className="mb-0">{state.profile.title}</p>
-                  <p className="text-secondary">
-                    {state.profile.area}{" "}
+                    <Button className="py-0 bg-transparent btn-add-language fs-7">
+                      <i className="bi bi-shield-check me-1"></i>Verifica ora
+                    </Button>
+                  </div>
+                  <p className="mb-2 lh-1">{state.profile.title}</p>
+                  <a
+                    href="#"
+                    className="d-block d-lg-none fs-7 text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    id="università"
+                  >
+                    EPICODE
+                  </a>
+                  <p className="text-secondary fs-7 m-0 mt-2">
+                    {state.profile.area}
                     <span>
                       <i className="bi bi-dot"></i>
                     </span>
-                    <span className="text-primary fw-semibold">
+                    <a
+                      href="#"
+                      className="fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    >
                       Informazioni di contatto
-                    </span>
+                    </a>
                   </p>
-                  <p className="text-primary fw-semibold mb-0">Collegamenti</p>
                 </Col>
-                <Col className="col-4 p-0">
+                <Col className="col-4 p-0 d-none d-lg-block">
                   <img
                     src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1716422400&v=beta&t=5MUJe7JW7qN_AhLIvXWy09nSa-yX3GS-ThImsm3_xqE"
                     alt="logo"
-                    style={{ width: "2em" }}
+                    width="12%"
+                    className="me-2 pointer"
                   />
-                  <span id="università">Epicode</span>
+                  <a
+                    href="#"
+                    className="fs-7 text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                    id="università"
+                  >
+                    EPICODE
+                  </a>
                 </Col>
               </Row>
-              <Row className="mt-2 g-2">
-                <Col className="col-12 col-md-4 col-lg-3 px-1">
-                  <button
-                    type="button"
-                    className="btn btn-primary rounded-pill w-100 p-1"
-                  >
+              <Row className="mt-2 g-2 justify-content-start">
+                <Col className="px-1 d-flex flex-wrap">
+                  <Button className="rounded-pill py-1 fw-semibold me-2 mb-2 justify-self-stretch flex-grow-1 flex-lg-grow-0">
                     Disponibile per
-                  </button>
-                </Col>
-                <Col className="col-9 col-md-6 col-lg-4 px-1">
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary rounded-pill w-100 p-1"
-                  >
+                  </Button>
+                  <Button className="bg-transparent btn-add-language py-1 me-2 mb-2">
                     Aggiungi sezione del profilo
-                  </button>
-                </Col>
-                <Col className="col-3 col-md-2 px-1">
-                  <button
-                    type="button"
-                    className="btn btn-outline-secondary rounded-pill w-100 p-1"
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    className="rounded-pill py-1 btn-modal-italiano bg-transparent mb-2"
                   >
-                    Altro
-                  </button>
+                    <span className="text-secondary">Altro</span>
+                  </Button>
                 </Col>
               </Row>
               <div className="mt-3 card-text">
                 <Row>
-                  <Col className="col-6">
+                  <Col className="col-12 col-lg-6 col-md-8 pointer">
                     <Card
-                      className="py-1 px-3 border-0"
+                      className="py-2 ps-3 pe-2 border-0 fs-7"
                       style={{
-                        fontSize: "0.9em",
-                        backgroundColor: "#dde7f1",
+                        backgroundColor: '#dde7f1',
                       }}
                     >
-                      <span className="fw-semibold m-0 d-flex justify-content-between">
+                      <span className="fw-semibold position-relative">
                         Disponibile a lavorare
-                        <span>
-                          <i className="bi bi-pen text-end"></i>
-                        </span>
+                        <i
+                          className="bi bi-pencil position-absolute top-0 end-0 text-secondary fs-6 pointer bg-darkgray-hover rounded-circle d-flex justify-content-center align-items-center"
+                          style={{
+                            height: '30px',
+                            width: '30px',
+                          }}
+                        ></i>
                       </span>
 
-                      <p className="m-0">Ruolo</p>
-                      <p className="m-0 fw-semibold text-primary">
+                      <p className="m-0">Ruoli di Sviluppatore front-end</p>
+                      <a
+                        href="#"
+                        className="fs-7 fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                        id="università"
+                      >
                         Mostra dettagli
-                      </p>
+                      </a>
                     </Card>
                   </Col>
                 </Row>
@@ -137,7 +154,7 @@ const ProfileSection = () => {
         )}
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default ProfileSection;
+export default ProfileSection
