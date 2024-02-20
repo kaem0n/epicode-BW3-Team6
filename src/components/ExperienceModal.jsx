@@ -8,7 +8,7 @@ const ExperienceModal = (props) => {
   const newExperienceState = useSelector(
     (state) => state.experience.newExperience
   );
-  console.log(newExperienceState);
+
   const dispatch = useDispatch();
   const [esperienza, setEsperienza] = useState({});
 

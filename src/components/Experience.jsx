@@ -11,7 +11,6 @@ const Experience = () => {
   const stateExperience = useSelector(
     (state) => state.experience.experiences[0]
   );
-  console.log(stateExperience);
 
   const [show, setShow] = useState(false);
 
