@@ -1,7 +1,7 @@
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 // eslint-disable-next-line react/prop-types
 const ActivitiesModal = ({ show, hide }) => {
@@ -26,11 +26,7 @@ const ActivitiesModal = ({ show, hide }) => {
         <Button variant="primary">Salva</Button>
       </Modal.Footer>
     </Modal>
-  )
-}
+  );
+};
 
-<<<<<<< HEAD
 export default ActivitiesModal;
-=======
-export default ActivitiesModal
->>>>>>> main
