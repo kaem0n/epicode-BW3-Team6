@@ -70,7 +70,7 @@ const ProfileSettings = () => {
                       <div>
                         <Button
                           variant="secondary"
-                          className="bg-transparent btn-modal-italiano py-1 me-2 "
+                          className="bg-transparent btn-modal-italiano py-1 me-2"
                         >
                           Italiano
                         </Button>
@@ -99,14 +99,18 @@ const ProfileSettings = () => {
                   </Modal.Body>
                 </Modal>
               </div>
-              <Card.Text className="border-bottom pb-3">Italiano</Card.Text>
+              <Card.Text className="border-bottom text-secondary pb-3 fs-7">
+                Italiano
+              </Card.Text>
               <div className="d-flex align-items-center justify-content-between ">
                 <Card.Title>Public profile & URL</Card.Title>
                 <Button className="border-0 bg-transparent ">
                   <i className="bi bi-pencil fs-5"></i>
                 </Button>
               </div>
-              <Card.Text>www.link.profilo</Card.Text>
+              <Card.Text className="text-secondary fs-7">
+                www.link.profilo
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>

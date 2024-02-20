@@ -131,19 +131,19 @@ body {
   padding-bottom: 1px;
 }
 
-.nav-link {
+.navbar-nav .nav-link {
   padding: 0;
   width: 80px;
 }
 
 @media screen and (max-width: 840px) {
-  .nav-link {
+  .navbar-nav .nav-link {
     width: 70px;
   }
 }
 
 @media screen and (max-width: 670px) {
-  .nav-link {
+  .navbar-nav .nav-link {
     width: 60px;
   }
 }
@@ -200,7 +200,7 @@ body {
 
 .premium-link {
   color: #915907;
-  width: 125px;
+  width: 125px !important;
   margin-left: 8px;
   text-align: center;
   text-decoration: underline;
@@ -292,7 +292,7 @@ body {
 }
 
 .bg-gray-hover:hover {
-  background-color: rgb(224, 224, 224);
+  background-color: rgba(140 140 140/0.1);
   transition: 300ms;
 }
 
