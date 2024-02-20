@@ -3,7 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import Slider from 'react-slick'
 
 const Suggestions = () => {
-  let settings = {
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -40,20 +40,12 @@ const Suggestions = () => {
   return (
     <>
       <Row>
-        <Col
-          /* xs={12}
-          sm={10}
-          md={8}
-          lg={8}
-          xl={6}
-          xxl={6} */
-          className=" d-flex justify-content-center align-item-center"
-        >
+        <Col className=" d-flex justify-content-center align-item-center">
           <Card>
             <Card.Body>
               <div>
-                <Card.Title>Consigliato per te</Card.Title>
-                <Card.Text className="mb-2 text-muted">
+                <Card.Title className="mb-0">Consigliato per te</Card.Title>
+                <Card.Text className="mb-2 text-muted fs-7">
                   <i className="bi bi-eye-fill"></i> Solo per te
                 </Card.Text>
               </div>
@@ -61,23 +53,34 @@ const Suggestions = () => {
                 <Card.Subtitle className="mt-3 mb-2">
                   Principiante
                 </Card.Subtitle>
-                <ProgressBar now={60} />
-                <Card.Text className="mt-2 mb-4">
-                  Completa 3 passaggi per raggiungere il livello intermedio
+                <div className="d-flex align-items-center">
+                  <ProgressBar now={28} className="me-2" />
+                  <span className="fs-7">2/7</span>
+                </div>
+                <Card.Text className="mb-2 fs-7">
+                  Completa 2 passaggi per raggiungere il livello{' '}
+                  <a
+                    href="#"
+                    className="fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >
+                    Intermedio
+                  </a>
                 </Card.Text>
               </div>
-              <div className="carousel ">
+              <div className="carousel px-0">
                 <Slider {...settings}>
-                  <Col className="box pe-3">
-                    <Card>
-                      <Card.Body>
-                        <Card.Title>
-                          Condividi la tua posizione lavorativa più recente
-                        </Card.Title>
-                        <Card.Text className="mb-2 text-muted">
-                          Aggiungendo il tuo ruolo attuale al profilo aiuterai i
-                          recruiter a trovarti.
-                        </Card.Text>
+                  <Col className="box px-1">
+                    <Card className="bg-body-tertiary">
+                      <Card.Body className="d-flex flex-column align-items-start justify-content-between">
+                        <div>
+                          <Card.Title>
+                            Condividi la tua posizione lavorativa più recente
+                          </Card.Title>
+                          <Card.Text className="mb-2 text-muted">
+                            Aggiungendo il tuo ruolo attuale al profilo aiuterai
+                            i recruiter a trovarti.
+                          </Card.Text>
+                        </div>
 
                         <Button className="suggestions-button mt-3">
                           Aggiungi posizione
@@ -85,14 +88,16 @@ const Suggestions = () => {
                       </Card.Body>
                     </Card>
                   </Col>
-                  <Col className="box pe-3">
-                    <Card>
-                      <Card.Body>
-                        <Card.Title>In quale settore lavori?</Card.Title>
-                        <Card.Text className="mb-2 text-muted">
-                          Gli utenti che aggiungono un settore ricevono fino a
-                          2,5 volte più visualizzazioni del profilo.
-                        </Card.Text>
+                  <Col className="box px-1">
+                    <Card className="bg-body-tertiary">
+                      <Card.Body className="d-flex flex-column align-items-start justify-content-between">
+                        <div>
+                          <Card.Title>In quale settore lavori?</Card.Title>
+                          <Card.Text className="mb-2 text-muted">
+                            Gli utenti che aggiungono un settore ricevono fino a
+                            2,5 volte più visualizzazioni del profilo.
+                          </Card.Text>
+                        </div>
 
                         <Button className="suggestions-button mt-3">
                           Aggiungi settore
@@ -100,17 +105,19 @@ const Suggestions = () => {
                       </Card.Body>
                     </Card>
                   </Col>
-                  <Col className="box pe-3">
-                    <Card>
-                      <Card.Body>
-                        <Card.Title>
-                          Aggiungi una foto al tuo profilo per aiutare gli altri
-                          a riconoscerti
-                        </Card.Title>
-                        <Card.Text className="mb-2 text-muted">
-                          Gli utenti con una foto del profilo ricevono fino a
-                          2,3 volte più visualizzazioni del profilo.
-                        </Card.Text>
+                  <Col className="box px-1">
+                    <Card className="bg-body-tertiary">
+                      <Card.Body className="d-flex flex-column align-items-start justify-content-between">
+                        <div>
+                          <Card.Title>
+                            Aggiungi una foto al tuo profilo per aiutare gli
+                            altri a riconoscerti
+                          </Card.Title>
+                          <Card.Text className="mb-2 text-muted">
+                            Gli utenti con una foto del profilo ricevono fino a
+                            2,3 volte più visualizzazioni del profilo.
+                          </Card.Text>
+                        </div>
 
                         <Button className="suggestions-button mt-3">
                           Aggiungi foto
@@ -118,17 +125,19 @@ const Suggestions = () => {
                       </Card.Body>
                     </Card>
                   </Col>
-                  <Col className="box pe-3">
-                    <Card>
-                      <Card.Body>
-                        <Card.Title>
-                          Quale scuola o università hai frequentato?
-                        </Card.Title>
-                        <Card.Text className="mb-2 text-muted">
-                          Gli utenti che includono una scuola o università
-                          ricevono fino a 2,2 volte più visualizzazioni del
-                          profilo.
-                        </Card.Text>
+                  <Col className="box px-1">
+                    <Card className="bg-body-tertiary">
+                      <Card.Body className="d-flex flex-column align-items-start justify-content-between">
+                        <div>
+                          <Card.Title>
+                            Quale scuola o università hai frequentato?
+                          </Card.Title>
+                          <Card.Text className="mb-2 text-muted">
+                            Gli utenti che includono una scuola o università
+                            ricevono fino a 2,2 volte più visualizzazioni del
+                            profilo.
+                          </Card.Text>
+                        </div>
 
                         <Button className="suggestions-button mt-3">
                           Aggiungi titolo di studio
@@ -136,17 +145,19 @@ const Suggestions = () => {
                       </Card.Body>
                     </Card>
                   </Col>
-                  <Col className="box pe-3">
-                    <Card>
-                      <Card.Body>
-                        <Card.Title>
-                          Scrivi un riepilogo per mettere in evidenza la tua
-                          personalità o la tua esperienza lavorativa
-                        </Card.Title>
-                        <Card.Text className="mb-2 text-muted">
-                          Gli utenti che includono un riepilogo ricevono fino a
-                          3,9 volte più visualizzazioni del profilo.
-                        </Card.Text>
+                  <Col className="box px-1">
+                    <Card className="bg-body-tertiary">
+                      <Card.Body className="d-flex flex-column align-items-start justify-content-between">
+                        <div>
+                          <Card.Title>
+                            Scrivi un riepilogo per mettere in evidenza la tua
+                            personalità o la tua esperienza lavorativa
+                          </Card.Title>
+                          <Card.Text className="mb-2 text-muted">
+                            Gli utenti che includono un riepilogo ricevono fino
+                            a 3,9 volte più visualizzazioni del profilo.
+                          </Card.Text>
+                        </div>
 
                         <Button className="suggestions-button mt-3">
                           Aggiungi un riepilogo

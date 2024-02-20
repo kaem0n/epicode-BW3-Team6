@@ -35,7 +35,7 @@ body {
   border-radius: 50px;
 }
 .carousel .card {
-  min-height: 300px;
+  min-height: 225px;
 }
 .bi-pencil {
   color: black !important;
@@ -299,4 +299,14 @@ body {
 .bg-darkgray-hover:hover {
   background-color: #bcc5ce;
   transition: 300ms;
+}
+
+.progress {
+  background-color: rgb(140 140 140/0.2) !important;
+  height: 8px;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: #212529bb !important;
 }
