@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Col, Container, Row } from 'react-bootstrap';
+
 //import pagine
 import Formation from './components/Formation';
 import Interests from './components/Interests';
@@ -16,6 +17,7 @@ import Analisys from './components/Analisys';
 import Activities from './components/Activities';
 import MyNavBar from './components/MyNavBar';
 import NavCanvas from './components/NavCanvas';
+import Experience from './components/Experience';
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
               <Resources />
               <Activities />
               <Formation />
+              <Experience />
               <Suggestions />
               <Interests />
             </Col>
