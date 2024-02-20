@@ -67,7 +67,7 @@ const Interests = () => {
                           />
                         </Col>
                         <Col className="col-6">
-                          <p className="mb-0">Nome persona1</p>
+                          <p className="mb-0 fw-semibold">Nome persona1</p>
                           <p className="mb-0">Professione Persona 1</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -86,7 +86,7 @@ const Interests = () => {
                           />
                         </Col>
                         <Col className="col-6">
-                          <p className="mb-0">Nome persona1</p>
+                          <p className="mb-0 fw-semibold">Nome persona1</p>
                           <p className="mb-0">Professione Persona 1</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -108,7 +108,7 @@ const Interests = () => {
                           />
                         </Col>
                         <Col className="col-6">
-                          <p className="mb-0">Azienda 1</p>
+                          <p className="mb-0 fw-semibold">Azienda 1</p>
                           <p className="mb-0">Descrizione</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -127,7 +127,7 @@ const Interests = () => {
                           />
                         </Col>
                         <Col className="col-6">
-                          <p className="mb-0">Azienda 1</p>
+                          <p className="mb-0 fw-semibold">Azienda 1</p>
                           <p className="mb-0">Descrizione</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
@@ -149,7 +149,7 @@ const Interests = () => {
                           />
                         </Col>
                         <Col className="col-6 ">
-                          <p className="mb-0">Epicode</p>
+                          <p className="mb-0 fw-semibold">Epicode</p>
                           <p className="text-secondary">Follower</p>
                           <button className="btn btn-outline-secondary rounded-pill">
                             Gia segui

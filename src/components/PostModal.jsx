@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 const PostModal = ({ show, hide }) => {
   return (
@@ -15,7 +15,7 @@ const PostModal = ({ show, hide }) => {
         </Button>
       </Modal.Footer>
     </Modal>
-  );
-};
+  )
+}
 
-export default PostModal;
+export default PostModal

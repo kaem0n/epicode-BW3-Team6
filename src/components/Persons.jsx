@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from 'react-bootstrap'
 
 const Persons = () => {
   return (
@@ -15,8 +15,8 @@ const Persons = () => {
                 src="http://placekitten.com/200/300"
                 className="rounded-circle"
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: '50px',
+                  height: '50px',
                 }}
               />
             </Col>
@@ -38,8 +38,8 @@ const Persons = () => {
                 src="http://placekitten.com/200/300"
                 className="rounded-circle"
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: '50px',
+                  height: '50px',
                 }}
               />
             </Col>
@@ -61,8 +61,8 @@ const Persons = () => {
                 src="http://placekitten.com/200/300"
                 className="rounded-circle"
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: '50px',
+                  height: '50px',
                 }}
               />
             </Col>
@@ -84,8 +84,8 @@ const Persons = () => {
                 src="http://placekitten.com/200/300"
                 className="rounded-circle"
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: '50px',
+                  height: '50px',
                 }}
               />
             </Col>
@@ -98,11 +98,15 @@ const Persons = () => {
             <Button className="bg-transparent text-black btn-person  ">
               <i className="bi bi-person-plus-fill"> Collegati</i>
             </Button>
+          </div>
+          <div className="d-flex justify-content-center mt-3 ">
+            {" "}
+            <h6> Mostra tutto</h6>
           </div>
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default Persons;
+export default Persons
