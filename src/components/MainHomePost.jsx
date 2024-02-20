@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 const MainHomePost = () => {
   return (
     <>
-      <Card className="m-4">
+      <Card className="mb-2">
         <Card.Body>
           <Card.Text>
             <div className="d-flex justify-content-between">

@@ -4,8 +4,24 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const ProfileSidebar = () => {
   return (
     <>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+      <Card>
+        <div className="p-0">
+          <div className="position-relative">
+            <img
+              src="https://www.ll-mm.com/images/placeholders/image-placeholder.jpg"
+              alt="bg-hero"
+              style={{ width: '100%', height: '57px' }}
+            />
+          </div>
+        </div>
+        <div className="position-absolute">
+          <img
+            src="http://placekitten.com/200/300"
+            alt="img-profile"
+            style={{ width: '65px', height: '65px', left: '53px' }}
+            className="rounded-circle"
+          />
+        </div>
         <Card.Body className="text-center">
           <Card.Title>Nome Utente</Card.Title>
           <Card.Text>Formazione</Card.Text>

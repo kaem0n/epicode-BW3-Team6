@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 
 const NewsSidebar = () => {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card>
       <Card.Body>
         <Card.Title className="d-flex justify-content-between">
           <h6>LinkedIn notizie</h6>

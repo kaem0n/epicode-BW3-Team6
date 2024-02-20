@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const CreateHomePost = () => {
   return (
     <>
-      <Card className="m-4">
+      <Card className=" mb-2">
         <Card.Body>
           <Card.Text>
             <div className="d-flex align-items-center mt-1">
