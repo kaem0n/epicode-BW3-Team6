@@ -18,6 +18,9 @@ import MyNavBar from './components/MyNavBar';
 import NavCanvas from './components/NavCanvas';
 import ProfileSidebar from './components/ProfileSidebar';
 import HomeFooter from './components/HomeFooter';
+import NewsSidebar from './components/NewsSidebar';
+import CreateHomePost from './components/CreateHomePost';
+import MainHomePost from './components/MainHomePost';
 
 function App() {
   return (
@@ -50,6 +53,9 @@ function App() {
       </footer>
       <ProfileSidebar />
       <HomeFooter />
+      <NewsSidebar />
+      <CreateHomePost />
+      <MainHomePost />
     </>
   );
 }

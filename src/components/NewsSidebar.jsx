@@ -1,16 +1,44 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
 const NewsSidebar = () => {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title className="d-flex justify-content-between">
+          <h6>LinkedIn notizie</h6>
+          <span>
+            <i className="bi bi-info-square-fill"></i>
+          </span>
+        </Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <ul className="mt2  mb1">
+            <li>
+              <a href="#">
+                <p> Top Voices Lavoro: 6 temi da approfondire</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p> Top Voices Lavoro: 6 temi da approfondire</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p> Top Voices Lavoro: 6 temi da approfondire</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p> Top Voices Lavoro: 6 temi da approfondire</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p> Top Voices Lavoro: 6 temi da approfondire</p>
+              </a>
+            </li>
+          </ul>
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
   );
