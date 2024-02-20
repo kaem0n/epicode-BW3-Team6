@@ -1,11 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import {
-  deleteExperience,
-  newExperience,
-  updateExperience,
-} from "../redux/actions/ProfileSection";
+import { updateExperience } from "../redux/actions/ProfileSection";
 import { useState } from "react";
 
 const UpdateModal = (props) => {
