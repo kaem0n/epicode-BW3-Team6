@@ -84,9 +84,9 @@ const SingleExperience = (props) => {
         <p className="text-secondary mb-0 fs-6">{props.endDate.slice(0, 10)}</p>
         <p>{props.description}</p>
       </Col>
-      <Col className="col-2">
-        <i className="bi bi-pen fs-4" onClick={handleShow}></i>
-        <i className="bi bi-x-lg" onClick={removeExperienceFetch}></i>
+      <Col className="col-2 d-flex justify-content-between">
+        <i className="bi bi-pen fs-5" onClick={handleShow}></i>
+        <i className="bi bi-x-lg fs-5" onClick={removeExperienceFetch}></i>
         <UpdateModal show={show} onHide={handleClose} data={props.data} />
       </Col>
     </Row>
