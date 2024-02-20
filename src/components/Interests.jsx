@@ -63,9 +63,15 @@ const Interests = () => {
                         alt="profilo1"
                         width="48px"
                         height="48px"
+                        className="pointer"
                       />
                       <div className="ms-2">
-                        <p className="mb-0 fw-semibold">Nome Persona 1</p>
+                        <a
+                          href="#"
+                          className="text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                        >
+                          Nome Persona 1
+                        </a>
                         <p className="text-secondary fs-7 pointer mb-2">
                           123.123 follower
                         </p>
@@ -80,9 +86,15 @@ const Interests = () => {
                         alt="profilo1"
                         width="48px"
                         height="48px"
+                        className="pointer"
                       />
                       <div className="ms-2">
-                        <p className="mb-0 fw-semibold">Nome Persona 2</p>
+                        <a
+                          href="#"
+                          className="text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                        >
+                          Nome Persona 2
+                        </a>
                         <p className="text-secondary fs-7 pointer mb-2">
                           123.123 follower
                         </p>
@@ -101,9 +113,15 @@ const Interests = () => {
                           alt="azienda1"
                           width="48px"
                           height="48px"
+                          className="pointer"
                         />
                         <div className="ms-2">
-                          <p className="mb-0 fw-semibold">Azienda 1</p>
+                          <a
+                            href="#"
+                            className="text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                          >
+                            Azienda 1
+                          </a>
                           <p className="text-secondary fs-7 pointer mb-2">
                             123.123 follower
                           </p>
@@ -118,9 +136,15 @@ const Interests = () => {
                           alt="azienda1"
                           width="48px"
                           height="48px"
+                          className="pointer"
                         />
                         <div className="ms-2">
-                          <p className="mb-0 fw-semibold">Azienda 1</p>
+                          <a
+                            href="#"
+                            className="text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                          >
+                            Azienda 2
+                          </a>
                           <p className="text-secondary fs-7 pointer mb-2">
                             123.123 follower
                           </p>
@@ -146,7 +170,6 @@ const Interests = () => {
                           <a
                             href="#"
                             className="fs-7 text-black nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                            id="università"
                           >
                             EPICODE
                           </a>
