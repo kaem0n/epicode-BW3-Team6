@@ -60,7 +60,7 @@ body {
   font-weight: 500;
 }
 .btn-modal-italiano:hover {
-  border: 2px solid gray;
+  box-shadow: 0px 0px 0px 1px gray inset;
   background-color: rgb(233, 233, 233) !important;
 }
 .btn-add-language {
@@ -71,7 +71,7 @@ body {
 .btn-add-language:hover {
   background-color: #d4e5ff !important;
   color: #0d6efd;
-  border: 2px solid #0d6efd;
+  box-shadow: 0px 0px 0px 1px #0d6efd inset;
 }
 .bi-globe {
   font-size: 40px;
@@ -89,16 +89,15 @@ body {
 .font-footer {
   color: gray;
   font-size: 12px;
-  font-weight: bold;
 }
 
 .font-footer-ans {
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
+  color: gray;
+  font-size: 14px;
+  font-weight: 500;
 }
 .font-footer-ans-p {
-  color: black;
+  color: gray;
   font-size: 12px;
 }
 #navbar {
@@ -137,12 +136,24 @@ body {
   width: 80px;
 }
 
+@media screen and (max-width: 840px) {
+  .nav-link {
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .nav-link {
+    width: 60px;
+  }
+}
+
 .nav-search {
   background-color: #edf3f8;
   border: none;
   border-radius: 5px;
   padding: 0 40px;
-  height: 35px;
+  height: 37px;
   font-size: 0.9rem;
 }
 
@@ -155,9 +166,22 @@ body {
   transition: 300ms;
 }
 
+#nav-searchbar-mobile {
+  box-sizing: border-box;
+}
+
 .nav-search-icon {
   position: absolute;
   left: 12%;
+  top: 12%;
+  transform: translate(-50%, 50%);
+  font-size: 0.9rem;
+  cursor: text;
+}
+
+.nav-search-icon-mobile {
+  position: absolute;
+  left: 6%;
   top: 12%;
   transform: translate(-50%, 50%);
   font-size: 0.9rem;
@@ -193,12 +217,26 @@ body {
   text-decoration-color: blue;
 }
 
-.dropdown-menu-end {
+.dropdown-menu-sm-end {
+  width: 265px;
+}
+
+.dropdown-menu-end,
+.dropdown-menu-sm-end {
   border-top-right-radius: 0;
   top: 110% !important;
   right: 7px !important;
   box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.2);
-  width: 265px;
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-menu-end,
+  .dropdown-menu-sm-end {
+    border-top-right-radius: 0;
+    top: 160% !important;
+    right: 7px !important;
+    box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .pointer {
@@ -225,4 +263,30 @@ body {
 
 .nav-profile-link:hover {
   text-decoration: underline;
+}
+
+.d-flex-475 {
+  display: none !important;
+}
+
+.d-flex-400 {
+  display: none !important;
+}
+
+@media screen and (max-width: 475px) {
+  .d-none-475 {
+    display: none !important;
+  }
+  .d-flex-475 {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .d-none-400 {
+    display: none !important;
+  }
+  .d-flex-400 {
+    display: flex !important;
+  }
 }

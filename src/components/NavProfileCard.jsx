@@ -7,9 +7,10 @@ const NavProfileCard = () => {
 
   return (
     <NavDropdown
-      align="end"
+      className="d-flex justify-content-center align-items-center border-end"
+      align={{ sm: 'end' }}
       title={
-        <div className="d-flex flex-column justify-content-center align-items-center py-1 border-end">
+        <div className="d-flex flex-column justify-content-center align-items-center">
           {profile && (
             <img
               width="24"
@@ -20,7 +21,7 @@ const NavProfileCard = () => {
               role="button"
             />
           )}
-          <div className="dropdown-toggle">Tu</div>
+          <div className="dropdown-toggle d-none d-md-block">Tu</div>
         </div>
       }
       id="collapsible-nav-dropdown"
