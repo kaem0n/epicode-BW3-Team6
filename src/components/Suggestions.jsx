@@ -1,6 +1,6 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
-import ProgressBar from "react-bootstrap/ProgressBar";
-import Slider from "react-slick";
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import ProgressBar from 'react-bootstrap/ProgressBar'
+import Slider from 'react-slick'
 
 const Suggestions = () => {
   let settings = {
@@ -36,7 +36,7 @@ const Suggestions = () => {
         },
       },
     ],
-  };
+  }
   return (
     <>
       <Row>
@@ -161,7 +161,7 @@ const Suggestions = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Suggestions;
+export default Suggestions
