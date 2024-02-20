@@ -5,7 +5,7 @@ const ProfileSettings = () => {
   const [lgShow, setLgShow] = useState(false);
   return (
     <>
-      <Row>
+      <Row className="mt-5 mb-2">
         <Col>
           <Card style={{ width: "18rem" }}>
             <Card.Body>
