@@ -17,6 +17,7 @@ import Activities from './components/Activities';
 import MyNavBar from './components/MyNavBar';
 import NavCanvas from './components/NavCanvas';
 import ProfileSidebar from './components/ProfileSidebar';
+import HomeFooter from './components/HomeFooter';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <MyFooter />
       </footer>
       <ProfileSidebar />
+      <HomeFooter />
     </>
   );
 }
