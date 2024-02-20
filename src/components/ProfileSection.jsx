@@ -1,47 +1,17 @@
-import {
-  Card,
-  Col,
-  Dropdown,
-  DropdownButton,
-  Row,
-  Spinner,
-} from "react-bootstrap";
+import { Card, Col, Row, Spinner } from "react-bootstrap";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { myProfile } from "../redux/actions/ProfileSection";
-const url = "https://striveschool-api.herokuapp.com/api/profile/me";
 
 const ProfileSection = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.profile);
 
-  const profileFetch = () => {
-    fetch(url, {
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error();
-        }
-      })
-      .then((data) => {
-        console.log(data);
-        dispatch(myProfile(data));
-      })
-      .catch((errore) => {
-        console.log(errore, "errore nella prima fetch");
-      });
-  };
   useEffect(() => {
-    profileFetch();
+    dispatch(myProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log(state);
+
   return (
     <Row className="mt-5 mb-2">
       <Col>
@@ -135,7 +105,7 @@ const ProfileSection = () => {
                   </button>
                 </Col>
               </Row>
-              <Card.Text className="mt-3">
+              <div className="mt-3 card-text">
                 <Row>
                   <Col className="col-6">
                     <Card
@@ -159,7 +129,7 @@ const ProfileSection = () => {
                     </Card>
                   </Col>
                 </Row>
-              </Card.Text>
+              </div>
             </Card.Body>
           </Card>
         ) : (

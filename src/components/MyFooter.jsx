@@ -1,6 +1,6 @@
-import { Col, Container, Row } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { Col, Container, Row } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const MyFooter = () => {
   return (
@@ -108,7 +108,7 @@ const MyFooter = () => {
         </Row>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default MyFooter;
+export default MyFooter
