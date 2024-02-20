@@ -32,7 +32,7 @@ function App() {
       <main>
         <Container>
           <Row>
-            <Col className="col-8">
+            <Col xs={12} md={7} lg={8}>
               <ProfileSection />
               <Analisys />
               <Resources />
@@ -41,7 +41,7 @@ function App() {
               <Suggestions />
               <Interests />
             </Col>
-            <Col className="col-4">
+            <Col xs={12} md={5} lg={4}>
               <ProfileSettings />
               <Persons />
             </Col>

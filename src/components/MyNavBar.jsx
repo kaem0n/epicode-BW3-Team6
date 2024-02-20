@@ -41,7 +41,7 @@ const MyNavBar = () => {
       id="navbar"
       fixed="top"
     >
-      <Container fluid="xl">
+      <Container fluid="xl" className="justify-content-start">
         <Navbar.Brand className="p-0">
           <i className="fa-brands fa-linkedin text-primary navbrand-icon"></i>
         </Navbar.Brand>
