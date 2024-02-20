@@ -25,7 +25,7 @@ function App() {
         <NavCanvas />
       </header>
       <main>
-        <Container>
+        <Container fluid="lg">
           <Row>
             <Col className="col-8">
               <ProfileSection />

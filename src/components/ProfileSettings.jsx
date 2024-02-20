@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Button, Card, Col, Modal, ModalBody, Row } from "react-bootstrap";
+import { useState } from 'react'
+import { Button, Card, Col, Modal, Row } from 'react-bootstrap'
 
 const ProfileSettings = () => {
-  const [lgShow, setLgShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false)
   return (
     <>
       <Row className="mt-5 mb-2">
         <Col>
-          <Card style={{ width: "18rem" }}>
+          <Card>
             <Card.Body>
               <div className="d-flex align-items-center justify-content-between ">
                 <Card.Title>Lingua del profilo</Card.Title>
@@ -51,8 +51,9 @@ const ProfileSettings = () => {
                           </Col>
                           <Col xs={11} sm={10}>
                             Se disponibile, mostreremo il tuo profilo nella
-                            lingua di chi lo visita. Se non c'è corrispondenza,
-                            verrà mostrato il tuo profilo predefinito
+                            lingua di chi lo visita. Se non c&apos;è
+                            corrispondenza, verrà mostrato il tuo profilo
+                            predefinito
                           </Col>
                         </Row>
                       </Col>
@@ -61,7 +62,7 @@ const ProfileSettings = () => {
                   <Modal.Body>
                     <h6
                       className="mb-3"
-                      style={{ color: "gray", fontWeight: "500" }}
+                      style={{ color: 'gray', fontWeight: '500' }}
                     >
                       Lingue
                     </h6>
@@ -104,7 +105,7 @@ const ProfileSettings = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ProfileSettings;
+export default ProfileSettings
