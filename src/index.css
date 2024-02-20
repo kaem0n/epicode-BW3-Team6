@@ -89,16 +89,15 @@ body {
 .font-footer {
   color: gray;
   font-size: 12px;
-  font-weight: bold;
 }
 
 .font-footer-ans {
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
+  color: gray;
+  font-size: 14px;
+  font-weight: 500;
 }
 .font-footer-ans-p {
-  color: black;
+  color: gray;
   font-size: 12px;
 }
 #navbar {

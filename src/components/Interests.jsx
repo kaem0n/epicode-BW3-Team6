@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Card, Col, Nav, Row } from "react-bootstrap";
+import { useState } from 'react'
+import { Card, Col, Nav, Row } from 'react-bootstrap'
 
 const Interests = () => {
-  const [clicked, setClicked] = useState("Top-Voices");
+  const [clicked, setClicked] = useState('Top-Voices')
 
   return (
     <>
-      <Row className="mt-2 mb-5">
+      <Row className="mt-2 mb-2 mb-md-5">
         <Col>
           <Card className="p-2 pb-3">
             <Card.Title className="ps-2">Interessi</Card.Title>
@@ -22,7 +22,7 @@ const Interests = () => {
                       eventKey="link-1"
                       className="text-success"
                       onClick={() => {
-                        setClicked("Top-Voices");
+                        setClicked('Top-Voices')
                       }}
                     >
                       Top Voices
@@ -33,7 +33,7 @@ const Interests = () => {
                       eventKey="link-2"
                       className="text-success"
                       onClick={() => {
-                        setClicked("Newsletter");
+                        setClicked('Newsletter')
                       }}
                     >
                       Newsletter
@@ -44,7 +44,7 @@ const Interests = () => {
                       eventKey="link-3"
                       className="text-success"
                       onClick={() => {
-                        setClicked("Scuole");
+                        setClicked('Scuole')
                       }}
                     >
                       Scuole e/o Università
@@ -55,7 +55,7 @@ const Interests = () => {
             </Row>
             <Row className="ps-2">
               <Col>
-                {clicked === "Top-Voices" ? (
+                {clicked === 'Top-Voices' ? (
                   <Row>
                     <Col>
                       <Row className="mt-3">
@@ -63,7 +63,7 @@ const Interests = () => {
                           <img
                             src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
                             alt="profilo1"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           />
                         </Col>
                         <Col className="col-6">
@@ -82,7 +82,7 @@ const Interests = () => {
                           <img
                             src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
                             alt="profilo1"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           />
                         </Col>
                         <Col className="col-6">
@@ -96,7 +96,7 @@ const Interests = () => {
                       </Row>
                     </Col>
                   </Row>
-                ) : clicked === "Newsletter" ? (
+                ) : clicked === 'Newsletter' ? (
                   <Row>
                     <Col>
                       <Row className="mt-3">
@@ -104,7 +104,7 @@ const Interests = () => {
                           <img
                             src="https://cosib.it/wp-content/uploads/2018/12/placeholder-logo-az.png"
                             alt="azienda1"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           />
                         </Col>
                         <Col className="col-6">
@@ -123,7 +123,7 @@ const Interests = () => {
                           <img
                             src="https://cosib.it/wp-content/uploads/2018/12/placeholder-logo-az.png"
                             alt="azienda1"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           />
                         </Col>
                         <Col className="col-6">
@@ -137,7 +137,7 @@ const Interests = () => {
                       </Row>
                     </Col>
                   </Row>
-                ) : clicked === "Scuole" ? (
+                ) : clicked === 'Scuole' ? (
                   <Row>
                     <Col>
                       <Row className="mt-3">
@@ -145,7 +145,7 @@ const Interests = () => {
                           <img
                             src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1716422400&v=beta&t=5MUJe7JW7qN_AhLIvXWy09nSa-yX3GS-ThImsm3_xqE"
                             alt="logo1"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           />
                         </Col>
                         <Col className="col-6 ">
@@ -159,7 +159,7 @@ const Interests = () => {
                     </Col>
                   </Row>
                 ) : (
-                  ""
+                  ''
                 )}
               </Col>
             </Row>
@@ -167,7 +167,7 @@ const Interests = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Interests;
+export default Interests

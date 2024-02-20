@@ -5,7 +5,7 @@ const ProfileSettings = () => {
   const [lgShow, setLgShow] = useState(false)
   return (
     <>
-      <Row className="mt-5 mb-2">
+      <Row className="mt-md-5 mb-2">
         <Col>
           <Card>
             <Card.Body>
@@ -19,6 +19,7 @@ const ProfileSettings = () => {
                   <i className="bi bi-pencil"></i>
                 </Button>
                 <Modal
+                  className="mt-5"
                   size="lg"
                   show={lgShow}
                   onHide={() => setLgShow(false)}

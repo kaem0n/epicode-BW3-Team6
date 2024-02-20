@@ -3,7 +3,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 const Persons = () => {
   return (
     <>
-      <Col>
+      <Col className="mb-5 mb-md-0">
         <Card>
           <Card.Body>
             <Card.Title>Persone che potresti conoscere</Card.Title>
