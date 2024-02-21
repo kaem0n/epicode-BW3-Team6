@@ -4,9 +4,37 @@ import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import {
+  endJobsLoading,
+  jobsLoading,
+  searchJobs,
+} from '../redux/actions/ProfileSection'
+import { useNavigate } from 'react-router-dom'
 
 const NavSearchBar = () => {
   const [inputValue, setInputValue] = useState('')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const jobsSearch = async () => {
+    dispatch(jobsLoading())
+    try {
+      const res = await fetch(
+        `https://strive-benchmark.herokuapp.com/api/jobs?search=${inputValue}`
+      )
+      if (res.ok) {
+        const jobs = await res.json()
+        dispatch(searchJobs(jobs.data))
+      } else {
+        throw new Error(`${res.status} - Errore nella fetch (jobs)`)
+      }
+    } catch (err) {
+      console.log(err)
+    } finally {
+      dispatch(endJobsLoading())
+    }
+  }
 
   const toggleDropdown = () => {
     const dropdownBtn = document.getElementById('dropdown-basic')
@@ -27,6 +55,8 @@ const NavSearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    jobsSearch()
+    navigate('/jobs')
     setInputValue('')
   }
 
@@ -35,6 +65,7 @@ const NavSearchBar = () => {
   return (
     <>
       <Form className="me-lg-auto" onSubmit={handleSubmit}>
+        <button className="d-none"></button>
         <Row>
           <Col xs="auto" className="d-none d-lg-block position-relative">
             <i
@@ -42,7 +73,7 @@ const NavSearchBar = () => {
               onClick={fixSearchIconClick}
             ></i>
             <Form.Control
-              type="text"
+              type="search"
               placeholder="Cerca"
               className="nav-search me-auto"
               id="nav-searchbar"
@@ -71,7 +102,7 @@ const NavSearchBar = () => {
             <div className="px-2 pb-2 mb-1 border-bottom position-relative d-lg-none">
               <i className="fa-solid fa-magnifying-glass nav-search-icon-mobile"></i>
               <Form.Control
-                type="text"
+                type="search"
                 placeholder="Cerca"
                 className="nav-search me-auto"
                 id="nav-searchbar-mobile"
