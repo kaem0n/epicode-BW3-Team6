@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import HomeShowMore from "./HomeShowMore";
 
 const ProfileSidebar = () => {
   return (
@@ -87,6 +88,7 @@ const ProfileSidebar = () => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
+      <HomeShowMore className="mt-2"></HomeShowMore>
     </>
   );
 };
