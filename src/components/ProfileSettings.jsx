@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Col, Modal, ModalBody, Row } from "react-bootstrap";
+import { Button, Card, Col, Modal, Row } from "react-bootstrap";
 
 const ProfileSettings = () => {
   const [lgShow, setLgShow] = useState(false);
@@ -11,7 +11,6 @@ const ProfileSettings = () => {
             <Card.Body>
               <div className="d-flex align-items-center justify-content-between ">
                 <Card.Title>Lingua del profilo</Card.Title>
-
                 <Button
                   className="border-0 bg-transparent "
                   onClick={() => setLgShow(true)}
@@ -23,6 +22,7 @@ const ProfileSettings = () => {
                   show={lgShow}
                   onHide={() => setLgShow(false)}
                   aria-labelledby="example-modal-sizes-title-lg"
+                  className="mt-5"
                 >
                   <Modal.Header closeButton>
                     <Modal.Title id="example-modal-sizes-title-lg">

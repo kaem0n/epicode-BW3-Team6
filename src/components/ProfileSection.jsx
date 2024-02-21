@@ -1,11 +1,23 @@
 import { Card, Col, Row, Spinner } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { myProfile } from "../redux/actions/ProfileSection";
+import ImageUploadProfile from "./UploadImageProfile";
 
 const ProfileSection = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.profile);
+  const [showPostModal, setShowPostModal] = useState(false);
+
+  // Funzione per aprire il modale per la creazione di un post
+  const handleCreatePostClick = () => {
+    setShowPostModal(true);
+  };
+
+  // Funzione per chiudere il modale per la creazione di un post
+  const handleClosePostModal = () => {
+    setShowPostModal(false);
+  };
 
   useEffect(() => {
     dispatch(myProfile());
@@ -32,6 +44,7 @@ const ProfileSection = () => {
                   className=" border rounded-circle border-white z-index-1 position-absolute"
                 />
                 <i
+                  onClick={handleCreatePostClick}
                   className="bi bi-pen text-primary position-absolute px-2 py-1 rounded-circle"
                   style={{
                     right: "25px",
@@ -39,6 +52,10 @@ const ProfileSection = () => {
                     backgroundColor: "white",
                   }}
                 ></i>
+                <ImageUploadProfile
+                  show={showPostModal}
+                  hide={handleClosePostModal}
+                />
               </div>
             </Card.Header>
             <div className="d-flex justify-content-end me-3 mt-3">
