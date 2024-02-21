@@ -27,6 +27,7 @@ const App = () => {
           <Route path="/jobs" element={<JobsPage />} />
         </Routes>
       </main>
+
       <footer></footer>
     </BrowserRouter>
   );

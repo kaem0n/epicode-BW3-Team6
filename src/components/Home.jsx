@@ -12,7 +12,6 @@ import HomeFooter from './HomeFooter';
 import ProfileSidebar from './ProfileSidebar';
 import Suggestions from './Suggestions';
 import HomeShowMore from './HomeShowMore';
-import JobsSidebar from './jobs_components/JobsSidebar';
 
 const Home = () => (
   <Container className="mt-5" fluid="xl">
@@ -20,7 +19,6 @@ const Home = () => (
       <Col xs={12} md={2} lg={3}>
         <ProfileSidebar />
         <HomeShowMore />
-        <JobsSidebar />
       </Col>
       <Col xs={12} md={6} lg={5} xl={6}>
         <CreateHomePost />

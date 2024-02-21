@@ -19,7 +19,7 @@ const NavProfileCard = () => {
               src={profile.image}
               height="24"
               alt="user"
-              className="rounded-circle dropdown-toggle"
+              className="rounded-circle dropdown-toggle objectfit-cover"
               role="button"
             />
           )}
@@ -36,7 +36,8 @@ const NavProfileCard = () => {
                 src={profile.image}
                 alt={profile._id}
                 width="60px"
-                className="me-2 rounded-circle"
+                height="60px"
+                className="me-2 rounded-circle objectfit-cover"
               />
               <div className="d-flex flex-column">
                 <p className="m-0 fw-semibold">

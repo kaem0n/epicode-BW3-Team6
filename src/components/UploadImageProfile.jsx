@@ -1,46 +1,47 @@
-import { useRef } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { useRef } from 'react'
+import { Button, Modal } from 'react-bootstrap'
 
 function ImageUploadProfile({ show, hide }) {
-  const inputRef = useRef();
+  const inputRef = useRef()
 
   const handleButtonClick = () => {
-    inputRef.current.click();
-  };
+    inputRef.current.click()
+  }
 
   const handleFileChange = () => {
-    let file = inputRef.current.files[0];
+    let file = inputRef.current.files[0]
     if (file) {
-      let formData = new FormData();
-      formData.append("profile", file);
-      let id = "65d3121324f605001937d45c";
+      let formData = new FormData()
+      formData.append('profile', file)
+      let id = '65d3121324f605001937d45c'
 
       fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${id}/picture`,
         {
-          method: "POST",
+          method: 'POST',
           body: formData,
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII',
           },
         }
       )
         .then((response) => {
           if (response.ok) {
-            throw new Error("Network response was not ok");
+            return response.json()
+          } else {
+            throw new Error('Network response was not ok')
           }
-          return response.json();
         })
         .then((data) => {
-          console.log(data);
-          window.location.reload();
+          console.log(data)
+          window.location.reload()
         })
         .catch((error) => {
-          console.error(error);
-        });
+          console.error(error)
+        })
     }
-  };
+  }
 
   return (
     <>
@@ -64,7 +65,7 @@ function ImageUploadProfile({ show, hide }) {
               type="file"
               ref={inputRef}
               onChange={handleFileChange}
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             />
           </div>
           <div>
@@ -78,7 +79,7 @@ function ImageUploadProfile({ show, hide }) {
         </Modal.Footer>
       </Modal>
     </>
-  );
+  )
 }
 
-export default ImageUploadProfile;
+export default ImageUploadProfile
