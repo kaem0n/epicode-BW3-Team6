@@ -378,3 +378,22 @@ body {
 .dropdown-menu-white {
   box-shadow: 5px 5px 5px #dedede;
 }
+
+.hero {
+  height: 200px;
+  background: url(https://picsum.photos/2000/700);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.propic-container {
+  width: 10em;
+  height: 10em;
+  left: 25px;
+  top: 88px;
+}
+
+.objectfit-cover {
+  object-fit: cover;
+}
