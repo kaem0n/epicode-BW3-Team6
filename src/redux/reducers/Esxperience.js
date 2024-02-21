@@ -42,9 +42,7 @@ export const myExperience = (state = initialState, action) => {
     case UPDATE_EXPERIENCE:
       return {
         ...state,
-        experiences: state.experiences.map((experience) =>
-          experience.id === action.payload.id ? action.payload : experience
-        ),
+        experiences: [...state.experiences, action.payload],
       };
 
     default:

@@ -3,22 +3,50 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { updateExperience } from "../redux/actions/ProfileSection";
 import { useState } from "react";
+const userId = "65d3121324f605001937d45c";
 
 const UpdateModal = (props) => {
   const dispatch = useDispatch();
-
-  const handleDeleteExperience = () => {
-    props.onHide();
-  };
+  console.log(props.data);
 
   const [esperienza, setEsperienza] = useState({});
 
   const handleInputChange = (field, value) => {
     setEsperienza({ ...esperienza, [field]: value });
+    console.log(esperienza);
+  };
+
+  const updateFetch = () => {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${props.data._id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(esperienza),
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .then((esperienze) => {
+        console.log("stato attuale delle esperienze dopo la put", esperienze);
+      })
+      .catch((errore) => {
+        console.log(errore, "il tuo oggetto non è stato salvato");
+      });
   };
 
   const handleUpdateExperience = () => {
-    dispatch(updateExperience({ ...props.data, ...esperienza }));
+    dispatch(updateExperience(esperienza));
+    updateFetch();
     props.onHide();
   };
 
