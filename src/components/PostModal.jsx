@@ -10,9 +10,6 @@ const PostModal = ({ show, hide }) => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(myProfile());
-  // }, []);
   const state = useSelector((state) => state.profile);
 
   const handleChange = (event) => {
