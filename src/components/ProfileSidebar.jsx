@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import HomeShowMore from "./HomeShowMore";
 
 const ProfileSidebar = () => {
   return (
