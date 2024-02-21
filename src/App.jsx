@@ -1,15 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.min.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // import pagine
-import MyFooter from './components/MyFooter'
-import MyNavBar from './components/MyNavBar'
-import NavCanvas from './components/NavCanvas'
-import Profile from './components/Profile'
-import Home from './components/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MyFooter from "./components/MyFooter";
+import MyNavBar from "./components/MyNavBar";
+import NavCanvas from "./components/NavCanvas";
+import Profile from "./components/Profile";
+import Home from "./components/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
@@ -28,9 +28,9 @@ const App = () => {
         <MyFooter />
       </footer>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
 // Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII
