@@ -77,9 +77,9 @@ const ProfileSidebar = () => {
               style={{ fontSize: "smaller" }}
               href="#"
             >
-              <div className="d-flex align-items-center justify-content-evenly text-secondary text-decoration-none   ">
+              <div className="d-flex align-items-center text-secondary text-decoration-none">
                 <i
-                  className="bi bi-bookmark-fill text-secondary"
+                  className="bi bi-bookmark-fill text-secondary me-1"
                   style={{ fontSize: "smaller" }}
                 ></i>{" "}
                 I miei elementi
