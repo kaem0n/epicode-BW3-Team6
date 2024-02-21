@@ -27,27 +27,38 @@ const ProfileSidebar = () => {
           <Card.Text>Formazione</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>
-            <div className="d-flex  justify-content-between">
-              {' '}
-              <p>Collegamenti </p>
-              <span>
-                <i className="bi bi-person-plus-fill"></i>
-              </span>
-            </div>
-            <p>Espandi la tua rete</p>
+          <ListGroup.Item className="mtlr">
+            <a className="text-decoration-none" href="#">
+              <div className="link-dark text-decoration-none   ">
+                <div className="d-flex  justify-content-between">
+                  {' '}
+                  <p className="text-secondary">Collegamenti </p>
+                  <span>
+                    <i className="bi bi-person-plus-fill"></i>
+                  </span>
+                </div>
+                <p>Espandi la tua rete</p>
+              </div>
+            </a>
           </ListGroup.Item>
-          <ListGroup.Item>
-            <p>Accedi a strumenti è informazioni in esclusiva</p>
-            <p>
-              <span></span> Prova Premium per 0 euro
-            </p>
+          <ListGroup.Item className="mtlr">
+            <a className="text-decoration-none" href="#">
+              <div className=" link-dark text-decoration-none  ">
+                <p className="text-secondary">
+                  Accedi a strumenti è informazioni in esclusiva
+                </p>
+                <p>
+                  <span></span> Prova Premium per 0 euro
+                </p>
+              </div>
+            </a>
           </ListGroup.Item>
-          <ListGroup.Item>
-            <span>
-              <i className="bi bi-bookmark-fill"></i>
-            </span>{' '}
-            I miei elementi
+          <ListGroup.Item className="mtlr">
+            <a className="text-decoration-none" href="#">
+              <div className="d-flex link-dark text-decoration-none   ">
+                <i className="bi bi-bookmark-fill"></i> I miei elementi
+              </div>
+            </a>
           </ListGroup.Item>
         </ListGroup>
       </Card>

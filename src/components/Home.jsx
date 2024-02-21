@@ -32,8 +32,6 @@ const Home = () => {
               <CreateHomePost />
 
               <MainHomePost />
-              <MainHomePost />
-              <MainHomePost />
 
               <Suggestions />
             </Col>

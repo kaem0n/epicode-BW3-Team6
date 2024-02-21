@@ -18,8 +18,8 @@ const CreateHomePost = () => {
                 Avvia un post
               </Button>
             </div>
-            <div>
-              <Button>Contenuti multimediali </Button>
+            <div className="d-flex justify-content-around pt-2">
+              <Button className="btn-homepost">Contenuti multimediali </Button>
               <Button>Evento </Button>
               <Button>Scrivi un articolo </Button>
             </div>

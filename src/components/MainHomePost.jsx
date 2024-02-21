@@ -39,10 +39,11 @@ const MainHomePost = () => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <div>
-            <Button>Contenuti multimediali </Button>
-            <Button>Evento </Button>
-            <Button>Scrivi un articolo </Button>
+          <div className="d-flex justify-content-around">
+            <Button>Consiglia </Button>
+            <Button>Commenta </Button>
+            <Button>Diffondi il post </Button>
+            <Button>Invia </Button>
           </div>
         </Card.Footer>
       </Card>

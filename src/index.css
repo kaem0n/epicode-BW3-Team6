@@ -290,3 +290,14 @@ body {
     display: flex !important;
   }
 }
+
+.span-bullet {
+  border-radius: 50%;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 1.2rem 2px 14px;
+  border: 3px solid black;
+}
+.btn-homepost {
+}
