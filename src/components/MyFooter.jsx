@@ -5,9 +5,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 const MyFooter = () => {
   return (
     <>
-      <Container>
-        <Row>
-          <Col className="col-2 font-footer">
+      <Container fluid="xl">
+        <Row className="justify-content-end">
+          <Col className="col-4 col-sm-3 col-md-2 font-footer">
             <p>Informazioni</p>
             <p> Linee guida della community</p>
             <NavDropdown
@@ -16,45 +16,45 @@ const MyFooter = () => {
               menuVariant="white"
               className="mb-3"
             >
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item className="fs-8">
                 Informazioni sulla privacy
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item className="fs-8">
                 Contratto di licenza
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item className="fs-8">
                 Termini e condizioni delle pagine
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item className="fs-8">
                 Informazioni sui cookie
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item className="fs-8">
                 Informativa sul copryright
               </NavDropdown.Item>
             </NavDropdown>
             <p> Sales Solution</p>
             <p> Centro sicurezza</p>
           </Col>
-          <Col className="col-2 font-footer">
+          <Col className="col-4 col-sm-3 col-md-2 font-footer">
             <p>Accessibilità</p>
             <p>Carriera</p>
             <p>Opzioni per gli annunci pubblicitari</p>
             <p>Mobile</p>
           </Col>
-          <Col className="col-2 font-footer">
+          <Col className="col-4 col-sm-2 font-footer">
             <p>Talent Solution</p>
             <p>Soluzioni di marketing</p>
             <p>Pubblicità</p>
             <p>Piccole imprese</p>
           </Col>
-          <Col className="col-4">
+          <Col className="col-6 col-sm-4 col-md-3">
             <Row>
               <div className="d-flex justify-content-start">
                 <h4>
                   <i className="bi bi-question-circle-fill me-2"></i>
                 </h4>
                 <div className="d-flex flex-column justify-content-start">
-                  <p className="font-footer-ans mb-0">Domande ?</p>
+                  <p className="font-footer-ans mb-0">Domande?</p>
                   <p className="font-footer-ans-p">
                     Visita il nostro Centro assistenza
                   </p>
@@ -90,9 +90,9 @@ const MyFooter = () => {
               </div>
             </Row>
           </Col>
-          <Col className="col-2">
-            <p className="text-muted">Seleziona lingua</p>
-            <Form.Select aria-label="Default select example">
+          <Col className="col-6 col-md-3">
+            <p className="font-footer mb-1">Seleziona lingua</p>
+            <Form.Select className="font-footer">
               <option value="1">Italiano (Italiano)</option>
               <option value="2">English (Inglese)</option>
               <option value="3">Espanol (Sapgnolo)</option>
@@ -102,7 +102,7 @@ const MyFooter = () => {
           </Col>
         </Row>
         <Row className="mt-4">
-          <p className="text-muted">
+          <p className="font-footer">
             Linkedin Corporation &copy; {new Date().getFullYear()}
           </p>
         </Row>

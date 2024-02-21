@@ -1,10 +1,10 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from 'react-bootstrap'
 
 const Persons = () => {
   return (
     <>
-      <Col>
-        <Card style={{ width: "18rem" }}>
+      <Col className="mb-5 mb-md-0">
+        <Card>
           <Card.Body>
             <Card.Title>Persone che potresti conoscere</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
@@ -16,15 +16,15 @@ const Persons = () => {
                   src="http://placekitten.com/200/300"
                   className="rounded-circle"
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: '50px',
+                    height: '50px',
                   }}
                 />
               </Col>
               <Col>
                 <Card.Title className="m-0">Nome</Card.Title>
                 <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){" "}
+                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
                 </Card.Text>
               </Col>
             </Row>
@@ -41,15 +41,15 @@ const Persons = () => {
                   src="http://placekitten.com/200/300"
                   className="rounded-circle"
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: '50px',
+                    height: '50px',
                   }}
                 />
               </Col>
               <Col>
                 <Card.Title className="m-0">Nome</Card.Title>
                 <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){" "}
+                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
                 </Card.Text>
               </Col>
             </Row>
@@ -66,15 +66,15 @@ const Persons = () => {
                   src="http://placekitten.com/200/300"
                   className="rounded-circle"
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: '50px',
+                    height: '50px',
                   }}
                 />
               </Col>
               <Col>
                 <Card.Title className="m-0">Nome</Card.Title>
                 <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){" "}
+                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
                 </Card.Text>
               </Col>
             </Row>
@@ -91,15 +91,15 @@ const Persons = () => {
                   src="http://placekitten.com/200/300"
                   className="rounded-circle"
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: '50px',
+                    height: '50px',
                   }}
                 />
               </Col>
               <Col>
                 <Card.Title className="m-0">Nome</Card.Title>
                 <Card.Text>
-                  Co-Founder & Ceo at Xquire (Techstars 23){" "}
+                  Co-Founder & Ceo at Xquire (Techstars 23){' '}
                 </Card.Text>
               </Col>
             </Row>
@@ -109,14 +109,14 @@ const Persons = () => {
               </Button>
             </div>
             <div className="d-flex justify-content-center mt-3 ">
-              {" "}
+              {' '}
               <h6> Mostra tutto</h6>
             </div>
           </Card.Body>
         </Card>
       </Col>
     </>
-  );
-};
+  )
+}
 
-export default Persons;
+export default Persons

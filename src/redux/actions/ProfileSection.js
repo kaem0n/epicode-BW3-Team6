@@ -1,6 +1,8 @@
 export const MY_PROFILE = "MY_PROFILE";
-export const ADD_IMAGE_TO_POST = "ADD_IMAGE_TO_POST";
-export const ADD_POST = "ADD_POST";
+export const MY_EXPERIENCE = "MY_EXPERIENCE";
+export const NEW_EXPERIENCE = "NEW_EXPERIENCE";
+export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE";
+export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE";
 
 export const myProfile = () => {
   const url = "https://striveschool-api.herokuapp.com/api/profile/me";
@@ -15,7 +17,6 @@ export const myProfile = () => {
       });
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
         dispatch({ type: MY_PROFILE, payload: data });
       } else {
         throw new Error(`${res.status} - Errore nella fetch`);
@@ -25,15 +26,30 @@ export const myProfile = () => {
     }
   };
 };
-export const addPost = (text) => {
+
+export const myExperience = (data) => {
   return {
-    type: ADD_POST,
-    payload: text,
+    type: MY_EXPERIENCE,
+    payload: data,
   };
 };
-export const addImageToPost = (postId, imageUrl) => {
+
+export const newExperience = (field, value) => {
   return {
-    type: ADD_IMAGE_TO_POST,
-    payload: { postId, imageUrl },
+    type: NEW_EXPERIENCE,
+    payload: { [field]: value },
+  };
+};
+
+export const deleteExperience = (experienceId) => {
+  return {
+    type: DELETE_EXPERIENCE,
+    payload: experienceId,
+  };
+};
+export const updateExperience = (updatedExperience) => {
+  return {
+    type: UPDATE_EXPERIENCE,
+    payload: updatedExperience,
   };
 };
