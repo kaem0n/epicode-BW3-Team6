@@ -5,7 +5,10 @@ const HomeFooter = () => {
     <>
       <Container className="mt-2">
         <Row className="justify-content-center">
-          <Col className="col-10 font-footer d-flex flex-wrap justify-content-center align-items-center ">
+          <Col
+            className="col-10 font-footer d-flex flex-wrap justify-content-center align-items-center "
+            style={{ minWidth: "250px" }}
+          >
             <p className="pe-3 pointer">Informazioni</p>
             <p className="pe-3 pointer">Accessibilità</p>
             <p className="pe-3 pointer">Centro Assistenza</p>
