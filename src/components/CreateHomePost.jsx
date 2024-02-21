@@ -30,16 +30,36 @@ const CreateHomePost = () => {
               />
               <Button
                 onClick={handleCreatePostClick}
-                size="lg"
-                className="suggestions-button lg flex-grow-1"
+                className="btn-starthomepost flex-grow-1"
               >
                 Avvia un post
               </Button>
             </div>
-            <div className="d-flex justify-content-around pt-2">
-              <Button className="btn-homepost">Contenuti multimediali </Button>
-              <Button>Evento </Button>
-              <Button>Scrivi un articolo </Button>
+            <div className="d-flex justify-content-around flex-wrap pt-2">
+              <Button className="btn-homepost text-secondary">
+                <span>
+                  <i className="bi bi-image text-primary"></i>
+                </span>{" "}
+                Contenuti multimediali
+              </Button>
+              <Button className="btn-homepost text-secondary">
+                <span>
+                  <i
+                    className="fa-solid fa-calendar-days"
+                    style={{ color: "#C37D16" }}
+                  ></i>
+                </span>{" "}
+                Evento
+              </Button>
+              <Button className="btn-homepost text-secondary">
+                <span>
+                  <i
+                    className="fa-sharp fa-light fa-newspaper"
+                    style={{ color: "#E06848" }}
+                  ></i>
+                </span>{" "}
+                Scrivi un articolo
+              </Button>
             </div>
           </Card.Text>
         </Card.Body>
