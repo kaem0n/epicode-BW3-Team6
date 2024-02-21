@@ -16,6 +16,9 @@ body {
   background-color: rgb(233, 233, 233) !important;
   color: gray;
 }
+.cdi:hover {
+  background-color: rgb(233, 233, 233) !important;
+}
 
 * {
   margin: 0;
@@ -291,6 +294,29 @@ body {
   }
 }
 
+/* button add post */
+.addpost-btn {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(224, 224, 224);
+}
+.btn-public {
+  background-color: rgb(224, 224, 224);
+  color: black;
+  border-radius: 30px;
+  width: 100px;
+}
+/* attività */
+.name-activities {
+  font-weight: 600;
+}
+.text-activities {
+  font-size: 14px;
+}
+.img-post {
+  width: 50px;
+}
+
 .bg-gray-hover:hover {
   background-color: rgba(140 140 140/0.1);
   transition: 300ms;
@@ -322,4 +348,30 @@ body {
   height: 6px;
   margin: 0 1.2rem 2px 14px;
   border: 3px solid black;
+}
+
+.btn-homepost {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-homepost:hover {
+  border: gray !important;
+  background-color: rgb(233, 233, 233) !important;
+  color: gray;
+}
+
+.btn-starthomepost {
+  background-color: white !important;
+  border: gray 1px solid !important;
+  border-radius: 28px;
+  color: gray;
+}
+.btn-starthomepost:hover {
+  border: 1px solid gray !important;
+  background-color: #eeeeee !important;
+  color: gray;
+}
+.ft {
+  font-size: 12px;
 }

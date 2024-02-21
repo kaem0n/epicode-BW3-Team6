@@ -1,4 +1,11 @@
 export const MY_PROFILE = 'MY_PROFILE'
+export const MY_EXPERIENCE = 'MY_EXPERIENCE'
+export const NEW_EXPERIENCE = 'NEW_EXPERIENCE'
+export const DELETE_EXPERIENCE = 'DELETE_EXPERIENCE'
+export const UPDATE_EXPERIENCE = 'UPDATE_EXPERIENCE'
+export const ADD_POST = 'ADD_POST'
+export const ADD_IMAGE_TO_POST = 'ADD_IMAGE_TO_POST'
+export const SET_IMAGE = 'SET_IMAGE'
 
 export const myProfile = () => {
   const url = 'https://striveschool-api.herokuapp.com/api/profile/me'
@@ -22,3 +29,20 @@ export const myProfile = () => {
     }
   }
 }
+
+export const addPost = (text) => {
+  return {
+    type: ADD_POST,
+    payload: text,
+  }
+}
+export const addImageToPost = (postId, imageUrl) => {
+  return {
+    type: ADD_IMAGE_TO_POST,
+    payload: { postId, imageUrl },
+  }
+}
+export const setImage = (image) => ({
+  type: SET_IMAGE,
+  payload: image,
+})

@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Button, Card, Col, Modal, Row } from 'react-bootstrap'
+import { useState } from "react";
+import { Button, Card, Col, Modal, Row } from "react-bootstrap";
 
 const ProfileSettings = () => {
-  const [lgShow, setLgShow] = useState(false)
+  const [lgShow, setLgShow] = useState(false);
   return (
     <>
       <Row className="mt-md-5 mb-2">
@@ -11,7 +11,6 @@ const ProfileSettings = () => {
             <Card.Body>
               <div className="d-flex align-items-center justify-content-between ">
                 <Card.Title>Lingua del profilo</Card.Title>
-
                 <Button
                   className="border-0 bg-transparent "
                   onClick={() => setLgShow(true)}
@@ -62,7 +61,7 @@ const ProfileSettings = () => {
                   <Modal.Body className="p-4">
                     <h6
                       className="mb-3"
-                      style={{ color: 'gray', fontWeight: '500' }}
+                      style={{ color: "gray", fontWeight: "500" }}
                     >
                       Lingue
                     </h6>
@@ -86,7 +85,7 @@ const ProfileSettings = () => {
                           Puoi avere un solo profilo per lingua. Quando cambi il
                           profilo nella tua lingua principale, le sezioni vuote
                           verranno compilate usando la tua precedente lingua
-                          principale. Scopri di più su come{' '}
+                          principale. Scopri di più su come{" "}
                           <a
                             href="#"
                             className="fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
@@ -116,7 +115,7 @@ const ProfileSettings = () => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default ProfileSettings
+export default ProfileSettings;
