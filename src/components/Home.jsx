@@ -15,7 +15,7 @@ import HomeShowMore from './HomeShowMore';
 
 const Home = () => (
   <Container className="mt-5">
-    <Row className="justify-content-center">
+    <Row>
       <Col xs={12} md={2} lg={2}>
         <ProfileSidebar />
         <HomeShowMore />
