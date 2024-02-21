@@ -1,9 +1,8 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PostModal from "./PostModal";
-import ActivitiesModal from "./ActivitiesModal";
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const CreateHomePost = () => {
   const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
