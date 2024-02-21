@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavSearchBar from './NavSearchBar'
 import NavProfileCard from './NavProfileCard'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { Link } from 'react-router-dom'
 
 const MyNavBar = () => {
   const toggleDropdown = () => {
@@ -42,17 +43,20 @@ const MyNavBar = () => {
       fixed="top"
     >
       <Container fluid="xl" className="justify-content-start">
-        <Navbar.Brand className="p-0">
+        <Link to="/" className="navbar-brand p-0 pointer">
           <i className="fa-brands fa-linkedin text-primary navbrand-icon"></i>
-        </Navbar.Brand>
+        </Link>
 
         <NavSearchBar />
 
         <Nav>
-          <Nav.Link className="d-flex flex-column justify-content-center align-items-center py-1">
+          <Link
+            to="/"
+            className="nav-link d-flex flex-column justify-content-center align-items-center py-1"
+          >
             <i className="fa-solid fa-house nav-icon"></i>
             <span className="d-none d-md-inline">Home</span>
-          </Nav.Link>
+          </Link>
           <Nav.Link className="d-flex flex-column justify-content-center align-items-center py-1">
             <i className="fa-solid fa-user-group nav-icon"></i>
             <span className="d-none d-md-inline">Rete</span>

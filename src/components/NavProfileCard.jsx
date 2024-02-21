@@ -1,9 +1,11 @@
 import Button from 'react-bootstrap/Button'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const NavProfileCard = () => {
   const profile = useSelector((state) => state.profile.profile)
+  const navigate = useNavigate()
 
   return (
     <NavDropdown
@@ -47,6 +49,9 @@ const NavProfileCard = () => {
           <Button
             variant="outline-primary"
             className="fs-7 rounded-5 py-0 fw-semibold"
+            onClick={() => {
+              navigate('/profile')
+            }}
           >
             Visualizza profilo
           </Button>
