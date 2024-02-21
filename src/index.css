@@ -375,3 +375,11 @@ body {
 .ft {
   font-size: 12px;
 }
+
+.hero {
+  height: 200px;
+  background: url(https://picsum.photos/2000/700);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
