@@ -14,7 +14,7 @@ import Suggestions from "./Suggestions";
 
 const Home = () => (
   <Container className="mt-5">
-    <Row>
+    <Row className="justify-content-center">
       <Col xs={12} md={2} lg={2}>
         <ProfileSidebar />
       </Col>
