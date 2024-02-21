@@ -1,15 +1,12 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-// import placeholderReducer from "../reducers";
-import ProfileSectionReducer from "../reducers/ProfileSection";
-import ExperienceReducer from "../reducers/Esxperience";
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import ProfileSectionReducer from '../reducers/ProfileSection'
 
 const globalReducer = combineReducers({
   profile: ProfileSectionReducer,
-  experience: ExperienceReducer,
-});
+})
 
 const store = configureStore({
   reducer: globalReducer,
-});
+})
 
-export default store;
+export default store

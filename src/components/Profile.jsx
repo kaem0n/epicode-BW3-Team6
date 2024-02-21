@@ -7,10 +7,11 @@ import Analysis from './Analisys'
 import Resources from './Resources'
 import Activities from './Activities'
 import Formation from './Formation'
-import Experience from './Experience'
+// import Experience from './Experience'
 import Interests from './Interests'
 import ProfileSettings from './ProfileSettings'
 import Persons from './Persons'
+import NewExperiences from './NewExperiences'
 
 const Profile = () => (
   <Container>
@@ -22,7 +23,8 @@ const Profile = () => (
         <Resources />
         <Activities />
         <Formation />
-        <Experience />
+        {/* <Experience /> */}
+        <NewExperiences />
         <Interests />
       </Col>
       <Col xs={12} md={5} lg={4} xl={3}>
