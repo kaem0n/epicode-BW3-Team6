@@ -88,7 +88,6 @@ const ProfileSidebar = () => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
-      <HomeShowMore className="mt-2"></HomeShowMore>
     </>
   );
 };
