@@ -7,13 +7,14 @@ const Resources = () => {
     <Row className="mb-2">
       <Col>
         <Card>
-          <Card.Body>
-            <Card.Title className="pb-2">Risorse</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              <i className="bi bi-eye-fill me-2"></i>Solo per te
+          <Card.Body className="ms-2">
+            <Card.Title className="mb-1">Risorse</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted d-flex align-items-center">
+              <i className="bi bi-eye-fill me-2"></i>
+              <span className="fs-7 fw-normal">Solo per te</span>
             </Card.Subtitle>
             <div className="card-text">
-              <div className="d-flex justify-content-start">
+              <div className="d-flex justify-content-start border-bottom mb-2">
                 <h4>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -29,35 +30,37 @@ const Resources = () => {
                   </svg>
                 </h4>
                 <div className="d-flex flex-column justify-content-start">
-                  <h6>
+                  <h6 className="mb-0">
                     Modalità creazione di contenuti
-                    <Badge bg="secondary" className="ms-2">
+                    <Badge text="dark" className="ms-2 bg-gray fw-normal fs-7">
                       No
                     </Badge>
                   </h6>
-                  <p>
+                  <p className="fs-7 mb-2">
                     Fatti scoprire, metti in risalto i contenuti sul tuo profilo
                     e accedi agli strumenti di crazione
                   </p>
                 </div>
               </div>
             </div>
-            <hr />
             <div className="card-text">
               <div className="d-flex justify-content-start">
                 <h4>
                   <i className="bi bi-people-fill me-2"></i>
                 </h4>
                 <div>
-                  <h6>La mia rete</h6>
-                  <span>Salva e gestisci i tuoi collegamenti e interessi</span>
+                  <h6 className="mb-0">La mia rete</h6>
+                  <span className="fs-7">
+                    Salva e gestisci i tuoi collegamenti e interessi
+                  </span>
                 </div>
               </div>
             </div>
           </Card.Body>
           <a className="text-decoration-none" href="#">
-            <div className="d-flex justify-content-center border-top p-2 link-dark text-decoration-none mtlr text-secondary ">
-              Mostra tutte le risorse (5) <i className="bi bi-arrow-right"></i>
+            <div className="d-flex justify-content-center align-items-center border-top p-2 link-dark text-decoration-none mtlr text-secondary ">
+              Mostra tutte le risorse (5){' '}
+              <i className="bi bi-arrow-right ms-1"></i>
             </div>
           </a>
         </Card>

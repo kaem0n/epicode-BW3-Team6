@@ -296,6 +296,10 @@ body {
   transition: 300ms;
 }
 
+.bg-gray {
+  background-color: rgba(140 140 140/0.2) !important;
+}
+
 .bg-darkgray-hover:hover {
   background-color: #bcc5ce;
   transition: 300ms;

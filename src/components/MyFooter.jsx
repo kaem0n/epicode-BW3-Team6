@@ -8,8 +8,8 @@ const MyFooter = () => {
       <Container fluid="xl">
         <Row className="justify-content-end">
           <Col className="col-4 col-sm-3 col-md-2 font-footer">
-            <p>Informazioni</p>
-            <p> Linee guida della community</p>
+            <p className="pointer">Informazioni</p>
+            <p className="pointer"> Linee guida della community</p>
             <NavDropdown
               id="nav-dropdown-dark-example"
               title="Privacy e Condizioni"
@@ -32,20 +32,20 @@ const MyFooter = () => {
                 Informativa sul copryright
               </NavDropdown.Item>
             </NavDropdown>
-            <p> Sales Solution</p>
-            <p> Centro sicurezza</p>
+            <p className="pointer"> Sales Solution</p>
+            <p className="pointer"> Centro sicurezza</p>
           </Col>
           <Col className="col-4 col-sm-3 col-md-2 font-footer">
-            <p>Accessibilità</p>
-            <p>Carriera</p>
-            <p>Opzioni per gli annunci pubblicitari</p>
-            <p>Mobile</p>
+            <p className="pointer">Accessibilità</p>
+            <p className="pointer">Carriera</p>
+            <p className="pointer">Opzioni per gli annunci pubblicitari</p>
+            <p className="pointer">Mobile</p>
           </Col>
           <Col className="col-4 col-sm-2 font-footer">
-            <p>Talent Solution</p>
-            <p>Soluzioni di marketing</p>
-            <p>Pubblicità</p>
-            <p>Piccole imprese</p>
+            <p className="pointer">Talent Solution</p>
+            <p className="pointer">Soluzioni di marketing</p>
+            <p className="pointer">Pubblicità</p>
+            <p className="pointer">Piccole imprese</p>
           </Col>
           <Col className="col-6 col-sm-4 col-md-3">
             <Row>
@@ -54,7 +54,7 @@ const MyFooter = () => {
                   <i className="bi bi-question-circle-fill me-2"></i>
                 </h4>
                 <div className="d-flex flex-column justify-content-start">
-                  <p className="font-footer-ans mb-0">Domande?</p>
+                  <p className="font-footer-ans mb-0 pointer">Domande?</p>
                   <p className="font-footer-ans-p">
                     Visita il nostro Centro assistenza
                   </p>
@@ -67,7 +67,7 @@ const MyFooter = () => {
                   <i className="bi bi-gear-fill me-2"></i>
                 </h4>
                 <div className="d-flex flex-column justify-content-start">
-                  <p className="font-footer-ans mb-0">
+                  <p className="font-footer-ans mb-0 pointer">
                     Gestisci il tuo account e la tua privacy
                   </p>
                   <p className="font-footer-ans-p">Vai alle impostazioni</p>
@@ -80,7 +80,7 @@ const MyFooter = () => {
                   <i className="bi bi-shield-shaded me-2"></i>
                 </h4>
                 <div className="d-flex flex-column justify-content-start">
-                  <p className="font-footer-ans mb-0">
+                  <p className="font-footer-ans mb-0 pointer">
                     Trasparenza sui contenuti consigliati
                   </p>
                   <p className="font-footer-ans-p">
