@@ -37,7 +37,6 @@ function App() {
               <Activities />
               <Formation />
               <Experience />
-              <Suggestions />
               <Interests />
             </Col>
             <Col xs={12} md={5} lg={4} xl={3}>
