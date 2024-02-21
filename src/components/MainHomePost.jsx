@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const MainHomePost = () => {
@@ -56,12 +55,21 @@ const MainHomePost = () => {
                     <Col>
                       <div className="d-flex justify-content-between">
                         <div className="d-flex">
-                          <img
-                            src="http://placekitten.com/200/300"
-                            alt="img-profilo"
-                            style={{ width: "50px", height: "50px" }}
-                            className="rounded-circle"
-                          ></img>
+                          {posts.user.image === undefined ? (
+                            <img
+                              src="http://placekitten.com/200/300"
+                              alt="img-profilo"
+                              style={{ width: "50px", height: "50px" }}
+                              className="rounded-circle"
+                            ></img>
+                          ) : (
+                            <img
+                              src={posts.user.image}
+                              alt="img-profilo"
+                              style={{ width: "50px", height: "50px" }}
+                              className="rounded-circle"
+                            ></img>
+                          )}
                           <div className="ms-2" style={{ fontSize: "small" }}>
                             <p className="mt-0 mb-0 fw-semibold fs-6">
                               {posts.username}
