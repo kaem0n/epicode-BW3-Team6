@@ -323,3 +323,26 @@ body {
   margin: 0 1.2rem 2px 14px;
   border: 3px solid black;
 }
+
+.btn-homepost {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-homepost:hover {
+  border: gray !important;
+  background-color: rgb(233, 233, 233) !important;
+  color: gray;
+}
+
+.btn-starthomepost {
+  background-color: white !important;
+  border: gray 1px solid !important;
+  border-radius: 28px;
+  color: gray;
+}
+.btn-starthomepost:hover {
+  border: 1px solid gray !important;
+  background-color: #eeeeee !important;
+  color: gray;
+}
