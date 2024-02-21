@@ -1,16 +1,28 @@
-import { Button, Card, Col, Row, Spinner } from 'react-bootstrap'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { myProfile } from '../redux/actions/ProfileSection'
+import { Card, Col, Row, Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { myProfile } from "../redux/actions/ProfileSection";
+import ImageUploadProfile from "./UploadImageProfile";
 
 const ProfileSection = () => {
-  const dispatch = useDispatch()
-  const state = useSelector((state) => state.profile)
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.profile);
+  const [showPostModal, setShowPostModal] = useState(false);
+
+  // Funzione per aprire il modale per la creazione di un post
+  const handleCreatePostClick = () => {
+    setShowPostModal(true);
+  };
+
+  // Funzione per chiudere il modale per la creazione di un post
+  const handleClosePostModal = () => {
+    setShowPostModal(false);
+  };
 
   useEffect(() => {
-    dispatch(myProfile())
+    dispatch(myProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <Row className="mt-5 mb-2">
@@ -22,32 +34,37 @@ const ProfileSection = () => {
                 <img
                   src="https://www.ll-mm.com/images/placeholders/image-placeholder.jpg"
                   alt="bg-hero"
-                  style={{ width: '100%', height: '200px' }}
+                  style={{ width: "100%", height: "200px" }}
                   className="pointer"
                 />
 
                 <img
                   src={state.profile.image}
                   alt="profilo"
-                  style={{ width: '10em', left: '25px', top: '88px' }}
+                  style={{ width: "10em", left: "25px", top: "88px" }}
                   className="border rounded-circle border-white z-index-1 position-absolute pointer"
                 />
                 <i
-                  className="bi bi-camera-fill text-primary position-absolute px-2 py-1 rounded-circle pointer"
+                  onClick={handleCreatePostClick}
+                  className="bi bi-camera-fill text-primary position-absolute px-2 py-1 rounded-circle"
                   style={{
-                    right: '25px',
-                    top: '15px',
-                    backgroundColor: 'white',
+                    right: "25px",
+                    top: "15px",
+                    backgroundColor: "white",
                   }}
                 ></i>
+                <ImageUploadProfile
+                  show={showPostModal}
+                  hide={handleClosePostModal}
+                />
               </div>
             </Card.Header>
             <div className="d-flex justify-content-end me-3 mt-3">
               <i
                 className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                 style={{
-                  height: '40px',
-                  width: '40px',
+                  height: "40px",
+                  width: "40px",
                 }}
               ></i>
             </div>
@@ -121,7 +138,7 @@ const ProfileSection = () => {
                     <Card
                       className="py-2 ps-3 pe-2 border-0 fs-7"
                       style={{
-                        backgroundColor: '#dde7f1',
+                        backgroundColor: "#dde7f1",
                       }}
                     >
                       <span className="fw-semibold position-relative">
@@ -129,8 +146,8 @@ const ProfileSection = () => {
                         <i
                           className="bi bi-pencil position-absolute top-0 end-0 text-secondary fs-6 pointer bg-darkgray-hover rounded-circle d-flex justify-content-center align-items-center"
                           style={{
-                            height: '30px',
-                            width: '30px',
+                            height: "30px",
+                            width: "30px",
                           }}
                         ></i>
                       </span>
@@ -154,7 +171,7 @@ const ProfileSection = () => {
         )}
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ProfileSection
+export default ProfileSection;
