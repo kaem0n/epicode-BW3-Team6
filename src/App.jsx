@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // import pagine
-import MyFooter from "./components/MyFooter";
+
 import MyNavBar from "./components/MyNavBar";
 import NavCanvas from "./components/NavCanvas";
 import Profile from "./components/Profile";
@@ -24,9 +24,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
-      <footer>
-        <MyFooter />
-      </footer>
+      <footer></footer>
     </BrowserRouter>
   );
 };
