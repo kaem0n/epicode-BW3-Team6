@@ -36,12 +36,13 @@ const ProfileSection = () => {
                 <Card.Header className="p-0">
                   <div className="position-relative">
                     <div className="hero"></div>
-                    <img
-                      src={state.profile.image}
-                      alt="profilo"
-                      style={{ width: '10em', left: '25px', top: '88px' }}
-                      className="border rounded-circle border-white z-index-1 position-absolute pointer"
-                    />
+                    <div className="position-absolute z-index-1 propic-container">
+                      <img
+                        src={state.profile.image}
+                        alt="propic"
+                        className="border border-3 rounded-circle border-white pointer w-100 h-100 objectfit-cover"
+                      />
+                    </div>
                     <i
                       onClick={handleCreatePostClick}
                       className="bi bi-camera-fill text-primary position-absolute px-2 py-1 rounded-circle pointer"
