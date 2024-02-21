@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PostModal from "./PostModal";
@@ -12,7 +12,7 @@ const Activities = () => {
   const [showActivitiesModal, setShowActivitiesModal] = useState(false); // Stato per controllare la visibilità del  modale attivita
   const state = useSelector((state) => state.posts);
   const state1 = useSelector((state) => state.profile);
-
+  const [posts, setPosts] = useState([]);
   const dispatch = useDispatch();
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
@@ -65,6 +65,26 @@ const Activities = () => {
         });
     }
   };
+
+  const GetFetchPost = (postId) => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+  useEffect(() => {
+    GetFetchPost("65d3121324f605001937d45c");
+  }, []);
 
   return (
     <>
