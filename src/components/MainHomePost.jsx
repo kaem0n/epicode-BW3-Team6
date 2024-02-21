@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 
 const MainHomePost = () => {
   const [clicked, setClicked] = useState(false);
+  const [comment, setComment] = useState(20);
 
   return (
     <>
@@ -71,7 +72,7 @@ const MainHomePost = () => {
                   className="text-secondary"
                   style={{ fontSize: "smaller" }}
                 >
-                  60 mi piace
+                  {comment} mi piace
                 </span>
               </Col>
               <Col className="col-3 text-secondary">2 diffusioni post</Col>
@@ -84,6 +85,7 @@ const MainHomePost = () => {
               <button
                 type="button"
                 className="btn btn-white text-secondary fw-semibold cdi"
+                onClick={() => setComment(comment + 1)}
               >
                 <i className="bi bi-hand-thumbs-up me-1"></i>Consiglia
               </button>
@@ -115,7 +117,7 @@ const MainHomePost = () => {
             </Col>
           </Row>
           {clicked ? (
-            <Row>
+            <Row className="align-items-center">
               <Col className="col-2">
                 <img
                   src="http://placekitten.com/200/300"
@@ -124,7 +126,13 @@ const MainHomePost = () => {
                   className="rounded-circle"
                 ></img>
               </Col>
-              <Col></Col>
+              <Col>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Inserisci il tuo commento"
+                ></input>
+              </Col>
             </Row>
           ) : (
             ""
