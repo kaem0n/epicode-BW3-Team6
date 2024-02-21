@@ -23,9 +23,8 @@ const Jobs = () => {
                   key={job._id}
                   onClick={() => setJobSelected(job)}
                 >
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action"
+                  <div
+                    className="list-group-item list-group-item-action pointer"
                     aria-current="true"
                   >
                     <div className="d-flex w-100 justify-content-between">
@@ -34,7 +33,7 @@ const Jobs = () => {
                     </div>
                     <p className="mb-1">{job.company_name}</p>
                     <small>{job.candidate_required_location}</small>
-                  </a>
+                  </div>
                 </div>
               )
             })
@@ -44,7 +43,7 @@ const Jobs = () => {
         </Col>
         <Col className="col-6">
           {jobSelected !== null ? (
-            <Card>
+            <Card className="sticky-top top-jobselected">
               <Card.Body>
                 <Card.Title>{jobSelected.title}</Card.Title>
                 <Card.Subtitle
@@ -94,6 +93,12 @@ const Jobs = () => {
                 <Card.Link href={jobSelected.url}>
                   Vai alla pagina dell&apos;offerta
                 </Card.Link>
+                <Card.Title className="mt-3">
+                  Informazioni sull&apos;offerta di lavoro
+                </Card.Title>
+                <div
+                  dangerouslySetInnerHTML={{ __html: jobSelected.description }}
+                ></div>
               </Card.Body>
             </Card>
           ) : (

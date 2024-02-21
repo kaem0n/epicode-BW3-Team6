@@ -394,3 +394,9 @@ body {
 .objectfit-cover {
   object-fit: cover;
 }
+
+.top-jobselected {
+  top: 7%;
+  max-height: 90vh;
+  overflow: auto;
+}
