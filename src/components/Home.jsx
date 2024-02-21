@@ -15,17 +15,17 @@ import HomeShowMore from './HomeShowMore';
 
 const Home = () => (
   <Container className="mt-5">
-    <Row>
+    <Row className="justify-content-center">
       <Col xs={12} md={2} lg={2}>
         <ProfileSidebar />
         <HomeShowMore />
       </Col>
-      <Col xs={12} md={7} lg={7}>
+      <Col xs={12} md={6} lg={6}>
         <CreateHomePost />
         <MainHomePost />
         <Suggestions />
       </Col>
-      <Col xs={12} md={3} lg={3}>
+      <Col xs={12} md={4} lg={3}>
         <NewsSidebar />
         <HomeFooter />
       </Col>
