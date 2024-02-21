@@ -1,9 +1,8 @@
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import PostModal from "./PostModal";
-import ActivitiesModal from "./ActivitiesModal";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import PostModal from './PostModal';
+
+import { useState } from 'react';
 
 const CreateHomePost = () => {
   const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
@@ -25,7 +24,7 @@ const CreateHomePost = () => {
               <img
                 src="http://placekitten.com/200/300"
                 alt="img-profilo"
-                style={{ width: "50px", height: "50px", border: "none" }}
+                style={{ width: '50px', height: '50px', border: 'none' }}
                 className="  rounded-circle me-2 "
               />
               <Button
@@ -39,25 +38,25 @@ const CreateHomePost = () => {
               <Button className="btn-homepost text-secondary">
                 <span>
                   <i className="bi bi-image text-primary"></i>
-                </span>{" "}
+                </span>{' '}
                 Contenuti multimediali
               </Button>
               <Button className="btn-homepost text-secondary">
                 <span>
                   <i
                     className="fa-solid fa-calendar-days"
-                    style={{ color: "#C37D16" }}
+                    style={{ color: '#C37D16' }}
                   ></i>
-                </span>{" "}
+                </span>{' '}
                 Evento
               </Button>
               <Button className="btn-homepost text-secondary">
                 <span>
                   <i
                     className="fa-sharp fa-light fa-newspaper"
-                    style={{ color: "#E06848" }}
+                    style={{ color: '#E06848' }}
                   ></i>
-                </span>{" "}
+                </span>{' '}
                 Scrivi un articolo
               </Button>
             </div>

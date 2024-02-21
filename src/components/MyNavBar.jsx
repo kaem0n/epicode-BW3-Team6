@@ -1,16 +1,16 @@
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavSearchBar from './NavSearchBar'
-import NavProfileCard from './NavProfileCard'
-import Dropdown from 'react-bootstrap/Dropdown'
-import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavSearchBar from './NavSearchBar';
+import NavProfileCard from './NavProfileCard';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
 const MyNavBar = () => {
   const toggleDropdown = () => {
-    const dropdownBtn = document.getElementById('dropdown-ellipsis')
-    dropdownBtn.click()
-  }
+    const dropdownBtn = document.getElementById('dropdown-ellipsis');
+    dropdownBtn.click();
+  };
 
   const premiumTxtGen = () => {
     const text = [
@@ -25,15 +25,15 @@ const MyNavBar = () => {
       'Prova Premium gratis',
       'Fai decollare la tua carriera con Premium',
       'Sblocca 1 mese di Premium',
-    ]
-    const i = Math.floor(Math.random() * text.length)
-    return text[i]
-  }
+    ];
+    const i = Math.floor(Math.random() * text.length);
+    return text[i];
+  };
 
   const openCanvas = () => {
-    const canvasBtn = document.getElementById('canvas-toggle')
-    canvasBtn.click()
-  }
+    const canvasBtn = document.getElementById('canvas-toggle');
+    canvasBtn.click();
+  };
 
   return (
     <Navbar
@@ -61,10 +61,13 @@ const MyNavBar = () => {
             <i className="fa-solid fa-user-group nav-icon"></i>
             <span className="d-none d-md-inline">Rete</span>
           </Nav.Link>
-          <Nav.Link className="d-flex flex-column justify-content-center align-items-center py-1">
+          <Link
+            to="/jobs"
+            className="nav-link d-flex flex-column justify-content-center align-items-center py-1"
+          >
             <i className="fa-solid fa-briefcase nav-icon"></i>
             <span className="d-none d-md-inline">Lavoro</span>
-          </Nav.Link>
+          </Link>
           <Nav.Link className="d-none-400 d-flex flex-column justify-content-center align-items-center py-1">
             <i className="fa-solid fa-comment-dots nav-icon"></i>
             <span className="d-none d-md-inline">Messaggistica</span>
@@ -130,7 +133,7 @@ const MyNavBar = () => {
         </Dropdown>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default MyNavBar
+export default MyNavBar;
