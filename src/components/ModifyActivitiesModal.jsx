@@ -27,7 +27,7 @@ const ModifyActivitiesModal = (post) => {
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ2MDE4ZmEzM2ZjOTAwMTk2NTgzYTUiLCJpYXQiOjE3MDg1MjM5MTksImV4cCI6MTcwOTczMzUxOX0.6gDRW8TyHNHR68eubi_09zYPRgldyG5UmkTUPPY7aTk",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ object }),
+        body: JSON.stringify(object),
       });
       if (res.ok) {
         setShow(false);
@@ -43,20 +43,10 @@ const ModifyActivitiesModal = (post) => {
     }
   };
 
-  const handleChange = (e) => {
-    setObeject({
-      ...originalActivities,
-      text: e.target.value,
-    });
-    dispatch(modPost(object));
-    console.log(object);
-  };
-
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     modifyActivities();
-  };
-
-  const handleClose = () => {
+    dispatch(modPost(object));
     setShow(false);
   };
 
@@ -73,7 +63,6 @@ const ModifyActivitiesModal = (post) => {
       <Modal
         size="lg"
         show={show}
-        onHide={handleClose}
         centered
         aria-labelledby="example-modal-sizes-title-lg"
       >
@@ -95,26 +84,28 @@ const ModifyActivitiesModal = (post) => {
               </Col>
             </Row>
             <Row className="mt-4 mb-4">
-              <Form.Control
-                as="textarea"
-                style={{ height: "200px", border: "none" }}
-                value={object.text}
-                onChange={handleChange}
-              />
+              <Form onSubmit={handleSubmit}>
+                <Form.Control
+                  as="textarea"
+                  style={{ height: "200px", border: "none" }}
+                  value={object.text}
+                  onChange={(e) =>
+                    setObeject({
+                      ...originalActivities,
+                      text: e.target.value,
+                    })
+                  }
+                />
+                <Button variant="secondary" onClick={() => setShow(false)}>
+                  Annulla
+                </Button>
+                <Button variant="primary" type="submit">
+                  Salva modifiche
+                </Button>
+              </Form>
             </Row>
-            <p className="text-muted">
-              Attenzione! Compilare aggiungendo una spazio alla fine.!
-            </p>
           </Container>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Annulla
-          </Button>
-          <Button variant="primary" onClick={handleClick}>
-            Salva modifiche
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
