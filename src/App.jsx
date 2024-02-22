@@ -10,7 +10,8 @@ import NavCanvas from "./components/NavCanvas";
 import Profile from "./components/Profile";
 import Home from "./components/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Jobs from "./components/Jobs";
+
+import JobsPage from "./components/JobsPage";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Home />} />
-          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs" element={<JobsPage />} />
         </Routes>
       </main>
 

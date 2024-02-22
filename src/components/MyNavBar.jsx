@@ -1,37 +1,37 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavSearchBar from "./NavSearchBar";
-import NavProfileCard from "./NavProfileCard";
-import Dropdown from "react-bootstrap/Dropdown";
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavSearchBar from './NavSearchBar';
+import NavProfileCard from './NavProfileCard';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
 const MyNavBar = () => {
   const toggleDropdown = () => {
-    const dropdownBtn = document.getElementById("dropdown-ellipsis");
+    const dropdownBtn = document.getElementById('dropdown-ellipsis');
     dropdownBtn.click();
   };
 
   const premiumTxtGen = () => {
     const text = [
-      "Raggiungi i tuoi obiettivi con Premium",
-      "Prova 1 mese di Premium per 0 EUR",
-      "Da non perdere: Premium per 0 EUR",
-      "Ottieni Premium per 0 EUR",
-      "Sblocca Premium gratis per 1 mese",
-      "Aggiorna le tue competenze con Premium",
-      "Prova Premium per 0 EUR",
-      "Una rete più smart con Premium",
-      "Prova Premium gratis",
-      "Fai decollare la tua carriera con Premium",
-      "Sblocca 1 mese di Premium",
+      'Raggiungi i tuoi obiettivi con Premium',
+      'Prova 1 mese di Premium per 0 EUR',
+      'Da non perdere: Premium per 0 EUR',
+      'Ottieni Premium per 0 EUR',
+      'Sblocca Premium gratis per 1 mese',
+      'Aggiorna le tue competenze con Premium',
+      'Prova Premium per 0 EUR',
+      'Una rete più smart con Premium',
+      'Prova Premium gratis',
+      'Fai decollare la tua carriera con Premium',
+      'Sblocca 1 mese di Premium',
     ];
     const i = Math.floor(Math.random() * text.length);
     return text[i];
   };
 
   const openCanvas = () => {
-    const canvasBtn = document.getElementById("canvas-toggle");
+    const canvasBtn = document.getElementById('canvas-toggle');
     canvasBtn.click();
   };
 
@@ -63,7 +63,7 @@ const MyNavBar = () => {
           </Nav.Link>
           <Link
             to="/jobs"
-            className=" nav-link d-flex flex-column justify-content-center align-items-center py-1"
+            className="nav-link d-flex flex-column justify-content-center align-items-center py-1"
           >
             <i className="fa-solid fa-briefcase nav-icon"></i>
             <span className="d-none d-md-inline">Lavoro</span>

@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import HomeShowMore from "./HomeShowMore";
 
 const ProfileSidebar = () => {
   return (
@@ -77,9 +76,9 @@ const ProfileSidebar = () => {
               style={{ fontSize: "smaller" }}
               href="#"
             >
-              <div className="d-flex align-items-center justify-content-evenly text-secondary text-decoration-none   ">
+              <div className="d-flex align-items-center text-secondary text-decoration-none">
                 <i
-                  className="bi bi-bookmark-fill text-secondary"
+                  className="bi bi-bookmark-fill text-secondary me-1"
                   style={{ fontSize: "smaller" }}
                 ></i>{" "}
                 I miei elementi
@@ -88,7 +87,6 @@ const ProfileSidebar = () => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
-      <HomeShowMore className="mt-2"></HomeShowMore>
     </>
   );
 };

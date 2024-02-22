@@ -3,6 +3,9 @@ export const ADD_POST = "ADD_POST";
 export const ADD_IMAGE_TO_POST = "ADD_IMAGE_TO_POST";
 export const SET_IMAGE = "SET_IMAGE";
 export const DELETE_FROM_FAVOURITES = "DELETE_FROM_FAVOURITES";
+export const SEARCH_JOBS = "SEARCH_JOBS";
+export const LOAD_JOBS = "LOAD_JOBS";
+export const END_LOAD_JOBS = "END_LOAD_JOBS";
 
 export const myProfile = () => {
   const url = "https://striveschool-api.herokuapp.com/api/profile/me";
@@ -49,3 +52,16 @@ export const deleteFromFavouriteAction = (postId) => {
     payload: postId,
   };
 };
+
+export const searchJobs = (jobs) => ({
+  type: SEARCH_JOBS,
+  payload: jobs,
+});
+
+export const jobsLoading = () => ({
+  type: LOAD_JOBS,
+});
+
+export const endJobsLoading = () => ({
+  type: END_LOAD_JOBS,
+});
