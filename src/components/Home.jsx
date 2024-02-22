@@ -9,12 +9,13 @@ import { useEffect } from 'react'
 
 //import pagine
 import CreateHomePost from './CreateHomePost'
-import MainHomePost from './MainHomePost'
+// import MainHomePost from './MainHomePost'
 import NewsSidebar from './NewsSidebar'
 import HomeFooter from './HomeFooter'
 import ProfileSidebar from './ProfileSidebar'
 import Suggestions from './Suggestions'
 import HomeShowMore from './HomeShowMore'
+import HomePostContainer from './HomePostContainer'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -34,7 +35,8 @@ const Home = () => {
         </Col>
         <Col xs={12} md={6} lg={5} xl={6}>
           <CreateHomePost />
-          <MainHomePost />
+          <HomePostContainer />
+          {/* <MainHomePost /> */}
           <Suggestions />
         </Col>
         <Col xs={12} md={4} lg={4} xl={3}>
