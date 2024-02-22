@@ -1,17 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.min.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // import pagine
 
-import MyNavBar from './components/MyNavBar';
-import NavCanvas from './components/NavCanvas';
-import Profile from './components/Profile';
-import Home from './components/Home';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MyNavBar from "./components/MyNavBar";
+import NavCanvas from "./components/NavCanvas";
+import Profile from "./components/Profile";
+import Home from "./components/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import JobsPage from './components/JobsPage';
+import JobsPage from "./components/JobsPage";
 
 const App = () => {
   return (
