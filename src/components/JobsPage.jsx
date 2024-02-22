@@ -1,13 +1,14 @@
-import JobsSidebar from './jobs_components/JobsSidebar';
-import { Col, Container, Row } from 'react-bootstrap';
-import SearchJobs from './jobs_components/SearchJobs';
-import OpenJobs from './jobs_components/OpenJobs';
+import JobsSidebar from './jobs_components/JobsSidebar'
+import { Col, Container, Row } from 'react-bootstrap'
+import SearchJobs from './jobs_components/SearchJobs'
+import OpenJobs from './jobs_components/OpenJobs'
+import Jobs from './jobs_components/Jobs'
 
 const JobsPage = () => {
   return (
     <>
       <Container className="mt-5" fluid="xl">
-        <Row>
+        <Row className="mb-3">
           <Col xs={12} md={2} lg={3}>
             <JobsSidebar />
           </Col>
@@ -18,9 +19,10 @@ const JobsPage = () => {
             <OpenJobs />
           </Col>
         </Row>
+        <Jobs />
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default JobsPage;
+export default JobsPage
