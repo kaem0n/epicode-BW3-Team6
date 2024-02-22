@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Button, Card, Col, Row, Spinner } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useState } from 'react'
+import { Button, Card, Col, Row, Spinner } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
 const Jobs = () => {
-  const [jobSelected, setJobSelected] = useState(null);
-  const jobs = useSelector((state) => state.jobs.list);
-  const jobsLoading = useSelector((state) => state.jobs.isLoading);
+  const [jobSelected, setJobSelected] = useState(null)
+  const jobs = useSelector((state) => state.jobs.list)
+  const jobsLoading = useSelector((state) => state.jobs.isLoading)
 
   return (
     <Row>
@@ -34,10 +34,10 @@ const Jobs = () => {
                   <small>{job.candidate_required_location}</small>
                 </div>
               </div>
-            );
+            )
           })
         ) : (
-          "Non ci sono lavori al momento"
+          'Non ci sono lavori al momento'
         )}
       </Col>
       <Col className="col-6">
@@ -47,7 +47,7 @@ const Jobs = () => {
               <Card.Title>{jobSelected.title}</Card.Title>
               <Card.Subtitle
                 className="mb-2 text-secondary"
-                style={{ fontSize: "smaller" }}
+                style={{ fontSize: 'smaller' }}
               >
                 {jobSelected.company_name}
                 <i className="bi bi-dot"></i>
@@ -59,22 +59,22 @@ const Jobs = () => {
                 <i className="bi bi-briefcase-fill text-secondary"></i>
                 <span
                   className="ms-2"
-                  style={{ fontSize: "smaller", backgroundColor: "#daebd1" }}
+                  style={{ fontSize: 'smaller', backgroundColor: '#daebd1' }}
                 >
                   {jobSelected.job_type}
                 </span>
                 <div>
                   <i className="bi bi-people-fill text-secondary"></i>
-                  <span className="ms-2" style={{ fontSize: "smaller" }}>
+                  <span className="ms-2" style={{ fontSize: 'smaller' }}>
                     Alcuni tuoi collegamenti lavorano qui
                   </span>
                 </div>
                 <div>
                   <i
                     className="bi bi-lightbulb text-secondary"
-                    style={{ fontSize: "smaller" }}
+                    style={{ fontSize: 'smaller' }}
                   ></i>
-                  <span className="ms-2" style={{ fontSize: "smaller" }}>
+                  <span className="ms-2" style={{ fontSize: 'smaller' }}>
                     Vedi come ti posizioni rispetto a 6 candidati. Prova Premium
                     per 0 EUR
                   </span>
@@ -98,10 +98,10 @@ const Jobs = () => {
             </Card.Body>
           </Card>
         ) : (
-          "Seleziona un lavoro"
+          'Seleziona un lavoro'
         )}
       </Col>
     </Row>
-  );
-};
-export default Jobs;
+  )
+}
+export default Jobs

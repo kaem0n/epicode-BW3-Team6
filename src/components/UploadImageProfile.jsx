@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 
 function ImageUploadProfile({ show, hide }) {
+  const API_KEY = localStorage.getItem('api-key')
   const inputRef = useRef()
 
   const handleButtonClick = () => {
@@ -21,8 +22,7 @@ function ImageUploadProfile({ show, hide }) {
           method: 'POST',
           body: formData,
           headers: {
-            Authorization:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII',
+            Authorization: API_KEY,
           },
         }
       )
