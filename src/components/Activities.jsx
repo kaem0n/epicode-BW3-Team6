@@ -6,6 +6,7 @@ import ActivitiesModal from "./ActivitiesModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import { addImageToPost } from "../redux/actions/ProfileSection";
+import ModifyActivitiesModal from "./ModifyActivitiesModal";
 
 const Activities = () => {
   const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
@@ -132,7 +133,12 @@ const Activities = () => {
                           onClick={() => handleImageClick(post._id)}
                         ></i>
                       </Button>
-
+                      <ModifyActivitiesModal
+                        id={post._id}
+                        text={post.text}
+                        imageUrl={post.imageUrl}
+                        username={post.username}
+                      />
                       <input
                         type="file"
                         accept="image"
@@ -147,9 +153,7 @@ const Activities = () => {
             )}
           </div>
         </Card.Body>
-
         <PostModal show={showPostModal} hide={handleClosePostModal} />
-
         <ActivitiesModal
           show={showActivitiesModal}
           hide={handleCloseActivitiesModal}
