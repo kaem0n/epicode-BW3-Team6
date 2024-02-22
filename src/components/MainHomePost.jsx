@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
-import { Col, Form, Row } from 'react-bootstrap'
-import Card from 'react-bootstrap/Card'
+import { useState, useEffect } from "react";
+import { Col, Form, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 
 const MainHomePost = () => {
-  const API_KEY = localStorage.getItem('api-key')
-  const [clicked, setClicked] = useState(false)
-  const [comment, setComment] = useState(20)
+  const API_KEY = localStorage.getItem("api-key");
+  const [clicked, setClicked] = useState(false);
+  const [comment, setComment] = useState(20);
+  const [commentoSingoloPost, setCommentoSingoloPost] = useState([]);
 
-  const [post, setPost] = useState([])
+  const [post, setPost] = useState([]);
   const fetchPost = async () => {
     try {
       let response = await fetch(
@@ -17,22 +18,56 @@ const MainHomePost = () => {
             Authorization: API_KEY,
           },
         }
-      )
+      );
       if (response.ok) {
-        let data = await response.json()
-        setPost(data.reverse())
-        console.log(data)
+        let data = await response.json();
+        setPost(data.reverse());
+        console.log(data);
       } else {
-        throw new Error('error')
+        throw new Error("error");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
+
+  const commentsFetch = () => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3NTRmZTc2YTY0YjAwMTllZjFhYTIiLCJpYXQiOjE3MDg2MTA4MTQsImV4cCI6MTcwOTgyMDQxNH0.SJraYIN4P-j8NdFvjHd07N0Af1IHy8j3IdZuJjW2vpE",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .then((commenti) => {
+        console.log(commenti);
+        setComment(commenti);
+      })
+      .catch((errore) => {
+        console.log("errore nella chiamata dei commenti", errore);
+      });
+  };
+
+  const commento = (postsId) => {
+    const commentoFiltrato = comment.filter(
+      (comment) => comment.elementId === postsId
+    );
+    console.log(commentoSingoloPost);
+    setCommentoSingoloPost(commentoFiltrato);
+    setClicked(!clicked);
+  };
+
   useEffect(() => {
-    fetchPost()
+    fetchPost();
+    commentsFetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <>
@@ -62,18 +97,18 @@ const MainHomePost = () => {
                             <img
                               src="http://placekitten.com/200/300"
                               alt="img-profilo"
-                              style={{ width: '50px', height: '50px' }}
+                              style={{ width: "50px", height: "50px" }}
                               className="rounded-circle objectfit-cover"
                             ></img>
                           ) : (
                             <img
                               src={posts.user.image}
                               alt="img-profilo"
-                              style={{ width: '50px', height: '50px' }}
+                              style={{ width: "50px", height: "50px" }}
                               className="rounded-circle objectfit-cover"
                             ></img>
                           )}
-                          <div className="ms-2" style={{ fontSize: 'small' }}>
+                          <div className="ms-2" style={{ fontSize: "small" }}>
                             <p className="mt-0 mb-0 fw-semibold fs-6">
                               {posts.username}
                             </p>
@@ -101,7 +136,7 @@ const MainHomePost = () => {
                       <Col className="d-flex justify-content-center">
                         <img
                           src={posts.image}
-                          style={{ width: '100%' }}
+                          style={{ width: "100%" }}
                           className="rounded objectfit-cover"
                         ></img>
                       </Col>
@@ -113,7 +148,7 @@ const MainHomePost = () => {
                       <i className="bi bi-suit-heart text-danger me-1"></i>
                       <span
                         className="text-secondary"
-                        style={{ fontSize: 'smaller' }}
+                        style={{ fontSize: "smaller" }}
                       >
                         60 mi piace
                       </span>
@@ -158,24 +193,24 @@ const MainHomePost = () => {
                       <img
                         src="http://placekitten.com/200/300"
                         alt="img-profilo"
-                        style={{ width: '50px', height: '50px' }}
+                        style={{ width: "50px", height: "50px" }}
                         className="rounded-circle objectfit-cover"
                       ></img>
                     </Col>
                     <Col>
-                      <Form.Control />
+                      <Form.Control type="text"></Form.Control>
                     </Col>
                   </Row>
                 ) : (
-                  ''
+                  ""
                 )}
               </Card.Footer>
             </Card>
           </div>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default MainHomePost
+export default MainHomePost;
