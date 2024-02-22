@@ -5,7 +5,10 @@ import PostModal from "./PostModal";
 import ActivitiesModal from "./ActivitiesModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
-import { addImageToPost } from "../redux/actions/ProfileSection";
+import {
+  addImageToPost,
+  deleteFromFavouriteAction,
+} from "../redux/actions/ProfileSection";
 
 const Activities = () => {
   const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
@@ -13,6 +16,7 @@ const Activities = () => {
   const state = useSelector((state) => state.posts);
   const state1 = useSelector((state) => state.profile);
   const dispatch = useDispatch();
+  const [posts, setPosts] = useState();
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
     setShowPostModal(true);
@@ -33,11 +37,11 @@ const Activities = () => {
     setShowActivitiesModal(false);
   };
 
-  const fileInputRef = useRef(null);
+  const fileInputRefs = useRef({});
 
-  const handleImageClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
+  const handleImageClick = (postId) => {
+    if (fileInputRefs.current[postId]) {
+      fileInputRefs.current[postId].click();
     }
   };
 
@@ -64,6 +68,48 @@ const Activities = () => {
         });
     }
   };
+
+  const GetFetchPost = () => {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/posts/65d638b9a33fc900196584e4`,
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+  const handleDeletePost = (postId) => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          dispatch(deleteFromFavouriteAction(postId));
+        } else {
+          throw new Error("Errore durante l'eliminazione del post");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  };
+
+  useEffect(() => {
+    GetFetchPost();
+  }, []);
+
   return (
     <>
       <Card className="mb-2">
@@ -133,11 +179,26 @@ const Activities = () => {
 
                       <input
                         type="file"
-                        accept="image"
-                        ref={fileInputRef}
+                        accept="image/*"
+                        ref={(el) => (fileInputRefs.current[post._id] = el)}
                         onChange={handleFileChange(post._id)}
                         style={{ display: "none" }}
                       />
+                      <i
+                        className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+                        style={{
+                          height: "40px",
+                          width: "40px",
+                        }}
+                      ></i>
+                      <i
+                        className="bi bi-x-lg text-secondary fs-4 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+                        style={{
+                          height: "40px",
+                          width: "40px",
+                        }}
+                        onClick={() => handleDeletePost(post._id)}
+                      ></i>
                     </Col>
                   </Row>
                 );
