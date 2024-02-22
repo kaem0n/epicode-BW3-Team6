@@ -32,7 +32,7 @@ const CreatePostModal = ({ profile }) => {
             />
             <div>
               <h5 className="m-0">
-                {profile.name} {profile.surname}
+                {profile ? profile.name + ' ' + profile.surname : ''}
               </h5>
               <p className="m-0 fs-7">Pubblica: Chiunque</p>
             </div>
