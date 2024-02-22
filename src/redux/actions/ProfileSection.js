@@ -2,19 +2,18 @@ export const MY_PROFILE = 'MY_PROFILE'
 export const ADD_POST = 'ADD_POST'
 export const ADD_IMAGE_TO_POST = 'ADD_IMAGE_TO_POST'
 export const SET_IMAGE = 'SET_IMAGE'
+export const DELETE_FROM_FAVOURITES = 'DELETE_FROM_FAVOURITES'
 export const SEARCH_JOBS = 'SEARCH_JOBS'
 export const LOAD_JOBS = 'LOAD_JOBS'
 export const END_LOAD_JOBS = 'END_LOAD_JOBS'
 
-export const myProfile = () => {
+export const myProfile = (api) => {
   const url = 'https://striveschool-api.herokuapp.com/api/profile/me'
-  const API_KEY =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII'
   return async (dispatch) => {
     try {
       const res = await fetch(url, {
         headers: {
-          Authorization: API_KEY,
+          Authorization: api,
         },
       })
       if (res.ok) {
@@ -29,10 +28,10 @@ export const myProfile = () => {
   }
 }
 
-export const addPost = (text) => {
+export const addPost = (post) => {
   return {
     type: ADD_POST,
-    payload: text,
+    payload: post,
   }
 }
 export const addImageToPost = (postId, imageUrl) => {
@@ -45,6 +44,12 @@ export const setImage = (image) => ({
   type: SET_IMAGE,
   payload: image,
 })
+export const deleteFromFavouriteAction = (postId) => {
+  return {
+    type: DELETE_FROM_FAVOURITES,
+    payload: postId,
+  }
+}
 
 export const searchJobs = (jobs) => ({
   type: SEARCH_JOBS,

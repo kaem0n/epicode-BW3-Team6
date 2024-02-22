@@ -2,6 +2,7 @@ import {
   ADD_POST,
   ADD_IMAGE_TO_POST,
   SET_IMAGE,
+  DELETE_FROM_FAVOURITES,
 } from "../actions/ProfileSection";
 const initialState = {
   posts: [],
@@ -25,6 +26,11 @@ const postReducers = (state = initialState, action) => {
               }
             : post
         ),
+      };
+    case DELETE_FROM_FAVOURITES:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post._id !== action.payload),
       };
     case SET_IMAGE:
       return {

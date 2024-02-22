@@ -5,8 +5,7 @@ import NewExperienceModal from './NewExperienceModal'
 import { useEffect, useState } from 'react'
 
 const NewExperiences = () => {
-  const API_KEY =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII'
+  const API_KEY = localStorage.getItem('api-key')
   const [experiences, setExperiences] = useState([])
   const [userId, setUserId] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -84,6 +83,7 @@ const NewExperiences = () => {
               area={el.area}
               start={el.startDate}
               end={el.endDate}
+              image={el.image}
             />
           ))
         )}
