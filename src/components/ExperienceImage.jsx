@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useRef } from 'react'
-import { Button } from 'react-bootstrap'
 
 const ExperienceImage = (props) => {
   const endPoint = `https://striveschool-api.herokuapp.com/api/profile/${props.userId}/experiences/${props.id}/picture`
@@ -42,13 +41,14 @@ const ExperienceImage = (props) => {
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
-      <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
-        <i
-          style={{ color: 'black', fontSize: '20px' }}
-          className="bi bi-card-image"
-          onClick={handleClick}
-        ></i>
-      </Button>
+      <i
+        className="bi bi-card-image fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+        style={{
+          height: '40px',
+          width: '40px',
+        }}
+        onClick={handleClick}
+      ></i>
     </div>
   )
 }
