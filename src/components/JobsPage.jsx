@@ -1,11 +1,12 @@
 import JobsSidebar from './jobs_components/JobsSidebar';
 import { Col, Container, Row } from 'react-bootstrap';
 import SearchJobs from './jobs_components/SearchJobs';
-import OpenJobs from './jobs_components/OpenJobs';
+
 import Jobs from './jobs_components/Jobs';
 import { myProfile } from '../redux/actions/ProfileSection';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import HomeFooter from './HomeFooter';
 
 const JobsPage = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const JobsPage = () => {
   return (
     <>
       <Container className="mt-5">
-        <Row className="justify-content-end">
+        <Row className="mb-3 justify-content-end">
           <Col xs={12} md={4} lg={3}>
             <JobsSidebar />
           </Col>
@@ -30,6 +31,7 @@ const JobsPage = () => {
             <HomeFooter />
           </Col>
         </Row>
+        <Jobs />
       </Container>
     </>
   );

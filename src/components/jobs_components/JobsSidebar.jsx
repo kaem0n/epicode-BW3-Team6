@@ -64,7 +64,10 @@ const JobsSidebar = () => {
         </Card.Body>
       </Card>
       <div className="d-md-block d-lg-block d-none text-center">
-        <Button className="btn-jobsidebar">Pubblica offerta gratutita</Button>
+        <Button className="btn-jobsidebar">
+          {' '}
+          <i className="bi bi-pencil-square"></i> Pubblica offerta gratutita
+        </Button>
       </div>
     </>
   );
