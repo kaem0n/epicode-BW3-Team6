@@ -3,8 +3,19 @@ import { Col, Container, Row } from 'react-bootstrap'
 import SearchJobs from './jobs_components/SearchJobs'
 import OpenJobs from './jobs_components/OpenJobs'
 import Jobs from './jobs_components/Jobs'
+import { myProfile } from '../redux/actions/ProfileSection'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 const JobsPage = () => {
+  const dispatch = useDispatch()
+  const API_KEY = localStorage.getItem('api-key')
+
+  useEffect(() => {
+    dispatch(myProfile(API_KEY))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <Container className="mt-5" fluid="xl">

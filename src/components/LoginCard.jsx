@@ -13,7 +13,7 @@ const LoginCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(myProfile())
+    dispatch(myProfile('Bearer ' + inputValue))
     localStorage.setItem('api-key', 'Bearer ' + inputValue)
     navigate('/home')
   }
