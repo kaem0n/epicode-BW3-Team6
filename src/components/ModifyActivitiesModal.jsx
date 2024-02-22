@@ -3,31 +3,35 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { modPost } from "../redux/actions/ProfileSection";
 
 const ModifyActivitiesModal = (post) => {
   const endPoint = `https://striveschool-api.herokuapp.com/api/posts/${post.id}`;
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
   const originalActivities = {
     id: post.id,
     text: post.text,
-    imageUrl: post.imageUrl,
     username: post.username,
   };
-  const [text, setText] = useState(originalActivities.text);
-  console.log(originalActivities);
+  const [object, setObeject] = useState(originalActivities);
+
   const modifyActivities = async () => {
     try {
       const res = await fetch(endPoint, {
         method: "PUT",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ2MDE4ZmEzM2ZjOTAwMTk2NTgzYTUiLCJpYXQiOjE3MDg1MjM5MTksImV4cCI6MTcwOTczMzUxOX0.6gDRW8TyHNHR68eubi_09zYPRgldyG5UmkTUPPY7aTk",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...originalActivities, text: text }),
+        body: JSON.stringify({ object }),
       });
       if (res.ok) {
         setShow(false);
+        console.log("Modificato", object);
       } else {
         throw new Error(
           `${res.status} - Errore nella fetch (modifica esperienza)`
@@ -40,8 +44,12 @@ const ModifyActivitiesModal = (post) => {
   };
 
   const handleChange = (e) => {
-    const newText = e.target.value;
-    setText(newText);
+    setObeject({
+      ...originalActivities,
+      text: e.target.value,
+    });
+    dispatch(modPost(object));
+    console.log(object);
   };
 
   const handleClick = () => {
@@ -54,11 +62,14 @@ const ModifyActivitiesModal = (post) => {
 
   return (
     <>
-      <Button onClick={() => setShow(true)} variant="outline-secondary">
-        <span>
-          <i className="bi bi-pen fs-4 text-secondary"></i>
-        </span>
-      </Button>
+      <i
+        className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+        style={{
+          height: "40px",
+          width: "40px",
+        }}
+        onClick={() => setShow(true)}
+      ></i>
       <Modal
         size="lg"
         show={show}
@@ -76,14 +87,6 @@ const ModifyActivitiesModal = (post) => {
             <Row>
               <Col
                 xs={12}
-                sm={3}
-                lg={2}
-                className="d-flex justify-content-center ps-0 p-sm-1 text-sm-start pe-0"
-              >
-                <p>{post.imageUrl}</p>
-              </Col>
-              <Col
-                xs={12}
                 sm={9}
                 lg={10}
                 className="mt-3 text-sm-start mt-sm-0 ps-0 d-flex align-items-center justify-content-center justify-content-sm-start"
@@ -94,15 +97,20 @@ const ModifyActivitiesModal = (post) => {
             <Row className="mt-4 mb-4">
               <Form.Control
                 as="textarea"
-                placeholder={post.text}
                 style={{ height: "200px", border: "none" }}
-                value={text}
+                value={object.text}
                 onChange={handleChange}
               />
             </Row>
+            <p className="text-muted">
+              Attenzione! Compilare aggiungendo una spazio alla fine.!
+            </p>
           </Container>
         </Modal.Body>
         <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Annulla
+          </Button>
           <Button variant="primary" onClick={handleClick}>
             Salva modifiche
           </Button>

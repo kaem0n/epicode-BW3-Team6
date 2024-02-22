@@ -1,58 +1,60 @@
-import { useEffect, useRef, useState } from 'react'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import PostModal from './PostModal'
-import ActivitiesModal from './ActivitiesModal'
-import { useDispatch, useSelector } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
+import { useEffect, useRef, useState } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import PostModal from "./PostModal";
+import ActivitiesModal from "./ActivitiesModal";
+import ModifyActivitiesModal from "./ModifyActivitiesModal";
+import { useDispatch, useSelector } from "react-redux";
+import { Col, Row } from "react-bootstrap";
 import {
   addImageToPost,
   deleteFromFavouriteAction,
-} from '../redux/actions/ProfileSection'
+} from "../redux/actions/ProfileSection";
 
 const Activities = () => {
-  const API_KEY = localStorage.getItem('api-key')
-  const [showPostModal, setShowPostModal] = useState(false) // Stato per controllare la visibilità del modale per la creazione di un post
-  const [showActivitiesModal, setShowActivitiesModal] = useState(false) // Stato per controllare la visibilità del  modale attivita
-  const state = useSelector((state) => state.posts)
-  const state1 = useSelector((state) => state.profile)
-  const dispatch = useDispatch()
-  const [posts, setPosts] = useState()
+  const API_KEY = localStorage.getItem("api-key");
+  const [showPostModal, setShowPostModal] = useState(false); // Stato per controllare la visibilità del modale per la creazione di un post
+  const [showActivitiesModal, setShowActivitiesModal] = useState(false); // Stato per controllare la visibilità del  modale attivita
+  const state = useSelector((state) => state.posts);
+  const state1 = useSelector((state) => state.profile);
+  const dispatch = useDispatch();
+  const [posts, setPosts] = useState();
+
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
-    setShowPostModal(true)
-  }
+    setShowPostModal(true);
+  };
 
   // Funzione per chiudere il modale per la creazione di un post
   const handleClosePostModal = () => {
-    setShowPostModal(false)
-  }
+    setShowPostModal(false);
+  };
 
   // Funzione per aprire  attività modale
   const handleActivitiesIconClick = () => {
-    setShowActivitiesModal(true)
-  }
+    setShowActivitiesModal(true);
+  };
 
   // Funzione per chiudere attività modale
   const handleCloseActivitiesModal = () => {
-    setShowActivitiesModal(false)
-  }
+    setShowActivitiesModal(false);
+  };
 
-  const fileInputRefs = useRef({})
+  const fileInputRefs = useRef({});
 
   const handleImageClick = (postId) => {
     if (fileInputRefs.current[postId]) {
-      fileInputRefs.current[postId].click()
+      fileInputRefs.current[postId].click();
     }
-  }
+  };
 
   const handleFileChange = (postId) => (event) => {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     if (file) {
-      const data = new FormData()
-      data.append('post', file)
+      const data = new FormData();
+      data.append("post", file);
       fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
-        method: 'POST',
+        method: "POST",
         body: data,
         headers: {
           Authorization: API_KEY,
@@ -60,14 +62,14 @@ const Activities = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          const imageUrl = data.image
-          dispatch(addImageToPost(postId, imageUrl))
+          const imageUrl = data.image;
+          dispatch(addImageToPost(postId, imageUrl));
         })
         .catch((error) => {
-          console.error('Error:', error)
-        })
+          console.error("Error:", error);
+        });
     }
-  }
+  };
 
   const GetFetchPost = () => {
     fetch(
@@ -80,33 +82,33 @@ const Activities = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setPosts(data)
-        console.log(data)
+        setPosts(data);
+        console.log(data);
       })
       .catch((error) => {
-        console.error('Error:', error)
-      })
-  }
+        console.error("Error:", error);
+      });
+  };
   const handleDeletePost = (postId) => {
     fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
         Authorization: API_KEY,
       },
     })
       .then((response) => {
         if (response.ok) {
-          dispatch(deleteFromFavouriteAction(postId))
+          dispatch(deleteFromFavouriteAction(postId));
         } else {
-          throw new Error("Errore durante l'eliminazione del post")
+          throw new Error("Errore durante l'eliminazione del post");
         }
       })
-      .catch((error) => console.error('Error:', error))
-  }
+      .catch((error) => console.error("Error:", error));
+  };
 
   useEffect(() => {
-    GetFetchPost()
-  }, [])
+    GetFetchPost();
+  }, []);
 
   return (
     <>
@@ -130,9 +132,9 @@ const Activities = () => {
               <div
                 className="d-flex align-items-center justify-content-center rounded-circle"
                 style={{
-                  width: '3.5rem',
-                  height: '3.5rem',
-                  minWidth: 'auto',
+                  width: "3.5rem",
+                  height: "3.5rem",
+                  minWidth: "auto",
                 }}
                 onClick={handleActivitiesIconClick}
               >
@@ -169,42 +171,34 @@ const Activities = () => {
                     <Col className="d-flex justify-content-end align-items-center  ">
                       <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                         <i
-                          style={{ color: 'black', fontSize: '20px' }}
+                          style={{ color: "black", fontSize: "20px" }}
                           className="bi bi-card-image"
                           onClick={() => handleImageClick(post._id)}
                         ></i>
                       </Button>
-                      <ModifyActivitiesModal
-                        id={post._id}
-                        text={post.text}
-                        imageUrl={post.imageUrl}
-                        username={post.username}
-                      />
                       <input
                         type="file"
                         accept="image/*"
                         ref={(el) => (fileInputRefs.current[post._id] = el)}
                         onChange={handleFileChange(post._id)}
-                        style={{ display: 'none' }}
+                        style={{ display: "none" }}
                       />
-                      <i
-                        className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
-                        style={{
-                          height: '40px',
-                          width: '40px',
-                        }}
-                      ></i>
+                      <ModifyActivitiesModal
+                        id={post._id}
+                        text={post.text}
+                        username={post.username}
+                      />
                       <i
                         className="bi bi-x-lg text-secondary fs-4 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                         style={{
-                          height: '40px',
-                          width: '40px',
+                          height: "40px",
+                          width: "40px",
                         }}
                         onClick={() => handleDeletePost(post._id)}
                       ></i>
                     </Col>
                   </Row>
-                )
+                );
               })
             )}
           </div>
@@ -221,7 +215,7 @@ const Activities = () => {
         </a>
       </Card>
     </>
-  )
-}
+  );
+};
 
-export default Activities
+export default Activities;
