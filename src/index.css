@@ -406,3 +406,9 @@ main {
   max-height: 90vh;
   overflow: auto;
 }
+
+.btn-jobsidebar {
+  border-radius: 2.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
