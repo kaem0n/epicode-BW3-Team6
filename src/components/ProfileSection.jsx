@@ -1,13 +1,12 @@
 import { Button, Card, Col, Row, Spinner, Modal } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { myProfile } from '../redux/actions/ProfileSection'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import ImageUploadProfile from './UploadImageProfile'
 import { Link } from 'react-router-dom'
 
 const ProfileSection = () => {
   const [show, setShow] = useState(false)
-  const dispatch = useDispatch()
+
   const state = useSelector((state) => state.profile)
   const [showPostModal, setShowPostModal] = useState(false)
 
@@ -20,11 +19,6 @@ const ProfileSection = () => {
   const handleClosePostModal = () => {
     setShowPostModal(false)
   }
-
-  useEffect(() => {
-    dispatch(myProfile())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <>

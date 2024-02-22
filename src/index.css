@@ -2,8 +2,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f4f2ee;
+}
+main {
   padding-top: 25px;
 }
+
 .suggestions-button {
   background-color: white !important;
   border: gray 1px solid !important;
