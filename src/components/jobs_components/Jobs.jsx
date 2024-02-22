@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Button, Card, Col, Row, Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { Button, Card, Col, Row, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const Jobs = () => {
   const [jobSelected, setJobSelected] = useState(null);
