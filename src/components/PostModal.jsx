@@ -1,23 +1,24 @@
 /* eslint-disable react/prop-types */
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { Col, Container, Form, Row } from "react-bootstrap";
-import { useState } from "react";
-import { addPost } from "../redux/actions/ProfileSection";
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import { useDispatch, useSelector } from 'react-redux'
+import { Col, Container, Form, Row } from 'react-bootstrap'
+import { useState } from 'react'
+import { addPost } from '../redux/actions/ProfileSection'
 
 const PostModal = ({ show, hide }) => {
-  const [text, setText] = useState("");
-  const [image, setImage] = useState(null);
-  const dispatch = useDispatch();
+  const API_KEY = localStorage.getItem('api-key')
+  const [text, setText] = useState('')
+  const [image, setImage] = useState(null)
+  const dispatch = useDispatch()
 
-  const state = useSelector((state) => state.profile);
+  const state = useSelector((state) => state.profile)
   const handleImageUpload = (event) => {
-    setImage(event.target.files[0]);
-  };
+    setImage(event.target.files[0])
+  }
   const handleChange = (event) => {
-    setText(event.target.value);
-  };
+    setText(event.target.value)
+  }
   const handleClick = () => {
     // formData.append("text", text);
     // if (image) {
@@ -42,27 +43,26 @@ const PostModal = ({ show, hide }) => {
     //     console.error("Errore:", error);
     //   });
 
-    fetch("https://striveschool-api.herokuapp.com/api/posts/", {
-      method: "POST",
+    fetch('https://striveschool-api.herokuapp.com/api/posts/', {
+      method: 'POST',
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
-        "Content-Type": "application/json",
+        Authorization: API_KEY,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ text }),
       // body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        dispatch(addPost({ text, ...data }));
+        console.log(data)
+        dispatch(addPost({ text, ...data }))
       })
       .catch((error) => {
-        console.error("Error:", error);
-      });
-    setText("");
-    setImage(null);
-  };
+        console.error('Error:', error)
+      })
+    setText('')
+    setImage(null)
+  }
 
   return (
     <>
@@ -92,7 +92,7 @@ const PostModal = ({ show, hide }) => {
                   <img
                     src={state.profile.image}
                     alt="profilo"
-                    style={{ width: "5em" }}
+                    style={{ width: '5em' }}
                     className=" border rounded-circle border-white "
                   />
                 </Col>
@@ -112,7 +112,7 @@ const PostModal = ({ show, hide }) => {
                 <Form.Control
                   as="textarea"
                   placeholder="Di cosa vorresti parlare?"
-                  style={{ height: "200px", border: "none" }}
+                  style={{ height: '200px', border: 'none' }}
                   value={text}
                   onChange={handleChange}
                 />
@@ -121,7 +121,7 @@ const PostModal = ({ show, hide }) => {
                 <div>
                   <Button className="border-0  bg-transparent mb-2 ">
                     <i
-                      style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: 'black', fontSize: '20px' }}
                       className="bi bi-emoji-smile "
                     ></i>
                   </Button>
@@ -133,32 +133,32 @@ const PostModal = ({ show, hide }) => {
                     <input
                       type="file"
                       onChange={handleImageUpload}
-                      style={{ display: "none" }}
+                      style={{ display: 'none' }}
                       id="image-upload"
                     />
                     <label htmlFor="image-upload">
                       <i
-                        style={{ color: "black", fontSize: "20px" }}
+                        style={{ color: 'black', fontSize: '20px' }}
                         className="bi bi-card-image"
                       ></i>
                     </label>
                   </Button>
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
-                      style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: 'black', fontSize: '20px' }}
                       className="bi bi-calendar3"
                     ></i>
                   </Button>
 
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
-                      style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: 'black', fontSize: '20px' }}
                       className="bi bi-filter-circle"
                     ></i>
                   </Button>
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
-                      style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: 'black', fontSize: '20px' }}
                       className="bi bi-three-dots"
                     ></i>
                   </Button>
@@ -167,7 +167,7 @@ const PostModal = ({ show, hide }) => {
             </Container>
           </Modal.Body>
           <Modal.Footer>
-            <i style={{ fontSize: "20px" }} className="bi bi-clock me-3 "></i>{" "}
+            <i style={{ fontSize: '20px' }} className="bi bi-clock me-3 "></i>{' '}
             <Button
               variant="primary"
               onClick={handleClick}
@@ -179,7 +179,7 @@ const PostModal = ({ show, hide }) => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default PostModal;
+export default PostModal
