@@ -1,10 +1,9 @@
 import { Button, Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 const SearchJobs = () => {
   const profile = useSelector((state) => state.profile);
-  const navigate = useNavigate();
 
   return (
     <>
