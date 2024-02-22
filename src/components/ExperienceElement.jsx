@@ -17,7 +17,10 @@ const ExperienceElement = (props) => {
     <div className="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
       <div className="d-flex">
         <img
-          src={props.image}
+          src={
+            props.image ||
+            'https://kodilan.com/img/empty-company-logo.8437254b.png'
+          }
           alt="logo1"
           width="48px"
           height="48px"
