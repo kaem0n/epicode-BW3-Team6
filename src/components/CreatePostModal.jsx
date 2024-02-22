@@ -6,6 +6,9 @@ import Modal from 'react-bootstrap/Modal'
 
 const CreatePostModal = ({ profile }) => {
   const [show, setShow] = useState(false)
+  const [inputValue, setInputValue] = useState('')
+
+  const handleSubmit = (e) => e.preventDefault()
 
   return (
     <>
@@ -38,17 +41,44 @@ const CreatePostModal = ({ profile }) => {
             </div>
           </div>
         </Modal.Header>
-        <Form>
-          <Modal.Body>
+        <Form onSubmit={handleSubmit}>
+          <Modal.Body className="pt-0">
             <Form.Control
-              type="textarea"
-              rows={7}
+              as="textarea"
+              rows={8}
               placeholder="Di cosa vorresti parlare?"
-              className="fs-5 border-0 boxshadow-0"
+              className="fs-5 border-0 boxshadow-0 mb-3"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
+            <div className="d-flex">
+              <div className="postmodal-btn rounded-circle canvas-btn bg-gray me-2">
+                <i className="fa-regular fa-image fs-5 text-secondary"></i>
+              </div>
+              <div className="postmodal-btn rounded-circle canvas-btn bg-gray me-2">
+                <i className="fa-solid fa-calendar-days fs-5 text-secondary"></i>
+              </div>
+              <div className="postmodal-btn rounded-circle canvas-btn bg-gray me-2">
+                <i className="fa-solid fa-certificate fs-5 text-secondary"></i>
+              </div>
+              <div className="postmodal-btn rounded-circle canvas-btn bg-gray me-2">
+                <i className="fa-solid fa-ellipsis fs-5 text-secondary"></i>
+              </div>
+            </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button className="fw-semibold rounded-pill px-3 py-1" disabled>
+            <i
+              className="fa-regular fa-clock fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+              style={{
+                height: '40px',
+                width: '40px',
+              }}
+            ></i>
+            <Button
+              variant={inputValue === '' ? 'secondary' : 'primary'}
+              className="fw-semibold rounded-pill px-3 py-1"
+              disabled={inputValue === '' ? true : false}
+            >
               Pubblica
             </Button>
           </Modal.Footer>
