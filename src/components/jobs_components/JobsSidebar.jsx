@@ -10,19 +10,23 @@ const JobsSidebar = () => {
         <Card.Body className="ps-0 pe-0">
           <div className="d-flex justify-content-between   align-items-center">
             <ul className="list-unstyled m-0 p-0 ps-3">
-              <li className="mb-0 mb-md-2">
+              <li className="mb-0 mb-md-3 mt-md-3">
                 <i className="bi bi-bookmark-fill pe-1 "></i>{' '}
                 <span>Le mie offerte di lavoro</span>
               </li>
               <div className="d-none d-md-block pe-1">
-                <li className="mb-2">
+                <li className="mb-3">
                   <i className="bi bi-list-ul pe-1"></i> <span>Preferenze</span>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <i className="bi bi-clipboard2-check pe-1"></i>{' '}
+                  <span>Valutazione delle competenze</span>
+                </li>
+                <li className="mb-3">
                   <i className="bi bi-play-btn-fill pe-1"></i>{' '}
                   <span>Indicazioni per chi cerca lavoro</span>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
                   <i className="bi bi-gear-fill pe-1"></i>{' '}
                   <span>Impostazioni candidatura </span>
                 </li>
