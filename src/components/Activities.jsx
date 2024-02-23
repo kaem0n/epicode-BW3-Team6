@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PostModal from "./PostModal";
 import ActivitiesModal from "./ActivitiesModal";
+import ModifyActivitiesModal from "./ModifyActivitiesModal";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import {
@@ -18,6 +19,7 @@ const Activities = () => {
   const state1 = useSelector((state) => state.profile);
   const dispatch = useDispatch();
   const [posts, setPosts] = useState();
+
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
     setShowPostModal(true);
@@ -185,7 +187,6 @@ const Activities = () => {
                           onClick={() => handleImageClick(post._id)}
                         ></i>
                       </Button>
-
                       <input
                         type="file"
                         accept="image/*"
@@ -193,13 +194,11 @@ const Activities = () => {
                         onChange={handleFileChange(post._id)}
                         style={{ display: "none" }}
                       />
-                      <i
-                        className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                        }}
-                      ></i>
+                      <ModifyActivitiesModal
+                        id={post._id}
+                        text={post.text}
+                        username={post.username}
+                      />
                       <i
                         className="bi bi-x-lg text-secondary fs-4 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                         style={{
@@ -215,9 +214,7 @@ const Activities = () => {
             )}
           </div>
         </Card.Body>
-
         <PostModal show={showPostModal} hide={handleClosePostModal} />
-
         <ActivitiesModal
           show={showActivitiesModal}
           hide={handleCloseActivitiesModal}
