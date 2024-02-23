@@ -27,7 +27,6 @@ const PostModal = ({ show, hide }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ text }),
-      // body: formData,
     })
       .then((response) => response.json())
       .then((data) => {

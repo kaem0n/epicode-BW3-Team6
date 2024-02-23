@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Card, Col, Nav, Row } from 'react-bootstrap'
+import { useState } from "react";
+import { Card, Col, Nav, Row } from "react-bootstrap";
 
 const Interests = () => {
-  const [clicked, setClicked] = useState('Top-Voices')
+  const [clicked, setClicked] = useState("Top-Voices");
 
   return (
     <>
@@ -22,7 +22,7 @@ const Interests = () => {
                       eventKey="link-1"
                       className="text-success px-2 bg-gray-hover"
                       onClick={() => {
-                        setClicked('Top-Voices')
+                        setClicked("Top-Voices");
                       }}
                     >
                       Top Voices
@@ -33,7 +33,7 @@ const Interests = () => {
                       eventKey="link-2"
                       className="text-success px-2 bg-gray-hover"
                       onClick={() => {
-                        setClicked('Newsletter')
+                        setClicked("Newsletter");
                       }}
                     >
                       Newsletter
@@ -44,7 +44,7 @@ const Interests = () => {
                       eventKey="link-3"
                       className="text-success px-2 bg-gray-hover"
                       onClick={() => {
-                        setClicked('Scuole')
+                        setClicked("Scuole");
                       }}
                     >
                       Scuole e/o Università
@@ -55,9 +55,13 @@ const Interests = () => {
             </Row>
             <Row className="ps-2">
               <Col>
-                {clicked === 'Top-Voices' ? (
+                {clicked === "Top-Voices" ? (
                   <Row className="mt-3">
-                    <Col xs={6} className="d-flex">
+                    <Col
+                      xs={12}
+                      sm={6}
+                      className="d-flex mb-3 mt-2 mt-sm-0 mb-sm-0"
+                    >
                       <img
                         src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
                         alt="profilo1"
@@ -80,7 +84,7 @@ const Interests = () => {
                         </button>
                       </div>
                     </Col>
-                    <Col xs={6} className="d-flex">
+                    <Col xs={12} sm={6} className="d-flex">
                       <img
                         src="https://media.istockphoto.com/id/1223671392/it/vettoriale/immagine-del-profilo-predefinita-avatar-segnaposto-della-foto-illustrazione-vettoriale.jpg?s=612x612&w=0&k=20&c=4lGdgXP1sYWjcu1e8TFgp1yhoUDx_aHzSM1b3ILnb6M="
                         alt="profilo1"
@@ -104,7 +108,7 @@ const Interests = () => {
                       </div>
                     </Col>
                   </Row>
-                ) : clicked === 'Newsletter' ? (
+                ) : clicked === "Newsletter" ? (
                   <>
                     <Row className="mt-3">
                       <Col xs={6} className="d-flex">
@@ -155,7 +159,7 @@ const Interests = () => {
                       </Col>
                     </Row>
                   </>
-                ) : clicked === 'Scuole' ? (
+                ) : clicked === "Scuole" ? (
                   <>
                     <Row className="mt-3">
                       <Col xs={6} className="d-flex">
@@ -184,7 +188,7 @@ const Interests = () => {
                     </Row>
                   </>
                 ) : (
-                  ''
+                  ""
                 )}
               </Col>
             </Row>
@@ -192,7 +196,7 @@ const Interests = () => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default Interests
+export default Interests;
