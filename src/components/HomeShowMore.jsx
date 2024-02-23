@@ -1,29 +1,33 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ProfileSidebar from './ProfileSidebar';
+import Test from './test';
 
 const HomeShowMore = () => {
   return (
     <>
-      <Card className="mt-2">
+      <Card className="mt-2 d-none d-md-block ">
         <Card.Body className="d-flex  justify-content-between ">
           <div className="d-flex flex-column justify-content-around">
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
               Gruppi
             </a>
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
-              Eventi{" "}
+              Eventi{' '}
             </a>
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
               Hastag seguiti
             </a>
@@ -40,6 +44,17 @@ const HomeShowMore = () => {
           </a>
         </Card.Footer>
       </Card>
+      <div className="text-center mt-3">
+        <Button className="text-secondary btn-homepost ">Vedi altro</Button>
+      </div>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Dropdown Button
+        </Dropdown.Toggle>
+
+        <ProfileSidebar />
+      </Dropdown>
+      <Test />
     </>
   );
 };

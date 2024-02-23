@@ -1,5 +1,5 @@
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const ProfileSidebar = () => {
   return (
@@ -10,18 +10,18 @@ const ProfileSidebar = () => {
             <img
               src="https://www.ll-mm.com/images/placeholders/image-placeholder.jpg"
               alt="bg-hero"
-              style={{ width: "100%", height: "57px" }}
+              style={{ width: '100%', height: '57px' }}
             />
           </div>
         </div>
         <div
           className="position-absolute"
-          style={{ left: "50%", top: "10%", transform: "translateX(-50%)" }}
+          style={{ left: '50%', top: '10%', transform: 'translateX(-50%)' }}
         >
           <img
             src="http://placekitten.com/200/300"
             alt="img-profile"
-            style={{ width: "3.5em", height: "3.5em", left: "53px" }}
+            style={{ width: '3.5em', height: '3.5em', left: '53px' }}
             className="rounded-circle"
           />
         </div>
@@ -29,27 +29,27 @@ const ProfileSidebar = () => {
           <Card.Title className="mb-0">Nome Utente</Card.Title>
           <Card.Text
             className=" text-secondary"
-            style={{ fontSize: "smaller" }}
+            style={{ fontSize: 'smaller' }}
           >
             Formazione
           </Card.Text>
         </Card.Body>
-        <ListGroup className="list-group-flush">
+        <ListGroup className="list-group-flush d-none d-md-block">
           <ListGroup.Item className="mtlr">
             <a className="text-decoration-none" href="#">
               <div className="link-dark text-decoration-none   ">
                 <div className="d-flex justify-content-between">
                   <p
                     className="text-secondary mb-0 "
-                    style={{ fontSize: "smaller" }}
+                    style={{ fontSize: 'smaller' }}
                   >
-                    Collegamenti{" "}
+                    Collegamenti{' '}
                   </p>
                   <span>
                     <i className="bi bi-person-plus-fill"></i>
                   </span>
                 </div>
-                <p className="mt-0 fw-semibold" style={{ fontSize: "smaller" }}>
+                <p className="mt-0 fw-semibold" style={{ fontSize: 'smaller' }}>
                   Espandi la tua rete
                 </p>
               </div>
@@ -58,13 +58,13 @@ const ProfileSidebar = () => {
           <ListGroup.Item className="mtlr">
             <a className="text-decoration-none" href="#">
               <div className=" link-dark text-decoration-none">
-                <p className="text-secondary" style={{ fontSize: "smaller" }}>
+                <p className="text-secondary" style={{ fontSize: 'smaller' }}>
                   Accedi a strumenti è informazioni in esclusiva
                 </p>
-                <p className="mt-0 fw-semibold" style={{ fontSize: "smaller" }}>
+                <p className="mt-0 fw-semibold" style={{ fontSize: 'smaller' }}>
                   <span>
                     <i className="bi bi-square-fill text-warning"></i>
-                  </span>{" "}
+                  </span>{' '}
                   Prova Premium per 0 EURO
                 </p>
               </div>
@@ -73,14 +73,14 @@ const ProfileSidebar = () => {
           <ListGroup.Item className="mtlr">
             <a
               className="text-decoration-none"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
               href="#"
             >
               <div className="d-flex align-items-center text-secondary text-decoration-none">
                 <i
                   className="bi bi-bookmark-fill text-secondary me-1"
-                  style={{ fontSize: "smaller" }}
-                ></i>{" "}
+                  style={{ fontSize: 'smaller' }}
+                ></i>{' '}
                 I miei elementi
               </div>
             </a>
