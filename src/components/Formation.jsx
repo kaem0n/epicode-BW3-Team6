@@ -12,7 +12,7 @@ const Formation = () => {
               </Col>
               <Col className="col-4 col-lg-3 col-xl-2 d-flex justify-content-evenly text-secondary">
                 <i className="bi bi-plus-lg fs-4"></i>
-                <i className="bi bi-pen fs-4"></i>
+                <i className="bi bi-pencil fs-5"></i>
               </Col>
             </Row>
             <Row className="border-bottom mx-2 my-1">
@@ -24,14 +24,14 @@ const Formation = () => {
                 />
               </Col>
               <Col className="col-11 col-sm-10 col-md-9 col-lg-10 col-xl-10 ms-xl-4 ">
-                <p className="fw-semibold mb-0">Nome scuola</p>
-                <p className="mb-0 fs-6">Titolo di studio</p>
-                <p className="text-secondary mb-0 fs-6">
-                  Periodo conseguimento
+                <p className="fw-semibold mb-0">Epicode</p>
+                <p className="mb-0 fs-6">Master I°</p>
+                <p className="text-secondary mb-0 fs-6">11/2023 - in corso</p>
+                <p className="fs-6">In corso</p>
+                <p>Full-stack Developer</p>
+                <p className="fw-semibold fs-6">
+                  HTML - CSS - BOOTSTRAP - SASS - JS - TS - REACT...{" "}
                 </p>
-                <p className="fs-6">Votazione</p>
-                <p>Descrizione corso di studi</p>
-                <p className="fw-semibold fs-6">Abilità Conseguite</p>
               </Col>
             </Row>
           </Card>
