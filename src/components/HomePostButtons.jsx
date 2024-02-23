@@ -8,6 +8,23 @@ const HomePostButtons = () => {
 
   return (
     <>
+      <div className="border-bottom py-1 mb-1 d-flex justify-content-between align-items-center">
+        <div>
+          <i className="fa-regular fa-thumbs-up text-secondary"></i>{' '}
+          <a
+            href="#"
+            className="text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover me-2"
+          >
+            0
+          </a>
+        </div>
+        <a
+          href="#"
+          className="text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover me-2"
+        >
+          0 Commenti
+        </a>
+      </div>
       <div className="d-flex justify-content-between">
         <button
           type="button"

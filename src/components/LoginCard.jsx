@@ -7,14 +7,16 @@ import { myProfile } from '../redux/actions/ProfileSection'
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII
 
 const LoginCard = () => {
-  const [inputValue, setInputValue] = useState('')
+  const [linkedInKey, setLinkedInKey] = useState('')
+  const [commentsKey, setCommentsKey] = useState('')
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(myProfile('Bearer ' + inputValue))
-    localStorage.setItem('api-key', 'Bearer ' + inputValue)
+    dispatch(myProfile('Bearer ' + linkedInKey))
+    localStorage.setItem('api-key', 'Bearer ' + linkedInKey)
+    localStorage.setItem('comments-key', 'Bearer ' + commentsKey)
     navigate('/home')
   }
 
@@ -34,10 +36,17 @@ const LoginCard = () => {
               <Form className="border-bottom pb-3 mb-3" onSubmit={handleSubmit}>
                 <Form.Control
                   type="password"
-                  placeholder="Inserisci la tua API key"
+                  placeholder="Inserisci la tua API key (LinkedIn)"
+                  className="mb-4 border-black py-2 rounded-1"
+                  value={linkedInKey}
+                  onChange={(e) => setLinkedInKey(e.target.value)}
+                />
+                <Form.Control
+                  type="password"
+                  placeholder="Inserisci la tua API key (Comments)"
                   className="mb-2 border-black py-2 rounded-1"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  value={commentsKey}
+                  onChange={(e) => setCommentsKey(e.target.value)}
                 />
                 <p>
                   <a
@@ -80,13 +89,22 @@ const LoginCard = () => {
               </p>
             </Card.Body>
           </Card>
-          <p className="mb-0 text-center">
+          <p className="mb-2 text-center">
             Nuovo utente di LinkedIn?{' '}
             <a
               href="https://strive.school/linkedin-registration"
               className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold"
             >
               Iscriviti ora
+            </a>
+          </p>
+          <p className="mb-0 text-center">
+            Hai bisogno di una nuova key per i commenti?{' '}
+            <a
+              href="https://strive.school/studentlogin"
+              className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-semibold"
+            >
+              Clicca qui
             </a>
           </p>
         </Col>
