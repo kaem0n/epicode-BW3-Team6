@@ -45,15 +45,15 @@ const JobsSidebar = () => {
                     {' '}
                     <i className="bi bi-list-ul pe-2 fw-bold"></i>Preferenze
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
+                  <Dropdown.Item className="fw-bold" href="#/action-2">
                     <i className="bi bi-clipboard2-check pe-2 fw-bold"></i>
                     Valutazione delle referenze
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
+                  <Dropdown.Item className="fw-bold" href="#/action-3">
                     <i className="bi bi-play-btn-fill pe-2 fw-bold"></i>
                     Indicazioni per chi cerca lavoro
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3 fw-bold">
+                  <Dropdown.Item className="fw-bold" href="#/action-3 fw-bold">
                     <i className="bi bi-gear-fill pe-2 fw-bold"></i>
                     Impostazioni candidatura
                   </Dropdown.Item>
