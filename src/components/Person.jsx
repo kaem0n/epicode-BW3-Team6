@@ -9,7 +9,7 @@ const Person = ({ img, name, title, id }) => {
       <Col className="d-flex align-items-start">
         <img
           src={img}
-          className="rounded-circle me-2 flex-shrink-0 pointer"
+          className="rounded-circle me-2 flex-shrink-0 pointer objectfit-cover"
           width="48px"
           height="48px"
         />

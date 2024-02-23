@@ -295,6 +295,11 @@ main {
     display: flex !important;
   }
 }
+@media screen and (max-width: 350px) {
+  .none {
+    display: none !important;
+  }
+}
 
 @media screen and (max-width: 400px) {
   .d-none-400 {
@@ -434,4 +439,10 @@ main {
   border-radius: 2.4rem;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.comment {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
 }

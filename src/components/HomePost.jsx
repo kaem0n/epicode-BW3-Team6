@@ -9,11 +9,11 @@ const HomePost = ({ post, trigger }) => {
   const profile = useSelector((state) => state.profile.profile)
 
   const formatDate = (date) => {
-    return date.slice(0, date.indexOf('T')).replace('-', '/').replace('-', '/')
-  }
-
-  const formatHour = (date) => {
-    return date.slice(date.indexOf('T') + 1, date.length).slice(0, 5)
+    const year = date.slice(0, 4)
+    const month = date.slice(5, 7)
+    const day = date.slice(8, 10)
+    const hour = date.slice(date.indexOf('T') + 1, date.indexOf('T') + 6)
+    return `${day}/${month}/${year} alle ${hour}`
   }
 
   return (
@@ -45,8 +45,8 @@ const HomePost = ({ post, trigger }) => {
               {post.user.title || 'FS0723'} - {post.user.area || 'Paperino, IT'}
             </p>
             <p className="m-0 fs-8 text-secondary pointer">
-              Pubblicato il: {formatDate(post.createdAt)} alle{' '}
-              {formatHour(post.createdAt)} <i className="bi bi-dot"></i>{' '}
+              Pubblicato il: {formatDate(post.createdAt)}{' '}
+              <i className="bi bi-dot"></i>{' '}
               <i className="fa-solid fa-earth-europe"></i>
             </p>
           </div>
@@ -58,7 +58,7 @@ const HomePost = ({ post, trigger }) => {
           <img src={post.image} alt={post._id} className="w-100 pointer" />
         )}
         <div className="px-3 fs-8">
-          <HomePostButtons />
+          <HomePostButtons id={post._id} />
         </div>
       </Card.Body>
     </Card>

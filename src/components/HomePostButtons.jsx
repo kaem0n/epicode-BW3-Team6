@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import { useSelector } from 'react-redux'
+import CommentSection from './CommentSection'
 
-const HomePostButtons = () => {
+const HomePostButtons = ({ id }) => {
+  // const endPoint = `https://striveschool-api.herokuapp.com/api/comments/`
+  // const API_KEY = localStorage.getItem('comments-key')
   const [show, setShow] = useState(false)
-  const proPic = useSelector((state) => state.profile.profile.image)
+  const [commentNum, setCommentNum] = useState(undefined)
+  const [likes, setLikes] = useState(undefined)
+
+  const likesAndComments = (n, m) => {
+    setLikes(n)
+    setCommentNum(m)
+  }
 
   return (
     <>
@@ -15,64 +23,55 @@ const HomePostButtons = () => {
             href="#"
             className="text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover me-2"
           >
-            0
+            {likes || likes === 0 ? likes : <i className="bi bi-dot"></i>}
           </a>
         </div>
         <a
           href="#"
           className="text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover me-2"
         >
-          0 Commenti
+          {commentNum || commentNum === 0 ? (
+            commentNum
+          ) : (
+            <i className="bi bi-dot"></i>
+          )}
+          {commentNum && commentNum === 1 ? ' Commento' : ' Commenti'}
         </a>
       </div>
       <div className="d-flex justify-content-between">
         <button
           type="button"
-          className="btn btn-white text-secondary fw-semibold cdi py-2"
+          className="btn btn-white text-secondary fw-semibold cdi py-2 px-sm-2 px-1"
         >
           <i className="bi bi-hand-thumbs-up me-1"></i>
-          <span className="fs-7">Consiglia</span>
+          <span className="fs-7 none ">Consiglia</span>
         </button>
         <button
           type="button"
-          className="btn btn-white text-secondary fw-semibold cdi py-2"
+          className="btn btn-white text-secondary fw-semibold cdi py-2 px-sm-2 px-1"
           onClick={() => {
             setShow(!show)
           }}
         >
           <i className="fa-regular fa-comment-dots me-1"></i>
-          <span className="fs-7">Commenta</span>
+          <span className="fs-7 none">Commenta</span>
         </button>
         <button
           type="button"
-          className="btn btn-white text-secondary fw-semibold cdi py-2"
+          className="btn btn-white text-secondary fw-semibold cdi py-2 px-sm-2 px-1"
         >
           <i className="fa-solid fa-retweet me-1"></i>
-          <span className="fs-7">Diffondi</span>
+          <span className="fs-7 none">Diffondi</span>
         </button>
         <button
           type="button"
-          className="btn btn-white text-secondary fw-semibold cdi py-2"
+          className="btn btn-white text-secondary fw-semibold cdi py-2 px-sm-2 px-1"
         >
           <i className="fa-solid fa-paper-plane me-1"></i>
-          <span className="fs-7">Invia</span>
+          <span className="fs-7 none">Invia</span>
         </button>
       </div>
-      {show && (
-        <Form className="mt-2 d-flex align-items-center">
-          <img
-            src={proPic}
-            alt="user.image"
-            height="48px"
-            width="48px"
-            className="rounded-circle objectfit-cover me-2 pointer"
-          />
-          <Form.Control
-            placeholder="Aggiungi un commento..."
-            className="rounded-pill fs-7 border-secondary"
-          />
-        </Form>
-      )}
+      {show && <CommentSection id={id} fn={likesAndComments} />}
     </>
   )
 }
