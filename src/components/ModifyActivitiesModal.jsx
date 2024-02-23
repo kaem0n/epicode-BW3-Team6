@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { modPost } from "../redux/actions/ProfileSection";
 
 const ModifyActivitiesModal = (post) => {
+  const API_KEY = localStorage.getItem("api-key");
   const endPoint = `https://striveschool-api.herokuapp.com/api/posts/${post.id}`;
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
@@ -23,8 +24,7 @@ const ModifyActivitiesModal = (post) => {
       const res = await fetch(endPoint, {
         method: "PUT",
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ2MDE4ZmEzM2ZjOTAwMTk2NTgzYTUiLCJpYXQiOjE3MDg1MjM5MTksImV4cCI6MTcwOTczMzUxOX0.6gDRW8TyHNHR68eubi_09zYPRgldyG5UmkTUPPY7aTk",
+          Authorization: API_KEY,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(object),
