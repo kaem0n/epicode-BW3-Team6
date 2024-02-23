@@ -79,7 +79,7 @@ const SearchJobs = () => {
                   </p>
                 </Col>
                 <Row>
-                  <Col className="col-12 col-sm-5">
+                  <Col className="col-12 ">
                     <button
                       type="button"
                       className="btn btn-warning rounded-pill opacity-75"
