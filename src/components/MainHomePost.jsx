@@ -69,9 +69,6 @@ const MainHomePost = () => {
 
   useEffect(() => {
     fetchPost();
-    commentsFetch();
-  useEffect(() => {
-    fetchPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -216,9 +213,7 @@ const MainHomePost = () => {
         );
       })}
     </>
-  )
-}
-}
+  );
+};
 
-
-export default MainHomePost
+export default MainHomePost;
