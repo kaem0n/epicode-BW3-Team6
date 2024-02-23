@@ -8,6 +8,7 @@ const HomePostContainer = () => {
   const endPoint = `https://striveschool-api.herokuapp.com/api/posts/`
   const [posts, setPosts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [reloadTrigger, setReloadTrigger] = useState(true)
 
   const getComments = async () => {
     setIsLoading(true)
@@ -29,20 +30,24 @@ const HomePostContainer = () => {
     }
   }
 
+  const trigger = () => setReloadTrigger(!reloadTrigger)
+
   useEffect(() => {
     getComments()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [reloadTrigger])
 
   return (
     <>
-      <CreatePost />
+      <CreatePost trigger={trigger} />
       {isLoading ? (
         <div className="text-center py-5 my-5">
           <Spinner animation="border" />
         </div>
       ) : (
-        posts.map((post) => <HomePost post={post} key={post._id} />)
+        posts.map((post) => (
+          <HomePost post={post} key={post._id} trigger={trigger} />
+        ))
       )}
     </>
   )

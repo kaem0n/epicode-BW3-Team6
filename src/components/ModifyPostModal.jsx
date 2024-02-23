@@ -4,19 +4,19 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-const CreatePostModal = ({ profile, trigger }) => {
-  const endPoint = 'https://striveschool-api.herokuapp.com/api/posts/'
+const ModifyPostModal = ({ id, text, trigger }) => {
+  const endPoint = `https://striveschool-api.herokuapp.com/api/posts/${id}`
   const API_KEY = localStorage.getItem('api-key')
   const [show, setShow] = useState(false)
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState(text)
   const [img, setImg] = useState(null)
   const inputRef = useRef()
 
-  const addImgToPost = async (id) => {
+  const addImgToPost = async () => {
     const formData = new FormData()
     formData.append('post', img)
     try {
-      const res = await fetch(endPoint + id, {
+      const res = await fetch(endPoint, {
         method: 'POST',
         headers: {
           Authorization: API_KEY,
@@ -33,28 +33,24 @@ const CreatePostModal = ({ profile, trigger }) => {
     }
   }
 
-  const newPost = async () => {
-    let postId
+  const modifyPost = async () => {
     try {
       const res = await fetch(endPoint, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           Authorization: API_KEY,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ text: inputValue }),
       })
-      if (res.ok) {
-        const data = await res.json()
-        postId = data._id
-      } else {
+      if (!res.ok) {
         throw new Error(`${res.status} - Errore nella fetch (nuovo post)`)
       }
     } catch (err) {
       console.log(err)
     } finally {
       if (img) {
-        addImgToPost(postId)
+        addImgToPost()
         setImg(null)
         setInputValue('')
         setShow(false)
@@ -72,17 +68,19 @@ const CreatePostModal = ({ profile, trigger }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    newPost()
+    modifyPost()
   }
 
   return (
     <>
-      <Button
-        className="btn-starthomepost flex-grow-1 fs-7 w-100 h-100 px-3"
+      <i
+        className="fa-solid fa-ellipsis text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
+        style={{
+          height: '35px',
+          width: '35px',
+        }}
         onClick={() => setShow(true)}
-      >
-        Avvia un post
-      </Button>
+      ></i>
       <Modal
         size="lg"
         show={show}
@@ -90,21 +88,7 @@ const CreatePostModal = ({ profile, trigger }) => {
         className="mt-5"
       >
         <Modal.Header closeButton className="align-items-start p-4 border-0">
-          <div className="d-flex px-3 py-3 align-items-center pointer bg-gray-hover rounded-4">
-            <img
-              src={profile ? profile.image : ''}
-              alt="profile-pic"
-              height="56px"
-              width="56px"
-              className="rounded-circle objectfit-cover me-2 pointer"
-            />
-            <div>
-              <h5 className="m-0">
-                {profile ? profile.name + ' ' + profile.surname : ''}
-              </h5>
-              <p className="m-0 fs-7">Pubblica: Chiunque</p>
-            </div>
-          </div>
+          <h4>Modifica post</h4>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>
           <Modal.Body className="pt-0">
@@ -166,4 +150,4 @@ const CreatePostModal = ({ profile, trigger }) => {
   )
 }
 
-export default CreatePostModal
+export default ModifyPostModal

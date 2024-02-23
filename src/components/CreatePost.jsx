@@ -1,22 +1,26 @@
+/* eslint-disable react/prop-types */
 import { Button, Card } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import CreatePostModal from './CreatePostModal'
+import { Link } from 'react-router-dom'
 
-const CreatePost = () => {
+const CreatePost = ({ trigger }) => {
   const profile = useSelector((state) => state.profile.profile)
 
   return (
     <Card className="mb-2">
       <Card.Body className="pb-1">
         <div className="d-flex align-items-center">
-          <img
-            src={profile ? profile.image : ''}
-            alt="profile-pic"
-            height="48px"
-            width="48px"
-            className="rounded-circle objectfit-cover me-2 pointer"
-          />
-          <CreatePostModal profile={profile} />
+          <Link to="/profile">
+            <img
+              src={profile ? profile.image : ''}
+              alt="profile-pic"
+              height="48px"
+              width="48px"
+              className="rounded-circle objectfit-cover me-2 pointer"
+            />
+          </Link>
+          <CreatePostModal profile={profile} trigger={trigger} />
         </div>
         <div className="d-flex justify-content-between flex-wrap pt-1">
           <Button className="btn-homepost text-secondary">
