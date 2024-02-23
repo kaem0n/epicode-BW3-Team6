@@ -1,15 +1,19 @@
+/* eslint-disable react/prop-types */
 import { Form, NavDropdown, Spinner } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Comment from './Comment'
 
-const CommentSection = ({ id }) => {
+const CommentSection = ({ id, fn }) => {
   const endPoint = `https://striveschool-api.herokuapp.com/api/comments/`
   const API_KEY = localStorage.getItem('comments-key')
   const proPic = useSelector((state) => state.profile.profile.image)
   const [isLoading, setIsLoading] = useState(true)
+  const [reloadTrigger, setReloadTrigger] = useState(true)
   const [comments, setComments] = useState([])
+  const [inputValue, setInputValue] = useState('')
+  const rate = `${Math.floor(Math.random() * 5) + 1}`
 
   const getComments = async () => {
     setIsLoading(true)
@@ -22,7 +26,17 @@ const CommentSection = ({ id }) => {
       })
       if (res.ok) {
         const data = await res.json()
-        setComments(data.filter((el) => el.elementId === id))
+        const filteredData = data.filter((el) => el.elementId === id).reverse()
+        setComments(filteredData)
+        const comments = filteredData.length
+        let likes = 0
+        for (let i = 0; i < filteredData.length; i++) {
+          likes += filteredData[i].rate
+        }
+        fn(likes, comments)
+        console.log(filteredData)
+      } else {
+        throw new Error(`${res.status} - Errore nella fetch (get comments)`)
       }
     } catch (err) {
       console.log(err)
@@ -31,14 +45,46 @@ const CommentSection = ({ id }) => {
     }
   }
 
+  const addComment = async () => {
+    try {
+      const res = await fetch(endPoint, {
+        method: 'POST',
+        headers: {
+          Authorization: API_KEY,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          comment: inputValue,
+          rate: rate,
+          elementId: id,
+        }),
+      })
+      if (res.ok) {
+        getComments()
+        setInputValue('')
+      } else {
+        throw new Error(`${res.status} - Errore nella fetch (crea commento)`)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const trigger = () => setReloadTrigger(!reloadTrigger)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    addComment()
+  }
+
   useEffect(() => {
     getComments()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [reloadTrigger])
 
   return (
-    <>
-      <Form className="my-2 d-flex align-items-center">
+    <div className="mb-2">
+      <Form className="my-2 d-flex align-items-center" onSubmit={handleSubmit}>
         <Link to="/profile">
           <img
             src={proPic}
@@ -51,6 +97,8 @@ const CommentSection = ({ id }) => {
         <Form.Control
           placeholder="Aggiungi un commento..."
           className="rounded-pill fs-7 border-secondary"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
       </Form>
       <NavDropdown title="Ordina" className="text-secondary mb-2">
@@ -84,9 +132,13 @@ const CommentSection = ({ id }) => {
         comments.map((el) => (
           <Comment
             key={el._id}
+            id={el._id}
+            postId={id}
             comment={el.comment}
             date={el.createdAt}
             author={el.author}
+            rate={el.rate}
+            trigger={trigger}
           />
         ))
       ) : (
@@ -94,7 +146,7 @@ const CommentSection = ({ id }) => {
           Non ci sono commenti
         </h5>
       )}
-    </>
+    </div>
   )
 }
 
