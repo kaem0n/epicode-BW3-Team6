@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
-import { Col, Form, Row } from 'react-bootstrap'
-import Card from 'react-bootstrap/Card'
+import { useState, useEffect } from "react";
+import { Col, Form, Row } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import { useSelector } from "react-redux";
 
 const MainHomePost = () => {
-  const API_KEY = localStorage.getItem('api-key')
-  const [clicked, setClicked] = useState(false)
-  const [comment, setComment] = useState(20)
-
-  const [post, setPost] = useState([])
+  const API_KEY = localStorage.getItem("api-key");
+  const [clicked, setClicked] = useState(false);
+  const [comment, setComment] = useState(20);
+  const state = useSelector((state) => state.profile);
+  const [post, setPost] = useState([]);
   const fetchPost = async () => {
     try {
       let response = await fetch(
@@ -17,22 +18,22 @@ const MainHomePost = () => {
             Authorization: API_KEY,
           },
         }
-      )
+      );
       if (response.ok) {
-        let data = await response.json()
-        setPost(data.reverse())
-        console.log(data)
+        let data = await response.json();
+        setPost(data.reverse());
+        console.log(data);
       } else {
-        throw new Error('error')
+        throw new Error("error");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   useEffect(() => {
-    fetchPost()
+    fetchPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <>
@@ -62,18 +63,18 @@ const MainHomePost = () => {
                             <img
                               src="http://placekitten.com/200/300"
                               alt="img-profilo"
-                              style={{ width: '50px', height: '50px' }}
+                              style={{ width: "50px", height: "50px" }}
                               className="rounded-circle objectfit-cover"
                             ></img>
                           ) : (
                             <img
                               src={posts.user.image}
                               alt="img-profilo"
-                              style={{ width: '50px', height: '50px' }}
+                              style={{ width: "50px", height: "50px" }}
                               className="rounded-circle objectfit-cover"
                             ></img>
                           )}
-                          <div className="ms-2" style={{ fontSize: 'small' }}>
+                          <div className="ms-2" style={{ fontSize: "small" }}>
                             <p className="mt-0 mb-0 fw-semibold fs-6">
                               {posts.username}
                             </p>
@@ -101,7 +102,7 @@ const MainHomePost = () => {
                       <Col className="d-flex justify-content-center">
                         <img
                           src={posts.image}
-                          style={{ width: '100%' }}
+                          style={{ width: "100%" }}
                           className="rounded objectfit-cover"
                         ></img>
                       </Col>
@@ -113,7 +114,7 @@ const MainHomePost = () => {
                       <i className="bi bi-suit-heart text-danger me-1"></i>
                       <span
                         className="text-secondary"
-                        style={{ fontSize: 'smaller' }}
+                        style={{ fontSize: "smaller" }}
                       >
                         60 mi piace
                       </span>
@@ -156,9 +157,9 @@ const MainHomePost = () => {
                   <Row className="align-items-center mt-2">
                     <Col className="col-2">
                       <img
-                        src="http://placekitten.com/200/300"
+                        src={state.profile.image}
                         alt="img-profilo"
-                        style={{ width: '50px', height: '50px' }}
+                        style={{ width: "50px", height: "50px" }}
                         className="rounded-circle objectfit-cover"
                       ></img>
                     </Col>
@@ -167,15 +168,15 @@ const MainHomePost = () => {
                     </Col>
                   </Row>
                 ) : (
-                  ''
+                  ""
                 )}
               </Card.Footer>
             </Card>
           </div>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default MainHomePost
+export default MainHomePost;

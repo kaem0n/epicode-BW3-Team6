@@ -28,8 +28,8 @@ const Home = () => {
 
   return (
     <Container className="mt-5" fluid="xl">
-      <Row className="justify-content-center">
-        <Col xs={12} md={2} lg={3}>
+      <Row className="mb-3 justify-content-end">
+        <Col xs={12} md={4} lg={3}>
           <ProfileSidebar />
           <HomeShowMore />
         </Col>
@@ -39,7 +39,7 @@ const Home = () => {
           {/* <MainHomePost /> */}
           <Suggestions />
         </Col>
-        <Col xs={12} md={4} lg={4} xl={3}>
+        <Col xs={12} md={8} lg={4} xl={3}>
           <NewsSidebar />
           <HomeFooter />
         </Col>
