@@ -8,8 +8,6 @@ import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 
 //import pagine
-// import CreateHomePost from './CreateHomePost'
-// import MainHomePost from './MainHomePost'
 import NewsSidebar from './NewsSidebar'
 import HomeFooter from './HomeFooter'
 import ProfileSidebar from './ProfileSidebar'
@@ -34,9 +32,7 @@ const Home = () => {
           <HomeShowMore />
         </Col>
         <Col xs={12} md={6} lg={5} xl={6}>
-          {/* <CreateHomePost /> */}
           <HomePostContainer />
-          {/* <MainHomePost /> */}
           <Suggestions />
         </Col>
         <Col xs={12} md={8} lg={4} xl={3}>
