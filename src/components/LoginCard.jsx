@@ -40,6 +40,7 @@ const LoginCard = () => {
                   className="mb-4 border-black py-2 rounded-1"
                   value={linkedInKey}
                   onChange={(e) => setLinkedInKey(e.target.value)}
+                  required
                 />
                 <Form.Control
                   type="password"
@@ -47,6 +48,7 @@ const LoginCard = () => {
                   className="mb-2 border-black py-2 rounded-1"
                   value={commentsKey}
                   onChange={(e) => setCommentsKey(e.target.value)}
+                  required
                 />
                 <p>
                   <a
