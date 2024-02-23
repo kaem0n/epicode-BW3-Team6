@@ -5,18 +5,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import { addPost } from "../redux/actions/ProfileSection";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import { useState } from "react";
+import { addPost } from "../redux/actions/ProfileSection";
 
 const PostModal = ({ show, hide }) => {
   const API_KEY = localStorage.getItem("api-key");
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
   const dispatch = useDispatch();
+  const API_KEY = localStorage.getItem("api-key");
+  const [text, setText] = useState("");
+  const [image, setImage] = useState(null);
+  const dispatch = useDispatch();
 
+  const state = useSelector((state) => state.profile);
   const state = useSelector((state) => state.profile);
   const handleImageUpload = (event) => {
     setImage(event.target.files[0]);
   };
+    setImage(event.target.files[0]);
+  };
   const handleChange = (event) => {
+    setText(event.target.value);
+  };
     setText(event.target.value);
   };
   const handleClick = () => {
@@ -45,8 +60,11 @@ const PostModal = ({ show, hide }) => {
 
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
+    fetch("https://striveschool-api.herokuapp.com/api/posts/", {
+      method: "POST",
       headers: {
         Authorization: API_KEY,
+        "Content-Type": "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ text }),
@@ -56,12 +74,15 @@ const PostModal = ({ show, hide }) => {
       .then((data) => {
         console.log(data);
         dispatch(addPost({ text, ...data }));
+        console.log(data);
+        dispatch(addPost({ text, ...data }));
       })
       .catch((error) => {
         console.error("Error:", error);
       });
     setText("");
     setImage(null);
+    hide();
   };
 
   return (
@@ -113,6 +134,7 @@ const PostModal = ({ show, hide }) => {
                   as="textarea"
                   placeholder="Di cosa vorresti parlare?"
                   style={{ height: "200px", border: "none" }}
+                  style={{ height: "200px", border: "none" }}
                   value={text}
                   onChange={handleChange}
                 />
@@ -121,6 +143,7 @@ const PostModal = ({ show, hide }) => {
                 <div>
                   <Button className="border-0  bg-transparent mb-2 ">
                     <i
+                      style={{ color: "black", fontSize: "20px" }}
                       style={{ color: "black", fontSize: "20px" }}
                       className="bi bi-emoji-smile "
                     ></i>
@@ -134,10 +157,12 @@ const PostModal = ({ show, hide }) => {
                       type="file"
                       onChange={handleImageUpload}
                       style={{ display: "none" }}
+                      style={{ display: "none" }}
                       id="image-upload"
                     />
                     <label htmlFor="image-upload">
                       <i
+                        style={{ color: "black", fontSize: "20px" }}
                         style={{ color: "black", fontSize: "20px" }}
                         className="bi bi-card-image"
                       ></i>
@@ -146,6 +171,7 @@ const PostModal = ({ show, hide }) => {
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
                       style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: "black", fontSize: "20px" }}
                       className="bi bi-calendar3"
                     ></i>
                   </Button>
@@ -153,11 +179,13 @@ const PostModal = ({ show, hide }) => {
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
                       style={{ color: "black", fontSize: "20px" }}
+                      style={{ color: "black", fontSize: "20px" }}
                       className="bi bi-filter-circle"
                     ></i>
                   </Button>
                   <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                     <i
+                      style={{ color: "black", fontSize: "20px" }}
                       style={{ color: "black", fontSize: "20px" }}
                       className="bi bi-three-dots"
                     ></i>
@@ -167,6 +195,7 @@ const PostModal = ({ show, hide }) => {
             </Container>
           </Modal.Body>
           <Modal.Footer>
+            <i style={{ fontSize: "20px" }} className="bi bi-clock me-3 "></i>{" "}
             <i style={{ fontSize: "20px" }} className="bi bi-clock me-3 "></i>{" "}
             <Button
               variant="primary"
@@ -181,5 +210,8 @@ const PostModal = ({ show, hide }) => {
     </>
   );
 };
+  );
+};
 
+export default PostModal;
 export default PostModal;
