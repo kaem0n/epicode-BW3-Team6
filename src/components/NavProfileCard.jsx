@@ -7,6 +7,12 @@ const NavProfileCard = () => {
   const profile = useSelector((state) => state.profile.profile)
   const navigate = useNavigate()
 
+  const logOut = () => {
+    localStorage.clear()
+    navigate('/')
+    window.location.reload()
+  }
+
   return (
     <NavDropdown
       className="d-flex justify-content-center align-items-center border-end"
@@ -96,7 +102,11 @@ const NavProfileCard = () => {
           </p>
         </div>
         <p className="mb-0 mt-1 ps-2 fs-7">
-          <a href="#" className="text-secondary nav-profile-link">
+          <a
+            href="#"
+            className="text-secondary nav-profile-link"
+            onClick={logOut}
+          >
             Esci
           </a>
         </p>

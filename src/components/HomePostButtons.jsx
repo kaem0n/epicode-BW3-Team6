@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import { useSelector } from 'react-redux'
+import CommentSection from './CommentSection'
 
-const HomePostButtons = () => {
+const HomePostButtons = ({ id }) => {
   const [show, setShow] = useState(false)
-  const proPic = useSelector((state) => state.profile.profile.image)
 
   return (
     <>
@@ -58,21 +56,7 @@ const HomePostButtons = () => {
           <span className="fs-7">Invia</span>
         </button>
       </div>
-      {show && (
-        <Form className="mt-2 d-flex align-items-center">
-          <img
-            src={proPic}
-            alt="user.image"
-            height="48px"
-            width="48px"
-            className="rounded-circle objectfit-cover me-2 pointer"
-          />
-          <Form.Control
-            placeholder="Aggiungi un commento..."
-            className="rounded-pill fs-7 border-secondary"
-          />
-        </Form>
-      )}
+      {show && <CommentSection id={id} />}
     </>
   )
 }
