@@ -1,6 +1,6 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 // eslint-disable-next-line react/prop-types
 const Person = ({ img, name, title, id }) => {
@@ -33,7 +33,7 @@ const Person = ({ img, name, title, id }) => {
         </div>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default Person;
+export default Person
