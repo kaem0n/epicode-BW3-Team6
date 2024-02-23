@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
-import { Col, Form, Row } from "react-bootstrap";
+
 import Card from "react-bootstrap/Card";
+import { Col, Form, Row } from "react-bootstrap";
+
 import { useSelector } from "react-redux";
 
 const MainHomePost = () => {
   const API_KEY = localStorage.getItem("api-key");
   const [clicked, setClicked] = useState(false);
   const [comment, setComment] = useState(20);
+  const [commentoSingoloPost, setCommentoSingoloPost] = useState([]);
+
   const state = useSelector((state) => state.profile);
   const [post, setPost] = useState([]);
   const fetchPost = async () => {
@@ -30,6 +34,39 @@ const MainHomePost = () => {
       console.log(error);
     }
   };
+
+  const commentsFetch = () => {
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3NTRmZTc2YTY0YjAwMTllZjFhYTIiLCJpYXQiOjE3MDg2MTA4MTQsImV4cCI6MTcwOTgyMDQxNH0.SJraYIN4P-j8NdFvjHd07N0Af1IHy8j3IdZuJjW2vpE",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .then((commenti) => {
+        console.log(commenti);
+        setComment(commenti);
+      })
+      .catch((errore) => {
+        console.log("errore nella chiamata dei commenti", errore);
+      });
+  };
+
+  const commento = (postsId) => {
+    const commentoFiltrato = comment.filter(
+      (comment) => comment.elementId === postsId
+    );
+    console.log(commentoSingoloPost);
+    setCommentoSingoloPost(commentoFiltrato);
+    setClicked(!clicked);
+  };
+
   useEffect(() => {
     fetchPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -164,7 +201,7 @@ const MainHomePost = () => {
                       ></img>
                     </Col>
                     <Col>
-                      <Form.Control />
+                      <Form.Control type="text"></Form.Control>
                     </Col>
                   </Row>
                 ) : (

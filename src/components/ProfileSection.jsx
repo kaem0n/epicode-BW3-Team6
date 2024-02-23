@@ -1,24 +1,24 @@
-import { Button, Card, Col, Row, Spinner, Modal } from 'react-bootstrap'
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
-import ImageUploadProfile from './UploadImageProfile'
-import { Link } from 'react-router-dom'
+import { Button, Card, Col, Row, Spinner, Modal } from "react-bootstrap";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import ImageUploadProfile from "./UploadImageProfile";
+import { Link } from "react-router-dom";
 
 const ProfileSection = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
-  const state = useSelector((state) => state.profile)
-  const [showPostModal, setShowPostModal] = useState(false)
+  const state = useSelector((state) => state.profile);
+  const [showPostModal, setShowPostModal] = useState(false);
 
   // Funzione per aprire il modale per la creazione di un post
   const handleCreatePostClick = () => {
-    setShowPostModal(true)
-  }
+    setShowPostModal(true);
+  };
 
   // Funzione per chiudere il modale per la creazione di un post
   const handleClosePostModal = () => {
-    setShowPostModal(false)
-  }
+    setShowPostModal(false);
+  };
 
   return (
     <>
@@ -41,9 +41,9 @@ const ProfileSection = () => {
                       onClick={handleCreatePostClick}
                       className="bi bi-camera-fill text-primary position-absolute px-2 py-1 rounded-circle pointer"
                       style={{
-                        right: '25px',
-                        top: '15px',
-                        backgroundColor: 'white',
+                        right: "25px",
+                        top: "15px",
+                        backgroundColor: "white",
                       }}
                     ></i>
                     <ImageUploadProfile
@@ -56,8 +56,8 @@ const ProfileSection = () => {
                   <i
                     className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                     style={{
-                      height: '40px',
-                      width: '40px',
+                      height: "40px",
+                      width: "40px",
                     }}
                   ></i>
                 </div>
@@ -65,16 +65,16 @@ const ProfileSection = () => {
                   <Row className="justify-content-between">
                     <Col className="col-12 col-lg-7">
                       <div className="d-flex align-items-center flex-wrap">
-                        <span className="fw-semibold fs-4 lh-1 pointer bg-gray-hover py-1 rounded-1 me-2">
+                        <span className="fw-semibold fs-4 lh-1 pointer bg-gray-hover py-1 rounded-1 me-2 ">
                           {state.profile.name} {state.profile.surname} (
                           {state.profile.username})
                         </span>
-                        <Button className="py-0 bg-transparent btn-add-language fs-7">
+                        <Button className="py-0 mt-2 bg-transparent btn-add-language fs-7">
                           <i className="bi bi-shield-check me-1"></i>Verifica
                           ora
                         </Button>
                       </div>
-                      <p className="mb-2 lh-1">{state.profile.title}</p>
+                      <p className="mb-2 mt-2 lh-1">{state.profile.title}</p>
                       <a
                         href="#"
                         className="d-block d-lg-none fs-7 text-secondary nav-profile-premium link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
@@ -91,7 +91,7 @@ const ProfileSection = () => {
                           href="#"
                           className="fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
                           onClick={() => {
-                            setShow(true)
+                            setShow(true);
                           }}
                         >
                           Informazioni di contatto
@@ -136,7 +136,7 @@ const ProfileSection = () => {
                         <Card
                           className="py-2 ps-3 pe-2 border-0 fs-7"
                           style={{
-                            backgroundColor: '#dde7f1',
+                            backgroundColor: "#dde7f1",
                           }}
                         >
                           <span className="fw-semibold position-relative">
@@ -144,8 +144,8 @@ const ProfileSection = () => {
                             <i
                               className="bi bi-pencil position-absolute top-0 end-0 text-secondary fs-6 pointer bg-darkgray-hover rounded-circle d-flex justify-content-center align-items-center"
                               style={{
-                                height: '30px',
-                                width: '30px',
+                                height: "30px",
+                                width: "30px",
                               }}
                             ></i>
                           </span>
@@ -178,8 +178,8 @@ const ProfileSection = () => {
                     <i
                       className="bi bi-pencil text-secondary fs-5 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                       style={{
-                        height: '40px',
-                        width: '40px',
+                        height: "40px",
+                        width: "40px",
                       }}
                     ></i>
                   </div>
@@ -231,7 +231,7 @@ const ProfileSection = () => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default ProfileSection
+export default ProfileSection;

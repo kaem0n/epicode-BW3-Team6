@@ -10,7 +10,7 @@ const HomePostContainer = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [reloadTrigger, setReloadTrigger] = useState(true)
 
-  const getComments = async () => {
+  const getPosts = async () => {
     setIsLoading(true)
     try {
       const res = await fetch(endPoint, {
@@ -33,7 +33,7 @@ const HomePostContainer = () => {
   const trigger = () => setReloadTrigger(!reloadTrigger)
 
   useEffect(() => {
-    getComments()
+    getPosts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reloadTrigger])
 

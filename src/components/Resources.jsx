@@ -1,6 +1,6 @@
-import { Col, Row } from 'react-bootstrap'
-import Badge from 'react-bootstrap/Badge'
-import Card from 'react-bootstrap/Card'
+import { Col, Row } from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
+import Card from "react-bootstrap/Card";
 
 const Resources = () => {
   return (
@@ -59,14 +59,14 @@ const Resources = () => {
           </Card.Body>
           <a className="text-decoration-none" href="#">
             <div className="d-flex justify-content-center align-items-center border-top p-2 link-dark text-decoration-none mtlr text-secondary ">
-              Mostra tutte le risorse (5){' '}
+              Mostra tutte le risorse (5){" "}
               <i className="bi bi-arrow-right ms-1"></i>
             </div>
           </a>
         </Card>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default Resources
+export default Resources;
