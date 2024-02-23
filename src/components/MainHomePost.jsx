@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { Col, Form, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+
 import Card from "react-bootstrap/Card";
+import { Col, Form, Row } from "react-bootstrap";
+
+import { useSelector } from "react-redux";
 
 const MainHomePost = () => {
   const API_KEY = localStorage.getItem("api-key");
@@ -8,6 +11,7 @@ const MainHomePost = () => {
   const [comment, setComment] = useState(20);
   const [commentoSingoloPost, setCommentoSingoloPost] = useState([]);
 
+  const state = useSelector((state) => state.profile);
   const [post, setPost] = useState([]);
   const fetchPost = async () => {
     try {
@@ -66,6 +70,8 @@ const MainHomePost = () => {
   useEffect(() => {
     fetchPost();
     commentsFetch();
+  useEffect(() => {
+    fetchPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -191,7 +197,7 @@ const MainHomePost = () => {
                   <Row className="align-items-center mt-2">
                     <Col className="col-2">
                       <img
-                        src="http://placekitten.com/200/300"
+                        src={state.profile.image}
                         alt="img-profilo"
                         style={{ width: "50px", height: "50px" }}
                         className="rounded-circle objectfit-cover"
@@ -210,7 +216,9 @@ const MainHomePost = () => {
         );
       })}
     </>
-  );
-};
+  )
+}
+}
 
-export default MainHomePost;
+
+export default MainHomePost
