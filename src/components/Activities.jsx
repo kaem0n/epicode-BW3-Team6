@@ -114,21 +114,20 @@ const Activities = () => {
     <>
       <Card className="mb-2">
         <Card.Body className="ms-2">
-          <div className="d-flex align-items-center">
-            <div className="mb-3">
+          <Row className="d-flex align-items-center justify-content-between">
+            <Col className="mb-3 col- col-sm-6 col-lg-7 col-xl-8">
               <h5> Attività</h5>
-            </div>
-            <div className="flex-grow-1"></div>
-            <div>
+            </Col>
+            <Col className="col-6 col-sm-4  col-lg-3  d-flex justify-content-end ">
               <Button
                 variant="outline-primary me-2"
                 onClick={handleCreatePostClick}
               >
                 Crea un post
               </Button>
-            </div>
+            </Col>
 
-            <div>
+            <Col className="d-flex col-1 col-sm-2 col-lg-2 col-xl-1 justify-content-end flex-grow-1 ">
               <div
                 className="d-flex align-items-center justify-content-center rounded-circle"
                 style={{
@@ -142,20 +141,31 @@ const Activities = () => {
                   <i className="bi bi-pen fs-4 text-secondary"></i>
                 </span>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
           <div className="card-text">
             {state.posts.length === 0 ? (
-              <div>
+              <div className="mt-3">
                 <p>Non hai pubblicato ancora nulla</p>
                 <p>I post che condividi appariranno qui</p>
               </div>
             ) : (
               state.posts.map((post) => {
                 return (
-                  <Row key={post._id} className="border-bottom pb-3">
-                    <Col className="mt-4  ">
+                  <Row
+                    key={post._id}
+                    className="border-bottom pb-3 align-items-center "
+                  >
+                    <Col className="mt-4 me-5 me-sm-0 me-lg-4 me-xxl-3 col-1 col-sm-2 col-md-3 col-lg-1 ">
+                      <img
+                        src={state1.profile.image}
+                        className="objectfit-cover rounded-circle"
+                        width="60px"
+                        height="60px"
+                      />
+                    </Col>
+                    <Col className="mt-4 ms-1 ms-sm-0 ms-lg-2 ms-xl-0">
                       <p className="name-activities mb-1">
                         {state1.profile.name} {state1.profile.surname}
                       </p>
@@ -168,7 +178,7 @@ const Activities = () => {
                         />
                       )}
                     </Col>
-                    <Col className="d-flex justify-content-end align-items-center  ">
+                    <Col className="d-flex justify-content-start justify-content-sm-end  align-items-center mt-2  ">
                       <Button className="me-3 border-0 rounded-circle addpost-btn mt-2 mt-sm-0">
                         <i
                           style={{ color: "black", fontSize: "20px" }}

@@ -20,29 +20,6 @@ const PostModal = ({ show, hide }) => {
     setText(event.target.value);
   };
   const handleClick = () => {
-    // formData.append("text", text);
-    // if (image) {
-    //   const formData = new FormData();
-    //   formData.append("post", image);
-    // }
-    // fetch(`https://striveschool-api.herokuapp.com/api/posts/:${postId}`, {
-    //   method: "POST",
-    //   headers: {
-    //     Authorization:
-    //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQzMTIxMzI0ZjYwNTAwMTkzN2Q0NWMiLCJpYXQiOjE3MDgzMzE1NDAsImV4cCI6MTcwOTU0MTE0MH0.Zl9ZBSk3lglgtHuX1aKTRzEJzPZ3CRCArwETLUu8CII",
-    //   },
-    //   body: formData,
-    // })
-    //   .then((risposta) => risposta.json())
-    //   .then((data) => {
-    //     console.log(data);
-
-    //     dispatch(addPost({ ...data }));
-    //   })
-    //   .catch((error) => {
-    //     console.error("Errore:", error);
-    //   });
-
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {
@@ -50,7 +27,6 @@ const PostModal = ({ show, hide }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ text }),
-      // body: formData,
     })
       .then((response) => response.json())
       .then((data) => {

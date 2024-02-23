@@ -1,6 +1,6 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import Form from 'react-bootstrap/Form'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Col, Container, Row } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const MyFooter = () => {
   return (
@@ -14,7 +14,7 @@ const MyFooter = () => {
               id="nav-dropdown-dark-example"
               title="Privacy e Condizioni"
               menuVariant="white"
-              className="mb-3"
+              className="mb-3 privacy-condition"
             >
               <NavDropdown.Item className="fs-8">
                 Informazioni sulla privacy
@@ -108,7 +108,7 @@ const MyFooter = () => {
         </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default MyFooter
+export default MyFooter;

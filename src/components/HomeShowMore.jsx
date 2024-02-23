@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 const HomeShowMore = () => {
   return (
     <>
-      <Card className="mt-2">
+      <Card className="mt-2 mb-2">
         <Card.Body className="d-flex  justify-content-between ">
           <div className="d-flex flex-column justify-content-around">
             <a
