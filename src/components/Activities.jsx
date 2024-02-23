@@ -138,7 +138,7 @@ const Activities = () => {
                 onClick={handleActivitiesIconClick}
               >
                 <span>
-                  <i className="bi bi-pen fs-4 text-secondary"></i>
+                <i className="bi bi-pencil fs-5"></i>
                 </span>
               </div>
             </Col>
@@ -198,6 +198,7 @@ const Activities = () => {
                         text={post.text}
                         username={post.username}
                       />
+                      
                       <i
                         className="bi bi-x-lg text-secondary fs-4 pointer bg-gray-hover rounded-circle d-flex justify-content-center align-items-center"
                         style={{
