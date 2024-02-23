@@ -131,7 +131,7 @@ const Comment = (props) => {
               </Form>
             )}
           </div>
-          <div className="fs-8 text-secondary pointer">
+          <div className="fs-8 text-secondary pointer mt-1">
             <span className="bg-gray-hover">Consiglia</span>
             <i className="bi bi-dot"></i>
             <i className="fa-regular fa-thumbs-up me-1"></i>
