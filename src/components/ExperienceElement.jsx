@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import DeleteExperienceModal from './DeleteExperienceModal'
-import ExperienceImage from './ExperienceImage'
-import ModifyExperienceModal from './ModifyExperienceModal'
+import { useState } from "react";
+import DeleteExperienceModal from "./DeleteExperienceModal";
+import ExperienceImage from "./ExperienceImage";
+import ModifyExperienceModal from "./ModifyExperienceModal";
 
 /* eslint-disable react/prop-types */
 const ExperienceElement = (props) => {
   const formatDate = (date) => {
-    return date.slice(0, date.indexOf('T')).replace('-', '/').replace('-', '/')
-  }
-  const [imageUrl, setImageUrl] = useState(null)
+    return date.slice(0, date.indexOf("T")).replace("-", "/").replace("-", "/");
+  };
+  const [imageUrl, setImageUrl] = useState(null);
   const handleImageUpload = (url) => {
-    setImageUrl(url)
-  }
+    setImageUrl(url);
+  };
 
   return (
     <div className="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
@@ -19,7 +19,7 @@ const ExperienceElement = (props) => {
         <img
           src={
             props.image ||
-            'https://kodilan.com/img/empty-company-logo.8437254b.png'
+            "https://kodilan.com/img/empty-company-logo.8437254b.png"
           }
           alt="logo1"
           width="48px"
@@ -71,7 +71,7 @@ const ExperienceElement = (props) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExperienceElement
+export default ExperienceElement;
