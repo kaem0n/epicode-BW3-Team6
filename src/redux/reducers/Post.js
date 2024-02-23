@@ -1,5 +1,6 @@
 import {
   ADD_POST,
+  MOD_POST,
   ADD_IMAGE_TO_POST,
   SET_IMAGE,
   DELETE_FROM_FAVOURITES,
@@ -14,6 +15,18 @@ const postReducers = (state = initialState, action) => {
       return {
         ...state,
         posts: [...state.posts, action.payload],
+      };
+    case MOD_POST:
+      return {
+        ...state,
+        posts: state.posts.map((post) =>
+          post._id === action.payload.id
+            ? {
+                ...post,
+                text: action.payload.text,
+              }
+            : post
+        ),
       };
     case ADD_IMAGE_TO_POST:
       return {
