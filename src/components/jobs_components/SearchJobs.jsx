@@ -40,7 +40,7 @@ const SearchJobs = () => {
                 <img
                   src={profile.profile.image}
                   alt="immagineProfilo"
-                  className=" rounded-circle "
+                  className=" rounded-circle objectfit-cover"
                   style={{ width: " 60px", height: "60px" }}
                 />
               ) : (
@@ -57,19 +57,19 @@ const SearchJobs = () => {
                   <img
                     src="https://images.stockx.com/images/Medicom-UDF-Despicable-Me-Minions-Bob-Ultra-Detail-Figure.jpg?fit=fill&bg=FFFFFF&w=480&h=320&fm=jpg&auto=compress&dpr=2&trim=color&updated_at=1635258656&q=60"
                     alt="profili"
-                    className="rounded-circle "
+                    className="rounded-circle objectfit-cover "
                     style={{ width: "30px", height: "30px" }}
                   />
                   <img
                     src="https://files.cults3d.com/uploaders/22976645/illustration-file/d1875e17-917f-4b79-a2f6-3e16db9aaff3/tbrender_003-Recovered-Recovered.jpg"
                     alt="profili"
-                    className="rounded-circle "
+                    className="rounded-circle objectfit-cover"
                     style={{ width: "30px", height: "30px" }}
                   />
                   <img
                     src="https://static.screenweek.it/interpretation/original_low-159622.jpg?1455127002"
                     alt="profili"
-                    className="rounded-circle "
+                    className="rounded-circle objectfit-cover"
                     style={{ width: "30px", height: "30px" }}
                   />
                 </Col>
