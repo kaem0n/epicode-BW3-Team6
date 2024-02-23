@@ -1,13 +1,9 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
-import ProfileSidebar from './ProfileSidebar';
-import Test from './test';
 
 const HomeShowMore = () => {
   return (
     <>
-      <Card className="mt-2 d-none d-md-block ">
+      <Card className="mt-2  ">
         <Card.Body className="d-flex  justify-content-between ">
           <div className="d-flex flex-column justify-content-around">
             <a
@@ -44,17 +40,6 @@ const HomeShowMore = () => {
           </a>
         </Card.Footer>
       </Card>
-      <div className="text-center mt-3">
-        <Button className="text-secondary btn-homepost ">Vedi altro</Button>
-      </div>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
-        </Dropdown.Toggle>
-
-        <ProfileSidebar />
-      </Dropdown>
-      <Test />
     </>
   );
 };
