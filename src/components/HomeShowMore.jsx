@@ -1,4 +1,4 @@
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card';
 
 const HomeShowMore = () => {
   return (
@@ -9,21 +9,21 @@ const HomeShowMore = () => {
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
               Gruppi
             </a>
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
-              Eventi{" "}
+              Eventi{' '}
             </a>
             <a
               href="#"
               className="text-decoration-none fw-semibold"
-              style={{ fontSize: "smaller" }}
+              style={{ fontSize: 'smaller' }}
             >
               Hastag seguiti
             </a>
