@@ -295,6 +295,11 @@ main {
     display: flex !important;
   }
 }
+@media screen and (max-width: 350px) {
+  .none {
+    display: none !important;
+  }
+}
 
 @media screen and (max-width: 400px) {
   .d-none-400 {

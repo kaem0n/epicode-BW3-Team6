@@ -35,25 +35,25 @@ const SearchJobs = () => {
             </Col>
           </Row>
           <Row className="border-bottom ms-1 me-1">
-            <Col className="col-2">
+            <Col className="col-2 col-sm-2 col-lg-3 col-xl-2  ps-0 ">
               {profile.profile ? (
                 <img
                   src={profile.profile.image}
                   alt="immagineProfilo"
-                  className=" rounded-circle"
+                  className=" rounded-circle "
                   style={{ width: " 60px", height: "60px" }}
                 />
               ) : (
                 ""
               )}
             </Col>
-            <Col>
+            <Col className="col-10 col-sm-10 col-lg-9 col-xl-10 ps-5 ps-sm-0">
               <h6>
                 Vedi l’elenco completo delle offerte di lavoro per cui saresti
                 fra i migliori candidati
               </h6>
-              <Row className="align-items-center">
-                <Col className="col-3 d-flex">
+              <Row className="align-items-center mt-sm-3  ">
+                <Col className="col-12 mt-2 mt-sm-0 mb-2 mb-sm-3 col-sm-3 col-lg-4 col-xl-3 d-flex">
                   <img
                     src="https://images.stockx.com/images/Medicom-UDF-Despicable-Me-Minions-Bob-Ultra-Detail-Figure.jpg?fit=fill&bg=FFFFFF&w=480&h=320&fm=jpg&auto=compress&dpr=2&trim=color&updated_at=1635258656&q=60"
                     alt="profili"
@@ -73,13 +73,13 @@ const SearchJobs = () => {
                     style={{ width: "30px", height: "30px" }}
                   />
                 </Col>
-                <Col className="col-7 d-flex align-items-center">
-                  <p style={{ fontSize: "0.8em" }}>
+                <Col className="col-12 col-sm-7  d-flex align-items-center">
+                  <p style={{ fontSize: "0.8em" }} className="ms-md-3  ms-xl-0">
                     Milioni di utenti oggi usano PREMIUM
                   </p>
                 </Col>
                 <Row>
-                  <Col>
+                  <Col className="col-12 col-sm-5">
                     <button
                       type="button"
                       className="btn btn-warning rounded-pill opacity-75"
